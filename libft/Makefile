@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS += -Werror -Wall -Wextra
+CFLAGS = -Werror -Wall -Wextra
 CC = gcc
 NAME = libft.a
-SRC = ft_isupper.c ft_islower ft_isalpha
+SRC = ft_isupper.c ft_islower.c ft_isalpha.c
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)

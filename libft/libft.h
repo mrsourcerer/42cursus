@@ -9,8 +9,8 @@
 /*   Updated: 2022/12/03 12:32:08 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT
-# define LIBFT
+#ifndef LIBFT_H
+# define LIBFT_H
 
 int	ft_isupper(int c);
 int	ft_islower(int c);
