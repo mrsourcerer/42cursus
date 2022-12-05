@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 10:43:59 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/05 07:20:32 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/05 06:38:36 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/05 06:47:14 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int	ft_isupper(int c);
-int	ft_islower(int c);
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_toupper(int c);
-int	ft_tolower(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-
-#endif
+int	ft_toupper(int c)
+{
+	if (ft_islower(c))
+		return (c - 32);
+	else
+		return (c);
+}
