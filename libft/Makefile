@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2022/12/06 19:27:09 by danlopez         ###   ########.fr        #
+#    Updated: 2022/12/07 06:31:08 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ OBJ = $(SRC:.c=.o)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) -c $(CFlAGS) $^
+#%.o: %.c
+#	$(CC) -c $(CFlAGS) $^
 
 .PHONY: all, clean, fclean, re
 all: 	$(NAME)

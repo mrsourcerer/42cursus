@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:43:36 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/06 19:24:33 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/07 06:45:27 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	len_src;
-	int	len_dst;
-	int	size;
+	size_t	len_src;
+	size_t	len_dst;
+	size_t	size;
 
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);

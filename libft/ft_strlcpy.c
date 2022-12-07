@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:09:16 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/06 14:34:40 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/07 06:48:57 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	len;
-	int	size;
+	size_t	len;
+	int		size;
 
 	len = ft_strlen(src);
 	if (dstsize > len)
