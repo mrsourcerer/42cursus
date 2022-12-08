@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 20:20:37 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/08 06:48:09 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/08 12:10:18 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/08 15:25:47 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	const char	*p;
+#include "libft.h"
 
-	p = s;
-	if (*p)
-		while (*p)
-			p++;
-	while (p >= s)
+int	ft_atoi(const char *str)
+{
+	int	n;
+	int	negative;
+
+	n = 0;
+	negative = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (*p == (char)c)
-			return ((char *)p);
-		p--;
+		if (*str == '-')
+			negative = negative * -1;
+		str++;
 	}
-	return (0);
+	while (*str >= '0' && *str <= '9')
+	{
+		n = n * 10 + (*str - '0');
+		str++;
+	}
+	return (n * negative);
 }

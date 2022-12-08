@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 20:20:37 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/08 06:48:09 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/08 19:02:18 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/08 19:12:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	const char	*p;
+#include "libft.h"
 
-	p = s;
-	if (*p)
-		while (*p)
-			p++;
-	while (p >= s)
-	{
-		if (*p == (char)c)
-			return ((char *)p);
-		p--;
-	}
-	return (0);
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*join;
+
+	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * 1);
+	if (!join)
+		return (0);
+	ft_strlcpy(join, s1, ft_strlen(s1) + 1);
+	ft_strlcpy(join + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	return (join);
 }
