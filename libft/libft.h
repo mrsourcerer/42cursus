@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:43:59 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/08 19:03:30 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:30:47 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_maxint(int a, int b);
+int		ft_minint(int a, int b);
+size_t	ft_maxsize(size_t a, size_t b);
+size_t	ft_minsize(size_t a, size_t b);
 
 #endif
