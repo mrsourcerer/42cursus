@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 06:38:36 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/11 08:04:30 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/11 08:12:16 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/11 11:01:04 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+	size_t	size;
+	size_t	left;
+	size_t	right;
+
+	size = ft_strlen(s1);
+	left = 0;
+	right = size;
+	while (left < size && ft_strchr(set, s1[left]))
+		left++;
+	while (right > 0 && ft_strchr(set, s1[right]))
+		right--;
+	right++;
+	if (left > right)
+	{
+		left = 0;
+		right = 0;
+	}
+	return (ft_substr(s1, left, right - left));
 }
