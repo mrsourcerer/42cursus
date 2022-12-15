@@ -6,14 +6,17 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 06:58:12 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/14 07:29:37 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/15 07:26:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intsize(int n, size_t size)
+size_t	ft_intsize(int n)
 {
+	size_t size;
+
+	size = 0;
 	if (n < 0)
 	{
 		size++;
@@ -22,7 +25,7 @@ size_t	ft_intsize(int n, size_t size)
 	while (n > 9)
 	{
 		size++;
-		ft_intsize(n / 10, size);
+		n = n / 10;
 	}
 	size++;
 	return (size);
@@ -33,9 +36,11 @@ char	*ft_itoa(int n)
 	size_t	size;
 	char	*num;
 
-	size = 0;
-	size = ft_intsize(n, size);
-
-	num = "25";
+	size = ft_intsize(n);
+	num = (char *)malloc((size + 1) * sizeof(char));
+	if (!num)
+		return (0);
+	// falta rellenar num con el resto de valores
+	num[size] = '\0';
 	return (num);
 }
