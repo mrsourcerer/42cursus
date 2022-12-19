@@ -6,13 +6,13 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 06:58:12 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/17 10:17:56 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/19 07:23:06 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intsize(int n)
+static size_t	ft_intsize(int n)
 {
 	size_t	size;
 
@@ -31,7 +31,7 @@ size_t	ft_intsize(int n)
 	return (size);
 }
 
-int	ft_pow(int n)
+static int	ft_pow(int n)
 {
 	int	i;
 

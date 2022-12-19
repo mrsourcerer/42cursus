@@ -6,13 +6,13 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 06:13:24 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/17 10:19:30 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/19 07:26:10 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_intsize_nomalloc(long n)
+static size_t	ft_intsize_nomalloc(long n)
 {
 	size_t	size;
 
@@ -31,7 +31,7 @@ size_t	ft_intsize_nomalloc(long n)
 	return (size);
 }
 
-int	ft_pow_nomalloc(int n)
+static int	ft_pow_nomalloc(int n)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ int	ft_pow_nomalloc(int n)
 	return (i);
 }
 
-char	*ft_itoa_nomalloc(int n)
+static char	*ft_itoa_nomalloc(int n)
 {
 	long		num;
 	size_t		size;
