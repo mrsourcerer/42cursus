@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/22 20:51:28 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/23 07:23:04 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@ int	ft_check_end(char *str)
 {
 	char	*nl;
 
+	printf("entra en check_end\n");
 	nl = ft_strchr(str, '\n');
-	if (*nl)
+	printf("si que llega aqui\n");
+//	printf("nl: %c\n", *nl);
+	if (*nl) //algo pasa cuando no encuentra \n ver que devuelve ft_strchr !!!!
+	{
+		printf("entra aqui?\n");
 		return (ft_strlen(str) - ft_strlen(nl));
+	}
+	printf("no no no\n");
 	return (-1);
 }
 
@@ -34,12 +41,14 @@ void	ft_delete(char *str, int pos)
 	printf("text:%s\n", str);
 	i = 0;
 	//while (str[i + pos] && i + pos < size)
-	while (i < 16)
+	while (i < size - pos - 1)
 	{
+		printf("i: %i str[i]: %c str[i+pos+1]: %c\n", i, str[i], str[i + pos + 1]);
 		str[i] = str[i + pos + 1];
 		i++;
 	}
 	//str[i] = str[i + pos + 1];
+	str[i] = '\0';
 }
 
 char	*get_next_line(int fd)
@@ -61,6 +70,7 @@ char	*get_next_line(int fd)
 	line = NULL;
 	if (ft_check_end(str) >= 0)
 	{
+		printf("llega aqui\n");
 		line = ft_substr(str, 0, ft_check_end(str));
 		ft_delete(str, ft_check_end(str));
 	}
