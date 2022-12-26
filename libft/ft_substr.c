@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:17:40 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/10 11:52:19 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/26 17:56:50 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	size;
 
+	if (!s)
+		return (0);
 	size = len;
 	if (len + start > ft_strlen(s))
 	{

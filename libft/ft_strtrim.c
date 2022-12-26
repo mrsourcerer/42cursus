@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 08:12:16 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/11 11:01:04 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:14:38 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	left;
 	size_t	right;
 
+	if (!s1)
+		return (0);
+	if (!set)
+		return (ft_strdup(s1));
 	size = ft_strlen(s1);
 	left = 0;
 	right = size;

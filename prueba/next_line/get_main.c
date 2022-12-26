@@ -24,8 +24,10 @@ int	main(void)
 
 	end = 0;
 	//i = 0;
-	fd = open("text.txt", O_RDONLY);
-	while (!end)
+	fd = open("../text.txt", O_RDONLY);
+    if (fd == -1)
+        return (0);
+    while (!end)
 	{
 		line = get_next_line(fd);
 		if (!line)

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:02:56 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/19 07:16:08 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/26 20:20:09 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ char	**ft_split(char const *s, char c)
 	size_t	size;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	count = ft_words(s, c);
 	dict = (char **)malloc((count + 1) * sizeof(size_t));
 	if (!dict)
@@ -102,10 +104,7 @@ char	**ft_split(char const *s, char c)
 		size = ft_next(s, c, start);
 		dict[i] = ft_add(s, c, start, size);
 		if (!dict[i])
-		{
-			ft_free(i, dict);
-			return (0);
-		}
+			return (ft_free(i, dict), (char **)0);
 		start = start + size + 1;
 		i++;
 	}

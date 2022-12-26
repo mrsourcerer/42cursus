@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 22:13:36 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/15 22:36:48 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/26 19:57:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*str;
 
+	if (!s || !f)
+		return (0);
 	size = ft_strlen(s);
 	str = (char *)malloc((size + 1) * sizeof(char));
 	if (!str)
