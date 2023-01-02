@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/26 10:28:54 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/27 10:47:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int	ft_check_end(char *str)
 {
 	char	*nl;
 
+	if (!str)
+		return (-1);
 	nl = ft_strchr(str, '\n');
 	if (nl)
-		return (ft_strlen(str) - ft_strlen(nl));
+		return ((int)(ft_strlen(str) - ft_strlen(nl)));
 	return (-1);
 }
 
@@ -40,7 +42,7 @@ void	ft_delete(char *str, int pos)
 char	*ft_makestr(char *buffer, char *str)
 {
 	char	*tmp;
-    size_t  size;
+	size_t	size;
 
 	size = ft_strlen(str) + ft_strlen(buffer);
 	tmp = (char *)malloc((size + 1) * sizeof(char));
@@ -64,6 +66,7 @@ char	*ft_read(int fd)
 		return (0);
 	if (!read(fd, buffer, BUFFER_SIZE))
 		return (0);
+	buffer[BUFFER_SIZE] = '\0';
 	return (buffer);
 }
 
@@ -73,13 +76,8 @@ char	*get_next_line(int fd)
 	static char	*str;
 	char		*line;
 
-	if (!str)
-	{
-		buffer = ft_read(fd);
-		if (!buffer)
-			return (0);
-		str = ft_makestr(buffer, str);
-	}
+	if (fd == -1)
+		return (0);
 	line = NULL;
 	while (ft_check_end(str) == -1)
 	{

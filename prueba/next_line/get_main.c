@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/26 10:47:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2022/12/27 12:16:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 
 	end = 0;
 	//i = 0;
-	fd = open("../text.txt", O_RDONLY);
+	fd = open("text.txt", O_RDONLY);
     if (fd == -1)
         return (0);
     while (!end)
