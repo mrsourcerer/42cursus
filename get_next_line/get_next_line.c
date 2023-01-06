@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/05 09:06:34 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:19:29 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	ft_check_end(char *str)
 char	*ft_delete(char *str, int pos)
 {
 	size_t	size;
-	//size_t	i;
 	char	*tmp;
 
 	size = ft_strlen(str);
@@ -35,13 +34,6 @@ char	*ft_delete(char *str, int pos)
 	free(str);
 	str = tmp;
 	return (str);
-/*	i = 0;
-	while (i < size - pos - 1)
-	{
-		str[i] = str[i + pos + 1];
-		i++;
-	}
-	str[i] = '\0'; */
 }
 
 char	*ft_makestr(char *buffer, char *str)
@@ -65,26 +57,22 @@ char	*ft_makestr(char *buffer, char *str)
 char	*ft_read(int fd)
 {
 	char	*buffer;
-	char 	*tmp;
-	size_t 	size_read;
-
+	char	*tmp;
+	ssize_t	size_read;
 
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (0);
 	size_read = read(fd, buffer, BUFFER_SIZE);
-	buffer[size_read] = '\0';
-	if (!size_read)
+	if (size_read < 1)
 		return (free(buffer), (char *)0);
 	if (size_read < BUFFER_SIZE)
 	{
 		tmp = ft_substr(buffer, 0, size_read);
 		free(buffer);
 		buffer = tmp;
-	//	buffer[size_read] = '\0';
 	}
-	//else
-	//	buffer[BUFFER_SIZE] = '\0';
+	buffer[size_read] = '\0';
 	return (buffer);
 }
 
@@ -101,7 +89,7 @@ char	*get_next_line(int fd)
 	{
 		buffer = ft_read(fd);
 		if (!buffer)
-			return (free(str),  (char *)0);
+			return (free(str), (char *)0);
 		else
 			str = ft_makestr(buffer, str);
 	}

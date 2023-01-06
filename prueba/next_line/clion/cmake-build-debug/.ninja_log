@@ -1,0 +1,5 @@
+# ninja log v5
+18	33	1672136498381164073	a.out	2e399db92b3203a
+1	20	1672136104289152556	CMakeFiles/a.out.dir/home/sourcerer/projects/42cursus/get_next_line_no42git/get_next_line_utils.c.o	9ba3956317a8e695
+1	17	1672133346137071951	CMakeFiles/a.out.dir/home/sourcerer/projects/42cursus/prueba/next_line/get_main.c.o	279ead645c703c67
+0	18	1672136498365164072	CMakeFiles/a.out.dir/home/sourcerer/projects/42cursus/get_next_line_no42git/get_next_line.c.o	1862e6fc31c671f

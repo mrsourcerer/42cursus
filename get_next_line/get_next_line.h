@@ -17,7 +17,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# include <stdlib.h>
+# include <stdlib.h> // porque?
 # include <unistd.h>
 
 char	*get_next_line(int fd);
