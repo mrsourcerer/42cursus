@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/06 19:19:29 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/09 07:24:45 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ char	*ft_makestr(char *buffer, char *str)
 	ft_memcpy(tmp, str, ft_strlen(str));
 	ft_memcpy(tmp + ft_strlen(str), buffer, ft_strlen(buffer));
 	tmp[size] = '\0';
-	free(str);
-	free(buffer);
+	if (!str) // analizar si es necesario esto ***************************************************
+		free(str);
+	if (!buffer) // analizar si es necesario esto ************************************************
+		free(buffer);
 	str = tmp;
 	return (str);
 }
