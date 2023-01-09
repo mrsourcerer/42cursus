@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:17:19 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/07 21:04:39 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/09 05:48:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # endif
 
 # include <stdlib.h> // porque?
+# include <stddef.h> // para size_t quitar o dejar?
 # include <unistd.h>
 
 char	*get_next_line(int fd);
