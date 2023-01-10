@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/09 07:24:45 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/10 05:45:39 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,16 @@ char	*ft_makestr(char *buffer, char *str)
 	tmp = (char *)malloc((size + 1) * sizeof(char));
 	if (!tmp)
 		return (0);
+	tmp[size] = '\0';
 	ft_memcpy(tmp, str, ft_strlen(str));
 	ft_memcpy(tmp + ft_strlen(str), buffer, ft_strlen(buffer));
-	tmp[size] = '\0';
-	if (!str) // analizar si es necesario esto ***************************************************
+	if (str)
 		free(str);
-	if (!buffer) // analizar si es necesario esto ************************************************
+	if (buffer)
+	{
 		free(buffer);
+		buffer = NULL;
+	}
 	str = tmp;
 	return (str);
 }

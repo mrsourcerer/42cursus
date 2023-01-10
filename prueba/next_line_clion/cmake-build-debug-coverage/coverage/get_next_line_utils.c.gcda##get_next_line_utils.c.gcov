@@ -1,0 +1,179 @@
+        -:    0:Source:/home/sourcerer/projects/42cursus/prueba/next_line_clion/get_next_line_utils.c
+        -:    0:Graph:/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/CMakeFiles/a.out.dir/get_next_line_utils.c.gcno
+        -:    0:Data:/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/CMakeFiles/a.out.dir/get_next_line_utils.c.gcda
+        -:    0:Runs:1
+        -:    1:/* ************************************************************************** */
+        -:    2:/*                                                                            */
+        -:    3:/*                                                        :::      ::::::::   */
+        -:    4:/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+        -:    5:/*                                                    +:+ +:+         +:+     */
+        -:    6:/*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
+        -:    7:/*                                                +#+#+#+#+#+   +#+           */
+        -:    8:/*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
+        -:    9:/*   Updated: 2023/01/05 09:08:19 by danlopez         ###   ########.fr       */
+        -:   10:/*                                                                            */
+        -:   11:/* ************************************************************************** */
+        -:   12:
+        -:   13:#include "get_next_line.h"
+        -:   14:
+function ft_strlen called 0 returned 0% blocks executed 0%
+    #####:   15:size_t	ft_strlen(const char *s)
+        -:   16:{
+        -:   17:	int	len;
+        -:   18:
+    #####:   19:	if (!s)
+    %%%%%:   19-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   20:		return (0);
+    %%%%%:   20-block  0
+    #####:   21:	len = 0;
+    #####:   22:	while (s[len])
+    %%%%%:   22-block  0
+    %%%%%:   22-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   23:		len++;
+    %%%%%:   23-block  0
+    #####:   24:	return (len);
+    %%%%%:   24-block  0
+        -:   25:}
+        -:   26:
+function ft_memcpy called 0 returned 0% blocks executed 0%
+    #####:   27:void	*ft_memcpy(void *dst, const void *src, size_t n)
+        -:   28:{
+        -:   29:	char	*s;
+        -:   30:	char	*d;
+        -:   31:	size_t	i;
+        -:   32:
+    #####:   33:	d = (char *)dst;
+    #####:   34:	s = (char *)src;
+    #####:   35:	i = 0;
+    #####:   36:	if (!src && !dst)
+    %%%%%:   36-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   36-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   37:		return (dst);
+    %%%%%:   37-block  0
+    #####:   38:	while (i < n)
+    %%%%%:   38-block  0
+    %%%%%:   38-block  1
+branch  0 never executed
+branch  1 never executed
+        -:   39:	{
+    #####:   40:		d[i] = s[i];
+    #####:   41:		i++;
+    %%%%%:   41-block  0
+        -:   42:	}
+    #####:   43:	return (dst);
+    %%%%%:   43-block  0
+        -:   44:}
+        -:   45:
+function ft_strchr called 0 returned 0% blocks executed 0%
+    #####:   46:char	*ft_strchr(const char *s, int c)
+        -:   47:{
+    #####:   48:	while (*s)
+    %%%%%:   48-block  0
+    %%%%%:   48-block  1
+branch  0 never executed
+branch  1 never executed
+        -:   49:	{
+    #####:   50:		if (*s == (char)c)
+    %%%%%:   50-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   51:			return ((char *)s);
+    %%%%%:   51-block  0
+    #####:   52:		s++;
+    %%%%%:   52-block  0
+        -:   53:	}
+    #####:   54:	if ((char)c == '\0')
+    %%%%%:   54-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   55:		return ((char *)s);
+    %%%%%:   55-block  0
+    #####:   56:	return (0);
+    %%%%%:   56-block  0
+        -:   57:}
+        -:   58:
+function ft_strlcpy called 0 returned 0% blocks executed 0%
+    #####:   59:size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+        -:   60:{
+        -:   61:	size_t	len;
+        -:   62:	size_t	size;
+        -:   63:
+    #####:   64:	len = ft_strlen(src);
+    %%%%%:   64-block  0
+call    0 never executed
+    #####:   65:	if (dstsize > len)
+branch  0 never executed
+branch  1 never executed
+    #####:   66:		size = len + 1;
+    %%%%%:   66-block  0
+        -:   67:	else
+    #####:   68:		size = dstsize;
+    %%%%%:   68-block  0
+    #####:   69:	if (size > 0)
+    %%%%%:   69-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   70:	{
+    #####:   71:		ft_memcpy(dst, src, size - 1);
+    %%%%%:   71-block  0
+call    0 never executed
+    #####:   72:		dst[size - 1] = '\0';
+        -:   73:	}
+    #####:   74:	return (len);
+    %%%%%:   74-block  0
+        -:   75:}
+        -:   76:
+function ft_substr called 0 returned 0% blocks executed 0%
+    #####:   77:char	*ft_substr(char const *s, unsigned int start, size_t len)
+        -:   78:{
+        -:   79:	char	*sub;
+        -:   80:	size_t	size;
+        -:   81:
+    #####:   82:	size = len;
+    #####:   83:	if (len + start > ft_strlen(s))
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   84:	{
+    #####:   85:		if (start > ft_strlen(s))
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   86:			size = 0;
+    %%%%%:   86-block  0
+        -:   87:		else
+    #####:   88:			size = ft_strlen(s) - start;
+    %%%%%:   88-block  0
+call    0 never executed
+        -:   89:	}
+    #####:   90:	sub = (char *)malloc((size + 1) * 1);
+    #####:   91:	if (!sub)
+    %%%%%:   91-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   92:		return (0);
+    %%%%%:   92-block  0
+    #####:   93:	if (start > ft_strlen(s))
+    %%%%%:   93-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   94:		sub[0] = '\0';
+    %%%%%:   94-block  0
+        -:   95:	else
+    #####:   96:		ft_strlcpy(sub, s + start, size + 1);
+    %%%%%:   96-block  0
+call    0 never executed
+    #####:   97:	return (sub);
+    %%%%%:   97-block  0
+        -:   98:}

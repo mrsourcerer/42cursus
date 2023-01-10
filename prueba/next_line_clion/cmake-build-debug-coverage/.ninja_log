@@ -1,0 +1,5 @@
+# ninja log v5
+0	25	1673329990305122758	CMakeFiles/a.out.dir/get_main.c.o	3a83c2defc406acd
+1	25	1673329990305122758	CMakeFiles/a.out.dir/get_next_line.c.o	c39cadbec22d60e0
+1	44	1673329990321122758	CMakeFiles/a.out.dir/get_next_line_utils.c.o	7ba9aaa381956f37
+44	70	1673329990349122759	a.out	b1127beb9eede04e

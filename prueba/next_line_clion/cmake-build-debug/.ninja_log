@@ -1,17 +1,7 @@
 # ninja log v5
-20	44	1673121256784559311	a.out	b0d9046e2aea6486
-1	20	1673121256760559310	CMakeFiles/a.out.dir/get_next_line_utils.c.o	cd3e58b5d8090f14
-1	20	1673121256760559310	CMakeFiles/a.out.dir/get_next_line.c.o	eb6c9b213492b434
-0	20	1673121256760559310	CMakeFiles/a.out.dir/get_main.c.o	1f21e820e560a83d
-0	19	1673121892144577879	CMakeFiles/a.out.dir/get_main.c.o	3174a3fe5fe90ed3
-0	20	1673121892144577879	CMakeFiles/a.out.dir/get_next_line_utils.c.o	ffb7688b69eecb91
-0	20	1673121892144577879	CMakeFiles/a.out.dir/get_next_line.c.o	9ef0719b3b0b1d8a
-20	36	1673121892160577879	a.out	87b08dc199d4913b
-1	20	1673239805451011557	CMakeFiles/a.out.dir/get_main.c.o	3174a3fe5fe90ed3
-1	20	1673239805451011557	CMakeFiles/a.out.dir/get_next_line.c.o	9ef0719b3b0b1d8a
-1	20	1673239805451011557	CMakeFiles/a.out.dir/get_next_line_utils.c.o	ffb7688b69eecb91
-20	37	1673239805467011557	a.out	87b08dc199d4913b
-0	18	1673242792967098864	CMakeFiles/a.out.dir/get_main.c.o	3174a3fe5fe90ed3
-18	35	1673242792983098865	a.out	87b08dc199d4913b
-0	19	1673243180971110204	CMakeFiles/a.out.dir/get_main.c.o	3174a3fe5fe90ed3
-19	35	1673243180979110204	a.out	87b08dc199d4913b
+19	35	1673329959921121870	a.out	2ffdac1d2abdfc10
+0	20	1673328909133091161	CMakeFiles/a.out.dir/get_next_line_utils.c.o	395218edfd82f2ae
+0	20	1673328909133091161	CMakeFiles/a.out.dir/get_next_line.c.o	48b2d4199d84d96a
+1	19	1673329959901121869	CMakeFiles/a.out.dir/get_main.c.o	ef18ff23796c6ba4
+1	21	1673331642573171044	CMakeFiles/a.out.dir/get_next_line.c.o	48b2d4199d84d96a
+21	37	1673331642589171044	a.out	2ffdac1d2abdfc10
