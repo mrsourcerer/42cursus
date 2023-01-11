@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/10 06:52:10 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/11 07:08:33 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main(void)
 {
 	int		fd;
-	char	*fd_name = "41_no_nl";
+	char	*fd_name = "only_nl.txt";
 	char	*line;
 	int		end;
 
@@ -35,7 +35,7 @@ int	main(void)
 			end = 1;
 		else
 		{
-			printf("Linea: ********\n%s\n***************\n", line);
+			printf("Linea: *%s*fin_linea\n", line);
 			free(line);
 		}
 	}

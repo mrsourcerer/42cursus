@@ -1,0 +1,785 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║         get_next_line        ║
+                        ╚══════════════════════════════╝
+⠋ Preparing framework⠙ Preparing framework✔ Preparing framework
+⠋ Executing: norminette⠙ Executing: norminette⠹ Executing: norminette✖ Executing: norminette
+get_next_line.c: Error!
+Error: TOO_MANY_LINES       (line: 111, col:   1):	Function has more than 25 lines
+get_next_line_utils.c: OK!
+get_next_line.h: OK!
+
+ℹ Running tests: gnlTester (https://github.com/Tripouille/gnlTester)
+[34m[Mandatory]
+[37m[BUFFER_SIZE = 1]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [31m1.KO [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO [31m9.KO [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [31m1.KO [32m2.OK [0m
+[37mstdin: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO [31m9.KO [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 42]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: ==69704== Conditional jump or move depends on uninitialised value(s)
+==69704==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69704==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69704==    by 0x110054: ft_read (get_next_line.c:71)
+==69704==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69704==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69704==    by 0x10D268: main (mandatory.cpp:40)
+==69704== 
+==69704== Conditional jump or move depends on uninitialised value(s)
+==69704==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69704==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69704==    by 0x110054: ft_read (get_next_line.c:71)
+==69704==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69704==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69704==    by 0x10D268: main (mandatory.cpp:40)
+==69704== 
+==69704== Conditional jump or move depends on uninitialised value(s)
+==69704==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69704==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69704==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69704==    by 0x110054: ft_read (get_next_line.c:71)
+==69704==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69704==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69704==    by 0x10D268: main (mandatory.cpp:40)
+==69704== 
+[31m1.KO [32m2.OK [0m
+[37mfiles/41_no_nl: ==69705== Conditional jump or move depends on uninitialised value(s)
+==69705==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69705==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69705==    by 0x110054: ft_read (get_next_line.c:71)
+==69705==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69705==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69705==    by 0x10D539: main (mandatory.cpp:45)
+==69705== 
+==69705== Conditional jump or move depends on uninitialised value(s)
+==69705==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69705==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69705==    by 0x110054: ft_read (get_next_line.c:71)
+==69705==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69705==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69705==    by 0x10D539: main (mandatory.cpp:45)
+==69705== 
+==69705== Conditional jump or move depends on uninitialised value(s)
+==69705==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69705==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69705==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69705==    by 0x110054: ft_read (get_next_line.c:71)
+==69705==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69705==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69705==    by 0x10D539: main (mandatory.cpp:45)
+==69705== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: ==69709== Conditional jump or move depends on uninitialised value(s)
+==69709==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69709==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69709==    by 0x110054: ft_read (get_next_line.c:71)
+==69709==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69709==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69709==    by 0x10E0D8: main (mandatory.cpp:72)
+==69709== 
+==69709== Conditional jump or move depends on uninitialised value(s)
+==69709==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69709==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69709==    by 0x110054: ft_read (get_next_line.c:71)
+==69709==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69709==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69709==    by 0x10E0D8: main (mandatory.cpp:72)
+==69709== 
+==69709== Conditional jump or move depends on uninitialised value(s)
+==69709==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69709==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69709==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69709==    by 0x110054: ft_read (get_next_line.c:71)
+==69709==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69709==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69709==    by 0x10E0D8: main (mandatory.cpp:72)
+==69709== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: ==69710== Conditional jump or move depends on uninitialised value(s)
+==69710==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69710==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69710==    by 0x110054: ft_read (get_next_line.c:71)
+==69710==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69710==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69710==    by 0x10E3A9: main (mandatory.cpp:77)
+==69710== 
+==69710== Conditional jump or move depends on uninitialised value(s)
+==69710==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69710==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69710==    by 0x110054: ft_read (get_next_line.c:71)
+==69710==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69710==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69710==    by 0x10E3A9: main (mandatory.cpp:77)
+==69710== 
+==69710== Conditional jump or move depends on uninitialised value(s)
+==69710==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69710==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69710==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69710==    by 0x110054: ft_read (get_next_line.c:71)
+==69710==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69710==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69710==    by 0x10E3A9: main (mandatory.cpp:77)
+==69710== 
+[31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: ==69711== Conditional jump or move depends on uninitialised value(s)
+==69711==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69711==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69711==    by 0x110054: ft_read (get_next_line.c:71)
+==69711==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69711==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69711==    by 0x10E689: main (mandatory.cpp:83)
+==69711== 
+==69711== Conditional jump or move depends on uninitialised value(s)
+==69711==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69711==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69711==    by 0x110054: ft_read (get_next_line.c:71)
+==69711==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69711==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69711==    by 0x10E689: main (mandatory.cpp:83)
+==69711== 
+==69711== Conditional jump or move depends on uninitialised value(s)
+==69711==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69711==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69711==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69711==    by 0x110054: ft_read (get_next_line.c:71)
+==69711==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69711==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69711==    by 0x10E689: main (mandatory.cpp:83)
+==69711== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO ==69712== Conditional jump or move depends on uninitialised value(s)
+==69712==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69712==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69712==    by 0x110054: ft_read (get_next_line.c:71)
+==69712==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69712==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69712==    by 0x10E9D2: main (mandatory.cpp:92)
+==69712== 
+==69712== Conditional jump or move depends on uninitialised value(s)
+==69712==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69712==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69712==    by 0x110054: ft_read (get_next_line.c:71)
+==69712==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69712==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69712==    by 0x10E9D2: main (mandatory.cpp:92)
+==69712== 
+==69712== Conditional jump or move depends on uninitialised value(s)
+==69712==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69712==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69712==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69712==    by 0x110054: ft_read (get_next_line.c:71)
+==69712==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69712==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69712==    by 0x10E9D2: main (mandatory.cpp:92)
+==69712== 
+[32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO ==69713== Conditional jump or move depends on uninitialised value(s)
+==69713==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69713==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69713==    by 0x110054: ft_read (get_next_line.c:71)
+==69713==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69713==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69713==    by 0x10ECDF: main (mandatory.cpp:101)
+==69713== 
+==69713== Conditional jump or move depends on uninitialised value(s)
+==69713==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69713==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69713==    by 0x110054: ft_read (get_next_line.c:71)
+==69713==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69713==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69713==    by 0x10ECDF: main (mandatory.cpp:101)
+==69713== 
+==69713== Conditional jump or move depends on uninitialised value(s)
+==69713==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69713==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69713==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69713==    by 0x110054: ft_read (get_next_line.c:71)
+==69713==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69713==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69713==    by 0x10ECDF: main (mandatory.cpp:101)
+==69713== 
+[31m5.KO [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO ==69714== Conditional jump or move depends on uninitialised value(s)
+==69714==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69714==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69714==    by 0x110054: ft_read (get_next_line.c:71)
+==69714==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69714==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69714==    by 0x10F028: main (mandatory.cpp:110)
+==69714== 
+==69714== Conditional jump or move depends on uninitialised value(s)
+==69714==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69714==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69714==    by 0x110054: ft_read (get_next_line.c:71)
+==69714==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69714==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69714==    by 0x10F028: main (mandatory.cpp:110)
+==69714== 
+==69714== Conditional jump or move depends on uninitialised value(s)
+==69714==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69714==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69714==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69714==    by 0x110054: ft_read (get_next_line.c:71)
+==69714==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69714==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69714==    by 0x10F028: main (mandatory.cpp:110)
+==69714== 
+[32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO ==69715== Conditional jump or move depends on uninitialised value(s)
+==69715==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69715==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69715==    by 0x110054: ft_read (get_next_line.c:71)
+==69715==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69715==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69715==    by 0x10F371: main (mandatory.cpp:123)
+==69715== 
+==69715== Conditional jump or move depends on uninitialised value(s)
+==69715==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69715==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69715==    by 0x110054: ft_read (get_next_line.c:71)
+==69715==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69715==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69715==    by 0x10F371: main (mandatory.cpp:123)
+==69715== 
+==69715== Conditional jump or move depends on uninitialised value(s)
+==69715==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69715==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69715==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69715==    by 0x110054: ft_read (get_next_line.c:71)
+==69715==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69715==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69715==    by 0x10F371: main (mandatory.cpp:123)
+==69715== 
+[31m9.KO [32m10.OK [0m
+[37mfiles/big_line_no_nl: ==69716== Conditional jump or move depends on uninitialised value(s)
+==69716==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69716==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69716==    by 0x110054: ft_read (get_next_line.c:71)
+==69716==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69716==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69716==    by 0x10F642: main (mandatory.cpp:136)
+==69716== 
+==69716== Conditional jump or move depends on uninitialised value(s)
+==69716==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69716==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69716==    by 0x110054: ft_read (get_next_line.c:71)
+==69716==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69716==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69716==    by 0x10F642: main (mandatory.cpp:136)
+==69716== 
+==69716== Conditional jump or move depends on uninitialised value(s)
+==69716==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69716==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69716==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69716==    by 0x110054: ft_read (get_next_line.c:71)
+==69716==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69716==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69716==    by 0x10F642: main (mandatory.cpp:136)
+==69716== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: ==69717== Conditional jump or move depends on uninitialised value(s)
+==69717==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69717==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69717==    by 0x110054: ft_read (get_next_line.c:71)
+==69717==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69717==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69717==    by 0x10F913: main (mandatory.cpp:140)
+==69717== 
+==69717== Conditional jump or move depends on uninitialised value(s)
+==69717==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69717==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69717==    by 0x110054: ft_read (get_next_line.c:71)
+==69717==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69717==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69717==    by 0x10F913: main (mandatory.cpp:140)
+==69717== 
+==69717== Conditional jump or move depends on uninitialised value(s)
+==69717==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69717==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69717==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69717==    by 0x110054: ft_read (get_next_line.c:71)
+==69717==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69717==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69717==    by 0x10F913: main (mandatory.cpp:140)
+==69717== 
+[31m1.KO [32m2.OK [0m
+[37mstdin: [31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO ==69718== Conditional jump or move depends on uninitialised value(s)
+==69718==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69718==    by 0x110382: ft_substr (get_next_line_utils.c:83)
+==69718==    by 0x110054: ft_read (get_next_line.c:71)
+==69718==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69718==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69718==    by 0x10FC53: main (mandatory.cpp:145)
+==69718== 
+==69718== Conditional jump or move depends on uninitialised value(s)
+==69718==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69718==    by 0x1103EC: ft_substr (get_next_line_utils.c:93)
+==69718==    by 0x110054: ft_read (get_next_line.c:71)
+==69718==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69718==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69718==    by 0x10FC53: main (mandatory.cpp:145)
+==69718== 
+==69718== Conditional jump or move depends on uninitialised value(s)
+==69718==    at 0x110208: ft_strlen (get_next_line_utils.c:22)
+==69718==    by 0x1102ED: ft_strlcpy (get_next_line_utils.c:64)
+==69718==    by 0x11041B: ft_substr (get_next_line_utils.c:96)
+==69718==    by 0x110054: ft_read (get_next_line.c:71)
+==69718==    by 0x1100B6: get_next_line (get_next_line.c:90)
+==69718==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69718==    by 0x10FC53: main (mandatory.cpp:145)
+==69718== 
+[31m9.KO [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: ==69736== Conditional jump or move depends on uninitialised value(s)
+==69736==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69736==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69736==    by 0x110024: ft_read (get_next_line.c:71)
+==69736==    by 0x110086: get_next_line (get_next_line.c:90)
+==69736==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69736==    by 0x10D268: main (mandatory.cpp:40)
+==69736== 
+==69736== Conditional jump or move depends on uninitialised value(s)
+==69736==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69736==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69736==    by 0x110024: ft_read (get_next_line.c:71)
+==69736==    by 0x110086: get_next_line (get_next_line.c:90)
+==69736==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69736==    by 0x10D268: main (mandatory.cpp:40)
+==69736== 
+==69736== Conditional jump or move depends on uninitialised value(s)
+==69736==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69736==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69736==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69736==    by 0x110024: ft_read (get_next_line.c:71)
+==69736==    by 0x110086: get_next_line (get_next_line.c:90)
+==69736==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69736==    by 0x10D268: main (mandatory.cpp:40)
+==69736== 
+[31m1.KO [32m2.OK [0m
+[37mfiles/41_no_nl: ==69737== Conditional jump or move depends on uninitialised value(s)
+==69737==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69737==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69737==    by 0x110024: ft_read (get_next_line.c:71)
+==69737==    by 0x110086: get_next_line (get_next_line.c:90)
+==69737==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69737==    by 0x10D539: main (mandatory.cpp:45)
+==69737== 
+==69737== Conditional jump or move depends on uninitialised value(s)
+==69737==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69737==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69737==    by 0x110024: ft_read (get_next_line.c:71)
+==69737==    by 0x110086: get_next_line (get_next_line.c:90)
+==69737==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69737==    by 0x10D539: main (mandatory.cpp:45)
+==69737== 
+==69737== Conditional jump or move depends on uninitialised value(s)
+==69737==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69737==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69737==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69737==    by 0x110024: ft_read (get_next_line.c:71)
+==69737==    by 0x110086: get_next_line (get_next_line.c:90)
+==69737==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69737==    by 0x10D539: main (mandatory.cpp:45)
+==69737== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: ==69738== Conditional jump or move depends on uninitialised value(s)
+==69738==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69738==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69738==    by 0x110024: ft_read (get_next_line.c:71)
+==69738==    by 0x110086: get_next_line (get_next_line.c:90)
+==69738==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69738==    by 0x10D80A: main (mandatory.cpp:50)
+==69738== 
+==69738== Conditional jump or move depends on uninitialised value(s)
+==69738==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69738==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69738==    by 0x110024: ft_read (get_next_line.c:71)
+==69738==    by 0x110086: get_next_line (get_next_line.c:90)
+==69738==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69738==    by 0x10D80A: main (mandatory.cpp:50)
+==69738== 
+==69738== Conditional jump or move depends on uninitialised value(s)
+==69738==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69738==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69738==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69738==    by 0x110024: ft_read (get_next_line.c:71)
+==69738==    by 0x110086: get_next_line (get_next_line.c:90)
+==69738==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69738==    by 0x10D80A: main (mandatory.cpp:50)
+==69738== 
+[31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: ==69739== Conditional jump or move depends on uninitialised value(s)
+==69739==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69739==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69739==    by 0x110024: ft_read (get_next_line.c:71)
+==69739==    by 0x110086: get_next_line (get_next_line.c:90)
+==69739==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69739==    by 0x10DAEA: main (mandatory.cpp:56)
+==69739== 
+==69739== Conditional jump or move depends on uninitialised value(s)
+==69739==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69739==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69739==    by 0x110024: ft_read (get_next_line.c:71)
+==69739==    by 0x110086: get_next_line (get_next_line.c:90)
+==69739==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69739==    by 0x10DAEA: main (mandatory.cpp:56)
+==69739== 
+==69739== Conditional jump or move depends on uninitialised value(s)
+==69739==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69739==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69739==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69739==    by 0x110024: ft_read (get_next_line.c:71)
+==69739==    by 0x110086: get_next_line (get_next_line.c:90)
+==69739==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69739==    by 0x10DAEA: main (mandatory.cpp:56)
+==69739== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: ==69740== Conditional jump or move depends on uninitialised value(s)
+==69740==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69740==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69740==    by 0x110024: ft_read (get_next_line.c:71)
+==69740==    by 0x110086: get_next_line (get_next_line.c:90)
+==69740==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69740==    by 0x10DDBB: main (mandatory.cpp:61)
+==69740== 
+==69740== Conditional jump or move depends on uninitialised value(s)
+==69740==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69740==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69740==    by 0x110024: ft_read (get_next_line.c:71)
+==69740==    by 0x110086: get_next_line (get_next_line.c:90)
+==69740==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69740==    by 0x10DDBB: main (mandatory.cpp:61)
+==69740== 
+==69740== Conditional jump or move depends on uninitialised value(s)
+==69740==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69740==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69740==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69740==    by 0x110024: ft_read (get_next_line.c:71)
+==69740==    by 0x110086: get_next_line (get_next_line.c:90)
+==69740==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69740==    by 0x10DDBB: main (mandatory.cpp:61)
+==69740== 
+[31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: ==69741== Conditional jump or move depends on uninitialised value(s)
+==69741==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69741==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69741==    by 0x110024: ft_read (get_next_line.c:71)
+==69741==    by 0x110086: get_next_line (get_next_line.c:90)
+==69741==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69741==    by 0x10E0A5: main (mandatory.cpp:72)
+==69741== 
+==69741== Conditional jump or move depends on uninitialised value(s)
+==69741==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69741==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69741==    by 0x110024: ft_read (get_next_line.c:71)
+==69741==    by 0x110086: get_next_line (get_next_line.c:90)
+==69741==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69741==    by 0x10E0A5: main (mandatory.cpp:72)
+==69741== 
+==69741== Conditional jump or move depends on uninitialised value(s)
+==69741==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69741==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69741==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69741==    by 0x110024: ft_read (get_next_line.c:71)
+==69741==    by 0x110086: get_next_line (get_next_line.c:90)
+==69741==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69741==    by 0x10E0A5: main (mandatory.cpp:72)
+==69741== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: ==69742== Conditional jump or move depends on uninitialised value(s)
+==69742==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69742==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69742==    by 0x110024: ft_read (get_next_line.c:71)
+==69742==    by 0x110086: get_next_line (get_next_line.c:90)
+==69742==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69742==    by 0x10E376: main (mandatory.cpp:77)
+==69742== 
+==69742== Conditional jump or move depends on uninitialised value(s)
+==69742==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69742==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69742==    by 0x110024: ft_read (get_next_line.c:71)
+==69742==    by 0x110086: get_next_line (get_next_line.c:90)
+==69742==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69742==    by 0x10E376: main (mandatory.cpp:77)
+==69742== 
+==69742== Conditional jump or move depends on uninitialised value(s)
+==69742==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69742==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69742==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69742==    by 0x110024: ft_read (get_next_line.c:71)
+==69742==    by 0x110086: get_next_line (get_next_line.c:90)
+==69742==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69742==    by 0x10E376: main (mandatory.cpp:77)
+==69742== 
+[31m1.KO [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: ==69743== Conditional jump or move depends on uninitialised value(s)
+==69743==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69743==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69743==    by 0x110024: ft_read (get_next_line.c:71)
+==69743==    by 0x110086: get_next_line (get_next_line.c:90)
+==69743==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69743==    by 0x10E656: main (mandatory.cpp:83)
+==69743== 
+==69743== Conditional jump or move depends on uninitialised value(s)
+==69743==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69743==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69743==    by 0x110024: ft_read (get_next_line.c:71)
+==69743==    by 0x110086: get_next_line (get_next_line.c:90)
+==69743==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69743==    by 0x10E656: main (mandatory.cpp:83)
+==69743== 
+==69743== Conditional jump or move depends on uninitialised value(s)
+==69743==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69743==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69743==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69743==    by 0x110024: ft_read (get_next_line.c:71)
+==69743==    by 0x110086: get_next_line (get_next_line.c:90)
+==69743==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69743==    by 0x10E656: main (mandatory.cpp:83)
+==69743== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: ==69744== Conditional jump or move depends on uninitialised value(s)
+==69744==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69744==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69744==    by 0x110024: ft_read (get_next_line.c:71)
+==69744==    by 0x110086: get_next_line (get_next_line.c:90)
+==69744==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69744==    by 0x10E963: main (mandatory.cpp:92)
+==69744== 
+==69744== Conditional jump or move depends on uninitialised value(s)
+==69744==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69744==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69744==    by 0x110024: ft_read (get_next_line.c:71)
+==69744==    by 0x110086: get_next_line (get_next_line.c:90)
+==69744==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69744==    by 0x10E963: main (mandatory.cpp:92)
+==69744== 
+==69744== Conditional jump or move depends on uninitialised value(s)
+==69744==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69744==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69744==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69744==    by 0x110024: ft_read (get_next_line.c:71)
+==69744==    by 0x110086: get_next_line (get_next_line.c:90)
+==69744==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69744==    by 0x10E963: main (mandatory.cpp:92)
+==69744== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: ==69745== Conditional jump or move depends on uninitialised value(s)
+==69745==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69745==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69745==    by 0x110024: ft_read (get_next_line.c:71)
+==69745==    by 0x110086: get_next_line (get_next_line.c:90)
+==69745==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69745==    by 0x10EC70: main (mandatory.cpp:101)
+==69745== 
+==69745== Conditional jump or move depends on uninitialised value(s)
+==69745==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69745==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69745==    by 0x110024: ft_read (get_next_line.c:71)
+==69745==    by 0x110086: get_next_line (get_next_line.c:90)
+==69745==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69745==    by 0x10EC70: main (mandatory.cpp:101)
+==69745== 
+==69745== Conditional jump or move depends on uninitialised value(s)
+==69745==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69745==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69745==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69745==    by 0x110024: ft_read (get_next_line.c:71)
+==69745==    by 0x110086: get_next_line (get_next_line.c:90)
+==69745==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69745==    by 0x10EC70: main (mandatory.cpp:101)
+==69745== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: ==69746== Conditional jump or move depends on uninitialised value(s)
+==69746==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69746==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69746==    by 0x110024: ft_read (get_next_line.c:71)
+==69746==    by 0x110086: get_next_line (get_next_line.c:90)
+==69746==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69746==    by 0x10EF7D: main (mandatory.cpp:110)
+==69746== 
+==69746== Conditional jump or move depends on uninitialised value(s)
+==69746==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69746==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69746==    by 0x110024: ft_read (get_next_line.c:71)
+==69746==    by 0x110086: get_next_line (get_next_line.c:90)
+==69746==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69746==    by 0x10EF7D: main (mandatory.cpp:110)
+==69746== 
+==69746== Conditional jump or move depends on uninitialised value(s)
+==69746==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69746==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69746==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69746==    by 0x110024: ft_read (get_next_line.c:71)
+==69746==    by 0x110086: get_next_line (get_next_line.c:90)
+==69746==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69746==    by 0x10EF7D: main (mandatory.cpp:110)
+==69746== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: ==69747== Conditional jump or move depends on uninitialised value(s)
+==69747==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69747==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69747==    by 0x110024: ft_read (get_next_line.c:71)
+==69747==    by 0x110086: get_next_line (get_next_line.c:90)
+==69747==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69747==    by 0x10F2C6: main (mandatory.cpp:123)
+==69747== 
+==69747== Conditional jump or move depends on uninitialised value(s)
+==69747==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69747==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69747==    by 0x110024: ft_read (get_next_line.c:71)
+==69747==    by 0x110086: get_next_line (get_next_line.c:90)
+==69747==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69747==    by 0x10F2C6: main (mandatory.cpp:123)
+==69747== 
+==69747== Conditional jump or move depends on uninitialised value(s)
+==69747==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69747==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69747==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69747==    by 0x110024: ft_read (get_next_line.c:71)
+==69747==    by 0x110086: get_next_line (get_next_line.c:90)
+==69747==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69747==    by 0x10F2C6: main (mandatory.cpp:123)
+==69747== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO [31m9.KO [32m10.OK [0m
+[37mfiles/big_line_no_nl: ==69748== Conditional jump or move depends on uninitialised value(s)
+==69748==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69748==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69748==    by 0x110024: ft_read (get_next_line.c:71)
+==69748==    by 0x110086: get_next_line (get_next_line.c:90)
+==69748==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69748==    by 0x10F60F: main (mandatory.cpp:136)
+==69748== 
+==69748== Conditional jump or move depends on uninitialised value(s)
+==69748==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69748==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69748==    by 0x110024: ft_read (get_next_line.c:71)
+==69748==    by 0x110086: get_next_line (get_next_line.c:90)
+==69748==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69748==    by 0x10F60F: main (mandatory.cpp:136)
+==69748== 
+==69748== Conditional jump or move depends on uninitialised value(s)
+==69748==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69748==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69748==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69748==    by 0x110024: ft_read (get_next_line.c:71)
+==69748==    by 0x110086: get_next_line (get_next_line.c:90)
+==69748==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69748==    by 0x10F60F: main (mandatory.cpp:136)
+==69748== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: ==69749== Conditional jump or move depends on uninitialised value(s)
+==69749==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69749==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69749==    by 0x110024: ft_read (get_next_line.c:71)
+==69749==    by 0x110086: get_next_line (get_next_line.c:90)
+==69749==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69749==    by 0x10F8E0: main (mandatory.cpp:140)
+==69749== 
+==69749== Conditional jump or move depends on uninitialised value(s)
+==69749==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69749==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69749==    by 0x110024: ft_read (get_next_line.c:71)
+==69749==    by 0x110086: get_next_line (get_next_line.c:90)
+==69749==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69749==    by 0x10F8E0: main (mandatory.cpp:140)
+==69749== 
+==69749== Conditional jump or move depends on uninitialised value(s)
+==69749==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69749==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69749==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69749==    by 0x110024: ft_read (get_next_line.c:71)
+==69749==    by 0x110086: get_next_line (get_next_line.c:90)
+==69749==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69749==    by 0x10F8E0: main (mandatory.cpp:140)
+==69749== 
+[31m1.KO [32m2.OK [0m
+[37mstdin: ==69750== Conditional jump or move depends on uninitialised value(s)
+==69750==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69750==    by 0x110352: ft_substr (get_next_line_utils.c:83)
+==69750==    by 0x110024: ft_read (get_next_line.c:71)
+==69750==    by 0x110086: get_next_line (get_next_line.c:90)
+==69750==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69750==    by 0x10FBB0: main (mandatory.cpp:145)
+==69750== 
+==69750== Conditional jump or move depends on uninitialised value(s)
+==69750==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69750==    by 0x1103BC: ft_substr (get_next_line_utils.c:93)
+==69750==    by 0x110024: ft_read (get_next_line.c:71)
+==69750==    by 0x110086: get_next_line (get_next_line.c:90)
+==69750==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69750==    by 0x10FBB0: main (mandatory.cpp:145)
+==69750== 
+==69750== Conditional jump or move depends on uninitialised value(s)
+==69750==    at 0x1101D8: ft_strlen (get_next_line_utils.c:22)
+==69750==    by 0x1102BD: ft_strlcpy (get_next_line_utils.c:64)
+==69750==    by 0x1103EB: ft_substr (get_next_line_utils.c:96)
+==69750==    by 0x110024: ft_read (get_next_line.c:71)
+==69750==    by 0x110086: get_next_line (get_next_line.c:90)
+==69750==    by 0x10AD36: gnl(int, char const*) (gnl.cpp:20)
+==69750==    by 0x10FBB0: main (mandatory.cpp:145)
+==69750== 
+[31m1.KO [31m2.KO [31m3.KO [31m4.KO [31m5.KO [31m6.KO [31m7.KO [31m8.KO [31m9.KO [32m10.OK [0m
+
+
+To see the tests open: /home/sourcerer/francinette/tests/get_next_line/gnlTester/tests/mandatory.cpp
+
+ℹ Running tests: fsoares (my own tests)
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;31m1.KO [0m[0;32m2.OK [0m[0;31m3_LEAKS.KO [0m
+Segmentation fault (core dumped)
+make: [Makefile:23: mandatory] Error 139 (no tiene efecto)
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;31m1.KO [0m[0;32m2.OK [0m[0;31m3_LEAKS.KO [0m
+Segmentation fault (core dumped)
+make: [Makefile:24: mandatory] Error 139 (no tiene efecto)
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;31m1.KO [0m[0;32m2.OK [0m[0;31m3_LEAKS.KO [0m
+Segmentation fault (core dumped)
+make: [Makefile:25: mandatory] Error 139 (no tiene efecto)
+⠋ Processing output⠙ Processing outputErrors found:
+
+To see the tests open: /home/sourcerer/francinette/tests/get_next_line/fsoares/tester.c
+
+
+Summary: no bonus
+
+Norminette Errors: get_next_line.c
+
+Failed tests: fsoares, gnlTester
+
