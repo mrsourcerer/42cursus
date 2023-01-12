@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/11 07:22:29 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/12 07:16:39 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*ft_read(int fd)
 char	*get_next_line(int fd)
 {
 	char		*buffer;
-	static char	*str;
+	static char	*str = NULL; // esto vale? *********************************************************************
 	char		*line;
 
 	if (fd == -1)

@@ -35,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "--coverage -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always"
+					"fragment" : " -Wall -Wextra -Werror -D BUFFER_SIZE=42 -g -g -fdiagnostics-color=always"
 				},
 				{
 					"fragment" : "-std=gnu99"
@@ -64,7 +64,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "--coverage -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g",
+				"fragment" : "-Wall -Wextra -Werror -D BUFFER_SIZE=42 -g -g",
 				"role" : "flags"
 			},
 			{

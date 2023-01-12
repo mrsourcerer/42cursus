@@ -6,21 +6,28 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/05 09:08:19 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/12 06:44:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h> //*************************************************************
 
 size_t	ft_strlen(const char *s)
 {
-	int	len;
+	int			len;
+	static int	cont;
 
+	cont++;
+	printf("cont: %i\n", cont);
 	if (!s)
 		return (0);
+	printf("a\n");
 	len = 0;
+	printf("b\n");
 	while (s[len])
 		len++;
+	printf("c\n");
 	return (len);
 }
 
