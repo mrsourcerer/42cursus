@@ -11,23 +11,16 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h> //*************************************************************
 
 size_t	ft_strlen(const char *s)
 {
-	int			len;
-	static int	cont;
+	int	len;
 
-	cont++;
-	printf("cont: %i\n", cont);
 	if (!s)
 		return (0);
-	printf("a\n");
 	len = 0;
-	printf("b\n");
 	while (s[len])
 		len++;
-	printf("c\n");
 	return (len);
 }
 

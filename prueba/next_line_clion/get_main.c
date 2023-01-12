@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/12 05:43:40 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/12 20:21:23 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main(void)
 {
 	int			fd;
-	char		*fd_name = "nl";
+	char		*fd_name = "only_nl.txt";
 	char		*line;
 	int			end;
 

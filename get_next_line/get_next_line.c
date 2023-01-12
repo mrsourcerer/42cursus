@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/12 07:16:39 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/12 20:10:40 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char	*ft_read(int fd)
 	size_read = read(fd, buffer, BUFFER_SIZE);
 	if (size_read < 1)
 		return (free(buffer), (char *)0);
+	buffer[size_read] = '\0';
 	if (size_read < BUFFER_SIZE)
 	{
 		tmp = ft_substr(buffer, 0, size_read);
@@ -81,7 +82,7 @@ char	*ft_read(int fd)
 char	*get_next_line(int fd)
 {
 	char		*buffer;
-	static char	*str = NULL; // esto vale? *********************************************************************
+	static char	*str = NULL;
 	char		*line;
 
 	if (fd == -1)
