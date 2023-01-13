@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/12 20:10:40 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/13 07:28:12 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ char	*ft_read(int fd)
 		tmp = ft_substr(buffer, 0, size_read);
 		free(buffer);
 		buffer = tmp;
+		buffer[size_read] = '\0';
 	}
-	buffer[size_read] = '\0';
 	return (buffer);
 }
 
@@ -99,7 +99,7 @@ char	*get_next_line(int fd)
 				return (free(str), str = NULL, line);
 			}
 			else
-				return ((char *) 0);
+				return (free(str), (char *) 0); // checkear creo que hace doble free en algunos casos
 		}
 		else
 			str = ft_makestr(buffer, str);
