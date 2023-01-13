@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/13 07:28:12 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:35:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,11 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd == -1)
+	{
+		if (str)
+			free(str);
 		return (0);
+	}
 	line = NULL;
 	while (ft_check_end(str) == -1)
 	{
@@ -97,6 +101,7 @@ char	*get_next_line(int fd)
 			{
 				line = ft_substr(str, 0, ft_strlen(str));
 				return (free(str), str = NULL, line);
+				//(return (str[0] = '\0', line);
 			}
 			else
 				return (free(str), (char *) 0); // checkear creo que hace doble free en algunos casos
