@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:17:19 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/09 05:48:35 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/13 06:27:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# include <stdlib.h> // porque?
-# include <stddef.h> // para size_t quitar o dejar?
+# include <stdlib.h> // porque? ***************************************************
+# include <stddef.h> // para size_t quitar o dejar? *******************************
 # include <unistd.h>
 
 char	*get_next_line(int fd);

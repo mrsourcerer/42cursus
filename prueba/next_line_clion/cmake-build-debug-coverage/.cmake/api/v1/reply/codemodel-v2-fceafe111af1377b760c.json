@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "a.out::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-a.out-Debug-e79c36d0ae70af97c9bb.json",
+					"jsonFile" : "target-a.out-Debug-5123e590515e02a12e7a.json",
 					"name" : "a.out",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug",
+		"build" : "/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage",
 		"source" : "/home/sourcerer/projects/42cursus/prueba/next_line_clion"
 	},
 	"version" : 

@@ -1,0 +1,69 @@
+        -:    0:Source:/home/sourcerer/projects/42cursus/prueba/next_line_clion/get_main.c
+        -:    0:Graph:/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/CMakeFiles/a.out.dir/get_main.c.gcno
+        -:    0:Data:/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/CMakeFiles/a.out.dir/get_main.c.gcda
+        -:    0:Runs:1
+        -:    1:/* ************************************************************************** */
+        -:    2:/*                                                                            */
+        -:    3:/*                                                        :::      ::::::::   */
+        -:    4:/*   get_main.c                                         :+:      :+:    :+:   */
+        -:    5:/*                                                    +:+ +:+         +:+     */
+        -:    6:/*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
+        -:    7:/*                                                +#+#+#+#+#+   +#+           */
+        -:    8:/*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
+        -:    9:/*   Updated: 2023/01/10 06:52:10 by danlopez         ###   ########.fr       */
+        -:   10:/*                                                                            */
+        -:   11:/* ************************************************************************** */
+        -:   12:
+        -:   13:#include "get_next_line.h"
+        -:   14:#include <unistd.h>
+        -:   15:#include <stdio.h>
+        -:   16:#include <fcntl.h>
+        -:   17:
+function main called 1 returned 100% blocks executed 33%
+        1:   18:int	main(void)
+        -:   19:{
+        -:   20:	int		fd;
+        1:   21:	char	*fd_name = "41_no_nl";
+        -:   22:	char	*line;
+        -:   23:	int		end;
+        -:   24:
+        1:   25:	end = 0;
+        1:   26:	printf("file: %s\n", fd_name);
+        1:   26-block  0
+call    0 returned 1
+        1:   27:	fd = open(fd_name, O_RDONLY);
+call    0 returned 1
+        1:   28:	if (fd == -1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   29:		return (0);
+        1:   29-block  0
+    #####:   30:	printf("Buffer_size: %i\n", BUFFER_SIZE);
+    %%%%%:   30-block  0
+call    0 never executed
+    #####:   31:	while (!end)
+    %%%%%:   31-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   32:	{
+    #####:   33:		line = get_next_line(fd);
+    %%%%%:   33-block  0
+call    0 never executed
+    #####:   34:		if (!line)
+branch  0 never executed
+branch  1 never executed
+    #####:   35:			end = 1;
+    %%%%%:   35-block  0
+        -:   36:		else
+        -:   37:		{
+    #####:   38:			printf("Linea: ********\n%s\n***************\n", line);
+    %%%%%:   38-block  0
+call    0 never executed
+    #####:   39:			free(line);
+        -:   40:		}
+        -:   41:	}
+    #####:   42:	close(fd);
+    %%%%%:   42-block  0
+call    0 never executed
+    #####:   43:	return (0);
+        -:   44:}

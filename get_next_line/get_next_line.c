@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/09 07:24:45 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:35:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ char	*ft_makestr(char *buffer, char *str)
 	tmp = (char *)malloc((size + 1) * sizeof(char));
 	if (!tmp)
 		return (0);
+	tmp[size] = '\0';
 	ft_memcpy(tmp, str, ft_strlen(str));
 	ft_memcpy(tmp + ft_strlen(str), buffer, ft_strlen(buffer));
-	tmp[size] = '\0';
-	if (!str) // analizar si es necesario esto ***************************************************
+	if (str)
 		free(str);
-	if (!buffer) // analizar si es necesario esto ************************************************
+	if (buffer)
 		free(buffer);
 	str = tmp;
 	return (str);
@@ -68,34 +68,47 @@ char	*ft_read(int fd)
 	size_read = read(fd, buffer, BUFFER_SIZE);
 	if (size_read < 1)
 		return (free(buffer), (char *)0);
+	buffer[size_read] = '\0';
 	if (size_read < BUFFER_SIZE)
 	{
 		tmp = ft_substr(buffer, 0, size_read);
 		free(buffer);
 		buffer = tmp;
+		buffer[size_read] = '\0';
 	}
-	buffer[size_read] = '\0';
 	return (buffer);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*buffer;
-	static char	*str;
+	static char	*str = NULL;
 	char		*line;
 
 	if (fd == -1)
+	{
+		if (str)
+			free(str);
 		return (0);
+	}
 	line = NULL;
 	while (ft_check_end(str) == -1)
 	{
 		buffer = ft_read(fd);
 		if (!buffer)
-			return (free(str), (char *)0);
+		{
+			if (ft_strlen(str) > 0)
+			{
+				line = ft_substr(str, 0, ft_strlen(str));
+				return (free(str), str = NULL, line);
+				//(return (str[0] = '\0', line);
+			}
+			else
+				return (free(str), (char *) 0); // checkear creo que hace doble free en algunos casos
+		}
 		else
 			str = ft_makestr(buffer, str);
 	}
-	line = ft_substr(str, 0, ft_check_end(str));
-	str = ft_delete(str, ft_check_end(str));
-	return (line);
+	line = ft_substr(str, 0, ft_check_end(str) + 1);
+	return (str = ft_delete(str, ft_check_end(str)), line);
 }

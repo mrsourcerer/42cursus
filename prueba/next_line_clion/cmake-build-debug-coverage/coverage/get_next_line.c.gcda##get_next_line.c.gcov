@@ -1,0 +1,181 @@
+        -:    0:Source:/home/sourcerer/projects/42cursus/prueba/next_line_clion/get_next_line.c
+        -:    0:Graph:/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/CMakeFiles/a.out.dir/get_next_line.c.gcno
+        -:    0:Data:/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/CMakeFiles/a.out.dir/get_next_line.c.gcda
+        -:    0:Runs:1
+        -:    1:/* ************************************************************************** */
+        -:    2:/*                                                                            */
+        -:    3:/*                                                        :::      ::::::::   */
+        -:    4:/*   get_next_line.c                                    :+:      :+:    :+:   */
+        -:    5:/*                                                    +:+ +:+         +:+     */
+        -:    6:/*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
+        -:    7:/*                                                +#+#+#+#+#+   +#+           */
+        -:    8:/*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
+        -:    9:/*   Updated: 2023/01/10 05:45:39 by danlopez         ###   ########.fr       */
+        -:   10:/*                                                                            */
+        -:   11:/* ************************************************************************** */
+        -:   12:
+        -:   13:#include "get_next_line.h"
+        -:   14:
+function ft_check_end called 0 returned 0% blocks executed 0%
+    #####:   15:int	ft_check_end(char *str)
+        -:   16:{
+        -:   17:	char	*nl;
+        -:   18:
+    #####:   19:	if (!str)
+    %%%%%:   19-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   20:		return (-1);
+    %%%%%:   20-block  0
+    #####:   21:	nl = ft_strchr(str, '\n');
+    %%%%%:   21-block  0
+call    0 never executed
+    #####:   22:	if (nl)
+branch  0 never executed
+branch  1 never executed
+    #####:   23:		return ((int)(ft_strlen(str) - ft_strlen(nl)));
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+    #####:   24:	return (-1);
+    %%%%%:   24-block  0
+        -:   25:}
+        -:   26:
+function ft_delete called 0 returned 0% blocks executed 0%
+    #####:   27:char	*ft_delete(char *str, int pos)
+        -:   28:{
+        -:   29:	size_t	size;
+        -:   30:	char	*tmp;
+        -:   31:
+    #####:   32:	size = ft_strlen(str);
+    %%%%%:   32-block  0
+call    0 never executed
+    #####:   33:	tmp = ft_substr(str, pos + 1, size - pos - 1);
+call    0 never executed
+    #####:   34:	free(str);
+    #####:   35:	str = tmp;
+    #####:   36:	return (str);
+        -:   37:}
+        -:   38:
+function ft_makestr called 0 returned 0% blocks executed 0%
+    #####:   39:char	*ft_makestr(char *buffer, char *str)
+        -:   40:{
+        -:   41:	char	*tmp;
+        -:   42:	size_t	size;
+        -:   43:
+    #####:   44:	size = ft_strlen(str) + ft_strlen(buffer);
+    %%%%%:   44-block  0
+call    0 never executed
+call    1 never executed
+    #####:   45:	tmp = (char *)malloc((size + 1) * sizeof(char));
+    #####:   46:	if (!tmp)
+branch  0 never executed
+branch  1 never executed
+    #####:   47:		return (0);
+    %%%%%:   47-block  0
+    #####:   48:	ft_memcpy(tmp, str, ft_strlen(str));
+    %%%%%:   48-block  0
+call    0 never executed
+call    1 never executed
+    #####:   49:	ft_memcpy(tmp + ft_strlen(str), buffer, ft_strlen(buffer));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   50:	tmp[size] = '\0';
+    #####:   51:	if (str)
+branch  0 never executed
+branch  1 never executed
+    #####:   52:		free(str);
+    %%%%%:   52-block  0
+    #####:   53:	if (buffer)
+    %%%%%:   53-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   54:		free(buffer);
+    %%%%%:   54-block  0
+    #####:   55:	str = tmp;
+    #####:   56:	return (str);
+    %%%%%:   56-block  0
+        -:   57:}
+        -:   58:
+function ft_read called 0 returned 0% blocks executed 0%
+    #####:   59:char	*ft_read(int fd)
+        -:   60:{
+        -:   61:	char	*buffer;
+        -:   62:	char	*tmp;
+        -:   63:	ssize_t	size_read;
+        -:   64:
+    #####:   65:	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+    #####:   66:	if (!buffer)
+    %%%%%:   66-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   67:		return (0);
+    %%%%%:   67-block  0
+    #####:   68:	size_read = read(fd, buffer, BUFFER_SIZE);
+    %%%%%:   68-block  0
+call    0 never executed
+    #####:   69:	if (size_read < 1)
+branch  0 never executed
+branch  1 never executed
+    #####:   70:		return (free(buffer), (char *)0);
+    %%%%%:   70-block  0
+    #####:   71:	if (size_read < BUFFER_SIZE)
+    %%%%%:   71-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   72:	{
+    #####:   73:		tmp = ft_substr(buffer, 0, size_read);
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:		free(buffer);
+    #####:   75:		buffer = tmp;
+        -:   76:	}
+    #####:   77:	buffer[size_read] = '\0';
+    #####:   78:	return (buffer);
+    %%%%%:   78-block  0
+        -:   79:}
+        -:   80:
+function get_next_line called 0 returned 0% blocks executed 0%
+    #####:   81:char	*get_next_line(int fd)
+        -:   82:{
+        -:   83:	char		*buffer;
+        -:   84:	static char	*str;
+        -:   85:	char		*line;
+        -:   86:
+    #####:   87:	if (fd == -1)
+    %%%%%:   87-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   88:		return (0);
+    %%%%%:   88-block  0
+    #####:   89:	line = NULL;
+    #####:   90:	while (ft_check_end(str) == -1)
+    %%%%%:   90-block  0
+    %%%%%:   90-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   91:	{
+    #####:   92:		buffer = ft_read(fd);
+    %%%%%:   92-block  0
+call    0 never executed
+    #####:   93:		if (!buffer)
+branch  0 never executed
+branch  1 never executed
+    #####:   94:			return (free(str), (char *)0);
+    %%%%%:   94-block  0
+        -:   95:		else
+    #####:   96:			str = ft_makestr(buffer, str);
+    %%%%%:   96-block  0
+call    0 never executed
+        -:   97:	}
+    #####:   98:	line = ft_substr(str, 0, ft_check_end(str));
+    %%%%%:   98-block  0
+call    0 never executed
+call    1 never executed
+    #####:   99:	str = ft_delete(str, ft_check_end(str));
+call    0 never executed
+call    1 never executed
+    #####:  100:	return (line);
+        -:  101:}

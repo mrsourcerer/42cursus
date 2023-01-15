@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug/
+cmake_ninja_workdir = /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage/
 # =============================================================================
 # Object build statements for EXECUTABLE target a.out
 
@@ -51,19 +51,19 @@ build cmake_object_order_depends_target_a.out: phony || CMakeFiles/a.out.dir
 
 build CMakeFiles/a.out.dir/get_main.c.o: C_COMPILER__a.2eout_Debug /home/sourcerer/projects/42cursus/prueba/next_line_clion/get_main.c || cmake_object_order_depends_target_a.out
   DEP_FILE = CMakeFiles/a.out.dir/get_main.c.o.d
-  FLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always -std=gnu99
+  FLAGS = --coverage -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always -std=gnu99
   OBJECT_DIR = CMakeFiles/a.out.dir
   OBJECT_FILE_DIR = CMakeFiles/a.out.dir
 
 build CMakeFiles/a.out.dir/get_next_line.c.o: C_COMPILER__a.2eout_Debug /home/sourcerer/projects/42cursus/prueba/next_line_clion/get_next_line.c || cmake_object_order_depends_target_a.out
   DEP_FILE = CMakeFiles/a.out.dir/get_next_line.c.o.d
-  FLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always -std=gnu99
+  FLAGS = --coverage -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always -std=gnu99
   OBJECT_DIR = CMakeFiles/a.out.dir
   OBJECT_FILE_DIR = CMakeFiles/a.out.dir
 
 build CMakeFiles/a.out.dir/get_next_line_utils.c.o: C_COMPILER__a.2eout_Debug /home/sourcerer/projects/42cursus/prueba/next_line_clion/get_next_line_utils.c || cmake_object_order_depends_target_a.out
   DEP_FILE = CMakeFiles/a.out.dir/get_next_line_utils.c.o.d
-  FLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always -std=gnu99
+  FLAGS = --coverage -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g -fdiagnostics-color=always -std=gnu99
   OBJECT_DIR = CMakeFiles/a.out.dir
   OBJECT_FILE_DIR = CMakeFiles/a.out.dir
 
@@ -76,7 +76,7 @@ build CMakeFiles/a.out.dir/get_next_line_utils.c.o: C_COMPILER__a.2eout_Debug /h
 # Link the executable a.out
 
 build a.out: C_EXECUTABLE_LINKER__a.2eout_Debug CMakeFiles/a.out.dir/get_main.c.o CMakeFiles/a.out.dir/get_next_line.c.o CMakeFiles/a.out.dir/get_next_line_utils.c.o
-  FLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g
+  FLAGS = --coverage -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g -g
   OBJECT_DIR = CMakeFiles/a.out.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -88,7 +88,7 @@ build a.out: C_EXECUTABLE_LINKER__a.2eout_Debug CMakeFiles/a.out.dir/get_main.c.
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug && /snap/clion/219/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage && /snap/clion/219/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -99,7 +99,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug && /snap/clion/219/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/sourcerer/projects/42cursus/prueba/next_line_clion -B/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug
+  COMMAND = cd /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage && /snap/clion/219/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/sourcerer/projects/42cursus/prueba/next_line_clion -B/home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -115,7 +115,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug
+# Folder: /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage
 
 build all: phony a.out
 

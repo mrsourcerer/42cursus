@@ -1,0 +1,4 @@
+/snap/clion/219/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/219/bin/ninja/linux/ninja -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G Ninja -S /home/sourcerer/projects/42cursus/prueba/next_line_clion -B /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/sourcerer/projects/42cursus/prueba/next_line_clion/cmake-build-debug-coverage
