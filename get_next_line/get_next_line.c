@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/13 20:35:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/16 07:10:28 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_makestr(char *buffer, char *str)
 	return (str);
 }
 
-char	*ft_read(int fd)
+char	*ft_read(int fd, char *str)
 {
 	char	*buffer;
 	char	*tmp;
@@ -66,7 +66,14 @@ char	*ft_read(int fd)
 	if (!buffer)
 		return (0);
 	size_read = read(fd, buffer, BUFFER_SIZE);
-	if (size_read < 1)
+	if (size_read == -1)
+	{
+		if (str)
+			return (free(buffer), str[0] = '\0', (char *) 0);
+		else
+			size_read = 0;
+	}
+	if (size_read == 0)
 		return (free(buffer), (char *)0);
 	buffer[size_read] = '\0';
 	if (size_read < BUFFER_SIZE)
@@ -94,17 +101,16 @@ char	*get_next_line(int fd)
 	line = NULL;
 	while (ft_check_end(str) == -1)
 	{
-		buffer = ft_read(fd);
+		buffer = ft_read(fd, str);
 		if (!buffer)
 		{
 			if (ft_strlen(str) > 0)
 			{
 				line = ft_substr(str, 0, ft_strlen(str));
 				return (free(str), str = NULL, line);
-				//(return (str[0] = '\0', line);
 			}
 			else
-				return (free(str), (char *) 0); // checkear creo que hace doble free en algunos casos
+				return (free(str), str = NULL, (char *) 0);
 		}
 		else
 			str = ft_makestr(buffer, str);

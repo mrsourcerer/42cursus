@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/15 06:24:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/16 06:32:22 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ int	main(void)
 	while (i < 4)
 	{
 		line = get_next_line(fd);
-		printf("Especial inicio_linea: *%s*fin_linea\n", line);
-		free(line);
+		if (line)
+		{
+			printf("Especial inicio_linea: *%s*fin_linea\n", line);
+			free(line);
+		}
 		i++;
 		if (i == 3)
 			close(fd);
