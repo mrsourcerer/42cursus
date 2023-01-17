@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/17 07:28:46 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/16 07:14:30 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ char	*ft_read(int fd, char *str)
 		tmp = ft_substr(buffer, 0, size_read);
 		free(buffer);
 		buffer = tmp;
+		buffer[size_read] = '\0';
 	}
 	return (buffer);
 }
@@ -91,6 +92,13 @@ char	*get_next_line(int fd)
 	static char	*str = NULL;
 	char		*line;
 
+	if (fd == -1)
+	{
+		if (str)
+			free(str);
+		return (0);
+	}
+	line = NULL;
 	while (ft_check_end(str) == -1)
 	{
 		buffer = ft_read(fd, str);

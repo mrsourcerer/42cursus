@@ -93,8 +93,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > ft_strlen(s))
 		sub[0] = '\0';
 	else
-	{
 		ft_strlcpy(sub, s + start, size + 1);
-	}
 	return (sub);
 }
