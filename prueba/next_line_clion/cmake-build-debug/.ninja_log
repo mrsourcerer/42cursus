@@ -13,3 +13,13 @@
 20	37	1673849316844962140	a.out	2ffdac1d2abdfc10
 0	20	1673930951260089835	CMakeFiles/a.out.dir/get_next_line.c.o	48b2d4199d84d96a
 20	36	1673930951276089961	a.out	2ffdac1d2abdfc10
+1	18	1674018094642925620	CMakeFiles/a.out.dir/get_main.c.o	ef18ff23796c6ba4
+1	19	1674018094642925620	CMakeFiles/a.out.dir/get_next_line_utils.c.o	395218edfd82f2ae
+1	20	1674018094642925620	CMakeFiles/a.out.dir/get_next_line.c.o	48b2d4199d84d96a
+20	36	1674018094658926377	a.out	2ffdac1d2abdfc10
+0	18	1674018284150790075	CMakeFiles/a.out.dir/get_main.c.o	ef18ff23796c6ba4
+18	33	1674018284166791191	a.out	2ffdac1d2abdfc10
+1	18	1674018330296942515	CMakeFiles/a.out.dir/get_main.c.o	ef18ff23796c6ba4
+18	33	1674018330308942818	a.out	2ffdac1d2abdfc10
+0	20	1674021686209508347	CMakeFiles/a.out.dir/get_next_line.c.o	48b2d4199d84d96a
+20	36	1674021686225508209	a.out	2ffdac1d2abdfc10

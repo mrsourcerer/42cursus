@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/16 06:32:22 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/18 06:05:27 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 int	main(void)
 {
 	int			fd;
-	char		*fd_name = "read_error.txt";
+	char		*fd_name = "1char.txt";
 	char		*line;
 	int			end;
-	int			i;
+	//int			i;
 
-	i = 0;
+	//i = 0;
 	end = 0;
 	printf("file: %s\n", fd_name);
-	fd = open(fd_name, O_RDONLY);
+	/*fd = open(fd_name, O_RDONLY);
 	if (fd == -1)
 		return (0);
 	printf("Buffer_size: %i\n", BUFFER_SIZE);
@@ -42,7 +42,7 @@ int	main(void)
 		if (i == 3)
 			close(fd);
 	}
-	end = 0;
+	end = 0;*/
 	fd = open(fd_name, O_RDONLY);
 	if (fd == -1)
 		return (0);
