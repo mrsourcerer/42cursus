@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/19 06:57:27 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/20 07:19:41 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,10 @@ char	*get_next_line(int fd)
 	static char	*str;
 	char		*line;
 
-	buffer = NULL;
-	line = NULL;
+	//buffer = NULL;
+	//line = NULL;
+	if (fd < 0 || BUFFER_SIZE < 1)
+		return (NULL);
 	while (ft_check_end(str) == -1)
 	{
 		buffer = ft_read(fd, str);
