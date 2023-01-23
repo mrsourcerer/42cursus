@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/22 13:19:49 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/23 07:26:20 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ char	*ft_buffer(int fd)
 		return (NULL);
 	size_read = read (fd, buf, BUFFER_SIZE);
 	if (size_read == -1)
-		return (free(buf), NULL);
+		return (ft_free(buf), NULL);
 	if (size_read == 0)
 	{
-		free(buf);
-		buf = (char *) malloc(1);
-		buf[0] = '\0';
+		ft_free(buf);
+		buf = ft_get("",0, -1);
+		//buf = (char *) malloc(1);
+		//buf[0] = '\0';
 		return (buf);
 	}
 	if (size_read < BUFFER_SIZE)
@@ -37,7 +38,7 @@ char	*ft_buffer(int fd)
 	return (buf);
 }
 
-int	ft_str(int fd, char **str)
+int	ft_str(int fd, char *str)
 {
 	char	*buffer;
 	char	*tmp;
@@ -49,35 +50,25 @@ int	ft_str(int fd, char **str)
 		return (-1);
 	if (buffer[0] == '\0')
 		return (1);
-	size = ft_strlen(*str) + ft_strlen(buffer);
+	size = ft_strlen(str) + ft_strlen(buffer);
 	tmp = (char *)malloc((size + 1) * sizeof(char));
 	if (!tmp)
 		return (-1);
-	i = 0;
-	while (i < size)
-	{
-		if (i < ft_strlen(*str))
-			tmp[i] = *str[i];
-		else
-			tmp[i] = buffer[i - ft_strlen(*str)];
-		i++;
-	}
-	tmp[size] = '\0';
-	if (*str)
-		free(*str);
-	*str = tmp;
-	return (free(buffer), buffer = NULL, 0);
+	tmp = ft_join(str, buffer);
+	str = tmp;
+	return (0);
 }
 
 char	*ft_line(int fd, char *str)
 {
 	char	*line;
+	char	*tmp;
 	int		fd_empty;
 
 	fd_empty = 0;
 	while (ft_check(str, '\n') == -1 && !fd_empty)
 	{
-		fd_empty = ft_str(fd, &str);
+		fd_empty = ft_str(fd, str);
 		if (fd_empty == -1)
 			return (NULL);
 	}
@@ -86,7 +77,15 @@ char	*ft_line(int fd, char *str)
 	if (fd_empty)
 		return (str);
 	else
-		line = ft_subs(&str);
+	{
+		line = ft_get(str, 0, ft_check(str, '\n'));
+		if ((int)ft_strlen(str) > ft_check(str, '\n'))
+			tmp = ft_get(str, ft_check(str, '\n') + 1, (int)ft_strlen(str));
+		else
+			tmp = ft_get("", 0, -1);
+		ft_free(str);
+		str = tmp;
+	}
 	return (line);
 }
 

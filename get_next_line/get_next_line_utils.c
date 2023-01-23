@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/22 13:51:33 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/23 07:26:20 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,53 +40,59 @@ int	ft_check(const char *s, char c)
 	return (-1);
 }
 
-char	*ft_remain(char **s, int cut)
+void	ft_free(char *s)
 {
-	char	*tmp;
-	int		i;
-	size_t	size;
-
-	size = ft_strlen(*s) - cut;
-	tmp = (char *)malloc((size) * sizeof(char));
-	if (!tmp)
-		return (NULL);
-	i = 0;
-	while (*s[i + cut + 1])
-	{
-		tmp[i] = *s[i + cut + 1];
-		i++;
-	}
-	tmp[size - 1] = '\0';
-	free(*s);
-	*s = NULL;
-	*s = tmp;
-	tmp = NULL;
-	return (*s);
+	if (s)
+		free(s);
+	s = NULL;
 }
 
-char	*ft_subs(char **s)
+char	*ft_join(char *s1, char *s2)
 {
-	int		i;
-	int		cut;
-	char	*subs;
-	char	*tmp;
+	char	*result;
+	size_t	i;
+	size_t	size;
+	size_t	len1;
+	size_t	len2;
 
-	cut = ft_check(*s, '\n');
-	subs = (char *)malloc((cut + 2) * sizeof(char));
-	if (!subs)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+	if (!result)
 		return (NULL);
 	i = 0;
-	while (i <= cut)
+	while (i < len1 + len2)
 	{
-		subs[i] = *s[i];
+		if (i < len1)
+			result[i] = s1[i];
+		else
+			result[i] = s2[i + len1];
 		i++;
 	}
-	subs[cut + 1] = '\0';
-	tmp = ft_remain(&*s, cut);
-	free(*s);
-	*s = tmp;
-	if (!*s)
+	result[len1 + len2] = '\0';
+	return (ft_free(s1), ft_free(s2), result);
+}
+
+char	*ft_get(char *s, int start, int end)
+{
+	int		size;
+	char	*result;
+	int		i;
+
+	if (!s)
 		return (NULL);
-	tmp = NULL;
-	return (subs);
+	size = end - start + 1;
+	if (size < 0)
+		return (NULL);
+	result = (char *)malloc((size + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		result[i] = s[start + i];
+		i++;
+	}
+	result[size] = '\0';
+	return (result);
 }
