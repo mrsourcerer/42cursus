@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/23 07:26:20 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/24 07:27:39 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_buffer(int fd)
 {
 	char	*buf;
 	ssize_t	size_read;
+	char	*tmp;
 
 	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
@@ -26,66 +27,52 @@ char	*ft_buffer(int fd)
 	if (size_read == 0)
 	{
 		ft_free(buf);
-		buf = ft_get("",0, -1);
-		//buf = (char *) malloc(1);
-		//buf[0] = '\0';
+		buf = ft_get("", 0, -1);
 		return (buf);
 	}
 	if (size_read < BUFFER_SIZE)
-		buf[size_read] = '\0';
+	{
+		tmp = ft_get(buf, 0, (int)size_read);
+		ft_free(buf);
+		buf = tmp;
+	}
 	else
 		buf[BUFFER_SIZE] = '\0';
 	return (buf);
 }
 
-int	ft_str(int fd, char *str)
+char	*ft_str(char *str, char *buffer)
 {
-	char	*buffer;
 	char	*tmp;
 	size_t	size;
-	size_t	i;
 
-	buffer = ft_buffer(fd);
-	if (!buffer)
-		return (-1);
-	if (buffer[0] == '\0')
-		return (1);
 	size = ft_strlen(str) + ft_strlen(buffer);
 	tmp = (char *)malloc((size + 1) * sizeof(char));
 	if (!tmp)
-		return (-1);
-	tmp = ft_join(str, buffer);
+		return (NULL);
+	if (str == NULL)
+		tmp = ft_join("", buffer);
+	else
+		tmp = ft_join(str, buffer);
 	str = tmp;
-	return (0);
+	tmp = NULL;
+	return (str);
 }
 
-char	*ft_line(int fd, char *str)
+char	*ft_line(char **str)
 {
 	char	*line;
 	char	*tmp;
-	int		fd_empty;
+	int		nl;
 
-	fd_empty = 0;
-	while (ft_check(str, '\n') == -1 && !fd_empty)
-	{
-		fd_empty = ft_str(fd, str);
-		if (fd_empty == -1)
-			return (NULL);
-	}
-	if (!str)
-		return (NULL);
-	if (fd_empty)
-		return (str);
+	nl = ft_check(*str, '\n');
+	line = ft_get(*str, 0, nl);
+	if ((int)ft_strlen(*str) > nl)
+		tmp = ft_get(*str, nl + 1, (int)ft_strlen(*str));
 	else
-	{
-		line = ft_get(str, 0, ft_check(str, '\n'));
-		if ((int)ft_strlen(str) > ft_check(str, '\n'))
-			tmp = ft_get(str, ft_check(str, '\n') + 1, (int)ft_strlen(str));
-		else
-			tmp = ft_get("", 0, -1);
-		ft_free(str);
-		str = tmp;
-	}
+		tmp = ft_get("", 0, 0);
+	ft_free(*str);
+	*str = tmp;
 	return (line);
 }
 
@@ -93,11 +80,30 @@ char	*get_next_line(int fd)
 {
 	static char	*str;
 	char		*line;
+	char		*buffer;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
-	line = ft_line(fd, str);
-	if (line)
-		return (line);
+	while ()
+	{
+		if (ft_check(str, '\n') >= 0)
+		{
+			line = ft_line(&str);
+			return (line);
+		}
+		buffer = ft_buffer(fd);
+		if (buffer)
+			str = ft_str(str, buffer);
+		else
+		{
+			if (ft_strlen(str))
+			{
+				line = str;
+				return (line);
+			}
+			else
+				return (ft_free(str), NULL);
+		}
+	}
 	return (NULL);
 }
