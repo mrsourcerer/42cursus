@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/23 07:26:35 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/25 07:26:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,22 @@ int	ft_check(const char *s, char c)
 	return (-1);
 }
 
-void	ft_free(char *s)
+void	ft_free(char **s)
 {
-	if (s)
-		free(s);
-	s = NULL;
+	if (*s)
+		free(*s);
+	*s = NULL;
 }
 
-char	*ft_join(char *s1, char *s2)
+char	*ft_join(char **s1, char **s2)
 {
 	char	*result;
 	size_t	i;
-	size_t	size;
 	size_t	len1;
 	size_t	len2;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
+	len1 = ft_strlen(*s1);
+	len2 = ft_strlen(*s2);
 	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
@@ -64,9 +63,9 @@ char	*ft_join(char *s1, char *s2)
 	while (i < len1 + len2)
 	{
 		if (i < len1)
-			result[i] = s1[i];
+			result[i] = *s1[i];
 		else
-			result[i] = s2[i + len1];
+			result[i] = *s2[i + len1];
 		i++;
 	}
 	result[len1 + len2] = '\0';
