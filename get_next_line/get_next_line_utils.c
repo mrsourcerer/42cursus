@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/26 06:34:30 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/26 22:14:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ int	ft_check(const char *s, char c)
 void	ft_free(char **s)
 {
 	if (*s)
+	{
 		free(*s);
-	*s = NULL;
+		*s = NULL;
+	}
 }
 
 char	*ft_join(char **s1, char **s2)
@@ -63,9 +65,9 @@ char	*ft_join(char **s1, char **s2)
 	while (i < len1 + len2)
 	{
 		if (i < len1)
-			result[i] = *s1[i];
+			result[i] = (*s1)[i];
 		else
-			result[i] = *s2[i - len1];
+			result[i] = (*s2)[i - len1];
 		i++;
 	}
 	result[len1 + len2] = '\0';
