@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/25 07:29:26 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/26 06:36:16 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,25 @@ char	*ft_buffer(int fd)
 	return (buf);
 }
 
-char	*ft_str(char *str, char *buffer)
+char	*ft_str(char **str, char **buffer)
 {
 	char	*tmp;
 	size_t	size;
 	char	*empty;
 
 	empty = ft_get("", 0, 0);
-	size = ft_strlen(str) + ft_strlen(buffer);
+	size = ft_strlen(*str) + ft_strlen(*buffer);
 	tmp = (char *)malloc((size + 1) * sizeof(char));
 	if (!tmp)
 		return (NULL);
-	if (str == NULL)
-		tmp = ft_join(&empty, &buffer);
+	if (*str == NULL)
+		tmp = ft_join(&empty, buffer);
 	else
-		tmp = ft_join(&str, &buffer);
-	str = tmp;
+		tmp = ft_join(str, buffer);
+	*str = tmp;
 	tmp = NULL;
-	return (str);
+	ft_free(&empty);
+	return (*str);
 }
 
 char	*ft_line(char **str)
@@ -92,12 +93,13 @@ char	*get_next_line(int fd)
 			return (line = ft_line(&str), line);
 		buffer = ft_buffer(fd);
 		if (buffer)
-			str = ft_str(str, buffer);
+			str = ft_str(&str, &buffer);
 		else
 		{
 			if (ft_strlen(str))
 			{
 				line = str;
+				str = NULL;
 				return (line);
 			}
 			else

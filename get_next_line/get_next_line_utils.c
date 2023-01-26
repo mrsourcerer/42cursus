@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/25 07:26:24 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/26 06:34:30 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*ft_join(char **s1, char **s2)
 		if (i < len1)
 			result[i] = *s1[i];
 		else
-			result[i] = *s2[i + len1];
+			result[i] = *s2[i - len1];
 		i++;
 	}
 	result[len1 + len2] = '\0';
