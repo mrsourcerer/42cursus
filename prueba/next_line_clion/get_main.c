@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 05:53:46 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/26 21:48:57 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/27 06:50:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main(void)
 {
 	int			fd;
-	char		*fd_name = "1char.txt";
+	char		*fd_name = "variable_nls.txt";
 	char		*line;
 	int			end;
 	//int			i;

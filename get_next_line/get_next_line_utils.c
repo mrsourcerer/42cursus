@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/26 22:14:53 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/27 06:51:16 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_join(char **s1, char **s2)
 	len2 = ft_strlen(*s2);
 	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
 	if (!result)
-		return (NULL);
+		return (ft_free(s1), ft_free(s2), NULL);
 	i = 0;
 	while (i < len1 + len2)
 	{

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/26 22:36:44 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/27 06:50:30 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_buffer(int fd, char **str)
 
 	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
-		return (NULL);
+		return (ft_free(str), NULL);
 	size_read = read (fd, buf, BUFFER_SIZE);
 	if (size_read == -1)
 		return (ft_free(&buf), ft_free(str), NULL);
@@ -48,6 +48,8 @@ char	*ft_str(char **str, char **buffer)
 	if (*str == NULL)
 	{
 		empty = ft_get("", 0, 0);
+		if (!empty)
+			return (ft_free(str), ft_free(buffer), NULL);
 		tmp = ft_join(&empty, buffer);
 	}
 	else
@@ -65,11 +67,15 @@ char	*ft_line(char **str)
 
 	nl = ft_check(*str, '\n');
 	line = ft_get(*str, 0, nl);
+	if (!line)
+		return (ft_free(str), NULL);
 	if ((int)ft_strlen(*str) > nl)
 		tmp = ft_get(*str, nl + 1, (int)ft_strlen(*str));
 	else
 		tmp = ft_get("", 0, 0);
 	ft_free(str);
+	if (!tmp)
+		return (ft_free(&line), NULL);
 	*str = tmp;
 	tmp = NULL;
 	return (line);
