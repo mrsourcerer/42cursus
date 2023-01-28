@@ -7,3 +7,7 @@
 1	14	1674798677024708561	CMakeFiles/a.out.dir/get_next_line.c.o	627670ab2bf3916d
 1	15	1674798677024708561	CMakeFiles/a.out.dir/get_next_line_utils.c.o	ca19b4809e97ac49
 15	25	1674798677036714562	a.out	cd46e63d2e3c29d4
+0	16	1674901838309107891	CMakeFiles/a.out.dir/get_main.c.o	d2ba21e8c605429e
+0	17	1674901838309107891	CMakeFiles/a.out.dir/get_next_line_utils.c.o	ca19b4809e97ac49
+0	17	1674901838313109893	CMakeFiles/a.out.dir/get_next_line.c.o	627670ab2bf3916d
+17	32	1674901838325115891	a.out	cd46e63d2e3c29d4
