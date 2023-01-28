@@ -4,7 +4,7 @@ project(next_line_clion C)
 set(CMAKE_C_STANDARD 99)
 
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -D BUFFER_SIZE=1000000 -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -D BUFFER_SIZE=10 -g")
 
 set(SOURCE_FILES get_main.c get_next_line.c get_next_line_utils.c)
 

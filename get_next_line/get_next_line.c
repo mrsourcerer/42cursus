@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/28 11:47:39 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:45:49 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ char	*ft_buffer(int fd, char **str)
 	if (size_read == -1)
 		return (ft_free(&buf), ft_free(str), NULL);
 	if (size_read == 0)
-	{
-		ft_free(&buf);
-		return (buf);
-	}
+		return (ft_free(&buf), buf);
 	if (size_read < BUFFER_SIZE)
 	{
 		tmp = ft_get(buf, 0, (int)size_read - 1);
