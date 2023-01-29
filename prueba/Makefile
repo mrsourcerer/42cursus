@@ -6,35 +6,32 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 06:23:09 by danlopez          #+#    #+#              #
-#    Updated: 2023/01/29 13:31:44 by danlopez         ###   ########.fr        #
+#    Updated: 2022/12/17 08:06:47 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBRARY = libft
-C_LIBRARY = libft/libft.a
-FLAGS = -Werror -Wall -Wextra
+CFLAGS = -Werror -Wall -Wextra
 CC = gcc
-NAME = libftprintf.a
-SRC = ft_printf.c
-
-OBJ = $(SRC:.c=.o)
+NAME = test
+SRC = test.c
+SRC_L = $(wildcard ../libft/*.c)
+OBJ = $(SRC:.c=.o) $(SRC_L:.c=.o)
+C_LIBRARY = ../libft/libft.a
 
 %.o: %.c
-	cd $(LIBRARY) && $(MAKE)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(C_LIBRARY)
 
 .PHONY: all, clean, fclean, re
 all: $(NAME)
 
 clean:
-	cd $(LIBRARY) && $(MAKE) clean
 	rm -f $(OBJ)
 
 fclean: clean
-	cd $(LIBRARY) && $(MAKE) fclean
 	rm -f $(NAME)
 
 re: fclean all
+

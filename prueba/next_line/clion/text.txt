@@ -1,0 +1,7 @@
+Esto es un texto
+de ejemplo para hacer las pruebas de:
+get_next_line
+En un lugar de la mancha,
+de cuyo nombre no quiero acordarme,
+no ha mucho tiempo que vivia un hidalgo de los de lanza en astillero,
+adarga antigua, rocin flaco y galgo corredor.
