@@ -6,14 +6,15 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:56:52 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/29 08:57:46 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/01/30 06:39:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "ft_printf.h"
 
 int	main(void)
 {
-	printf("Hello, World!\n");
+	ft_printf();
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 06:23:09 by danlopez          #+#    #+#              #
-#    Updated: 2023/01/29 13:31:44 by danlopez         ###   ########.fr        #
+#    Updated: 2023/01/30 07:17:23 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = $(SRC:.c=.o)
 
 %.o: %.c
 	cd $(LIBRARY) && $(MAKE)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c -I$(LIBRARY) $< -o $@
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
