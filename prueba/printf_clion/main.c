@@ -15,8 +15,15 @@
 
 int	main(void)
 {
-	ft_putchar_fd('N', 0);
-	ft_putchar_fd('\n', 0);
-	ft_printf();
+	int		size;
+
+	printf("Custom: *");
+	size = ft_printf("prueba");
+	printf("* fin custom\n");
+	printf("Escrito: %i\n", size);
+	printf("Original: *");
+	size = printf("prueba");
+	printf("* fin original\n");
+	printf("Escrito: %i\n", size);
 	return (0);
 }

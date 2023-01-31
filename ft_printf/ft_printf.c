@@ -12,13 +12,31 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(void)
+int	ft_check(char *str)
 {
-	write(0, "1-", 2);
-	ft_putchar_fd('C', 0);
-	write(0, "\n2-", 3);
-	ft_putnbr_fd(ft_strlen("Hola mundo"), 0);
-	write(0, "\n3-", 3);
-	write(0, "Hola mundo\n", 11);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar_fd(str[i], 0);
+		write(0, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
+
+int	ft_printf(char const *str, ...)
+{
+	va_list	args;
+	int		size;
+	//int		i;
+
+	//i = 0;
+	va_start(args, str);
+
+	size = ft_check(va_arg(args, char *));
+
+	va_end (args);
+	return (size);
 }
