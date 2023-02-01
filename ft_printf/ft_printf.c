@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
+/*
 int	ft_check(char *str)
 {
 	int	i;
@@ -25,18 +27,23 @@ int	ft_check(char *str)
 	}
 	return (i);
 }
-
+*/
 int	ft_printf(char const *str, ...)
 {
-	va_list	args;
-	int		size;
-	//int		i;
+	//va_list	args;
+	//char	*base;
+	int		i;
 
-	//i = 0;
-	va_start(args, str);
-
-	size = ft_check(va_arg(args, char *));
-
-	va_end (args);
-	return (size);
+	i = 0;
+	//va_start(args, str);
+	//base = va_arg(args, char *);
+	while (str[i])
+	{
+		//ft_putchar_fd(str[i], 0);
+		//write(1, &str[i], 1);
+		ft_putchar_fd(str[i], 1);
+		i++;
+	}
+	//va_end (args);
+	return (i);
 }
