@@ -17,6 +17,7 @@ int	main(void)
 {
 	int		size;
 
+	setbuf(stdout, NULL);
 	printf("Custom: *");
 	size = ft_printf("Texto base");
 	printf("* fin custom\n");
