@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra -g")
 
-set(SOURCE_FILES main.c ft_printf.c)
+set(SOURCE_FILES main.c ft_printf.c ft_printf_charutils.c ft_printf_intutils.c)
 
 find_library(FTPRINTF_LIBRARY ftprintf ./)
 

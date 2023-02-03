@@ -18,12 +18,12 @@ int	main(void)
 	int		size;
 
 	setbuf(stdout, NULL);
-	printf("Custom: *");
-	size = ft_printf("Texto base");
+	printf("Custom:   *");
+	size = ft_printf("Texto base ");
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
 	printf("Original: *");
-	size = printf("Texto base");
+	size = printf("Texto base ");
 	printf("* fin original\n");
 	printf("Escrito: %i\n", size);
 	return (0);

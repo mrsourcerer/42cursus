@@ -15,7 +15,7 @@ C_LIBRARY = ./libft/libft.a
 FLAGS = -Werror -Wall -Wextra
 CC = gcc
 NAME = libftprintf.a
-SRC = ft_printf.c
+SRC = ft_printf.c ft_printf_charutils.c ft_printf_intutils.c
 
 OBJ = $(SRC:.c=.o)
 

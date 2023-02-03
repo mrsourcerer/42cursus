@@ -11,16 +11,14 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-
 
 int	ft_check(char c, va_list *args)
 {
 	int	i;
 
 	i = 0;
-	ft_putchar_fd(c, 1);
-	i++;
+	if (c == 'c')
+		ft_printf_c(va_arg(*args, int), &i);
 	return (i);
 }
 
@@ -50,8 +48,7 @@ int	ft_special(char c)
 int	ft_printf(char const *str, ...)
 {
 	va_list	args;
-	char	*base;
-	int		i;
+	size_t	i;
 	int		written;
 	size_t	size;
 
@@ -59,12 +56,11 @@ int	ft_printf(char const *str, ...)
 	written = 0;
 	size = ft_strlen(str);
 	va_start(args, str);
-	//base = va_arg(args, char *);
-	while (i < size - 2)
+	while (i < size)
 	{
-		if (str[i] == '%' && ft_special(str[i + 1]))
+		if (str[i] == '%')
 		{
-			written = ft_check(str[i + 1], &args);
+			written += ft_check(str[i + 1], &args);
 			i++;
 		}
 		else
@@ -72,10 +68,8 @@ int	ft_printf(char const *str, ...)
 			ft_putchar_fd(str[i], 1);
 			written++;
 		}
-		ft_putchar_fd(str[i], 1);
 		i++;
 	}
-	ft_putchar_fd(str[i], 1)
 	va_end (args);
 	return (written + 1);
 }
