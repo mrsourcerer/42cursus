@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:17:33 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/30 22:09:25 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/05 13:53:41 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,20 @@ int	ft_check(char c, va_list *args)
 	i = 0;
 	if (c == 'c')
 		ft_printf_c(va_arg(*args, int), &i);
-	return (i);
-}
-
-int	ft_special(char c)
-{
-	if (c == 'c')
-		return (1);
 	if (c == 's')
-		return (1);
+		ft_printf_s(va_arg(*args, char *), &i);
 	if (c == 'p')
-		return (1);
+		ft_printf_p(va_arg(*args, size_t), &i);
 	if (c == 'd')
-		return (1);
+		ft_printf_i(va_arg(*args, int), &i);
 	if (c == 'i')
-		return (1);
+		ft_printf_i(va_arg(*args, int), &i);
 	if (c == 'u')
-		return (1);
-	if (c == 'x')
-		return (1);
-	if (c == 'X')
-		return (1);
+		ft_printf_u(va_arg(*args, unsigned int), &i);
+
 	if (c == '%')
-		return (1);
-	return (0);
+		ft_printf_c('%', &i);
+	return (i);
 }
 
 int	ft_printf(char const *str, ...)
@@ -71,5 +61,5 @@ int	ft_printf(char const *str, ...)
 		i++;
 	}
 	va_end (args);
-	return (written + 1);
+	return (written);
 }
