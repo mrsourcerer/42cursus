@@ -19,10 +19,12 @@ int	main(void)
 	int				num;
 	unsigned int	u_num;
 	int				*p_num;
+	char			*p_null;
 
 	num = -1;
 	u_num = 2147483649;
 	p_num = &num;
+	p_null = NULL;
 
 	setbuf(stdout, NULL);
 	printf("Custom:   *");
@@ -53,11 +55,11 @@ int	main(void)
 	printf("Escrito: %i\n\n", size);
 
 	printf("Custom:   *");
-	size = ft_printf(" NULL %s NULL ", NULL);
+	size = ft_printf(" NULL %s NULL ", p_null);
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
 	printf("Original: *");
-	size = printf(" NULL %s NULL ", NULL);
+	size = printf(" NULL %s NULL ", p_null);
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 

@@ -23,8 +23,6 @@ void	ft_printf_s(char *str, int *p_i);
 void	ft_printf_p(size_t pointer, int *p_i);
 void	ft_printf_i(int num, int *p_i);
 void	ft_printf_u(unsigned int num, int *p_i);
-
-
-
+void	ft_putnbr_u_fd(unsigned int n, int fd);
 
 #endif

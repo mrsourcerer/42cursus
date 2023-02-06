@@ -49,12 +49,6 @@ void	ft_printf_i(int num, int *p_i)
 
 void	ft_printf_u(unsigned int num, int *p_i)
 {
-	unsigned int	tmp;
-
-	tmp = 4294967295;
-	if (num >= 0)
-		ft_putnbr_fd(num, 1);
-	else
-		ft_putnbr_fd(tmp, 1);
-	*p_i = ft_numlen(tmp);
+	ft_putnbr_u_fd(num, 1);
+	*p_i = ft_numlen(num);
 }
