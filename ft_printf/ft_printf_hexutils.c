@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_hexutils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 08:32:01 by danlopez          #+#    #+#             */
+/*   Created: 2023/02/06 20:40:37 by danlopez          #+#    #+#             */
 /*   Updated: 2023/02/07 07:04:37 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "ft_printf.h"
 
-#  define BASE  "0123456789abcdef"
-
-int		ft_printf(char const *str, ...);
-void	ft_printf_c(char c, int *p_i);
-void	ft_printf_s(char *str, int *p_i);
-void	ft_printf_p(size_t pointer, int *p_i);
-void	ft_printf_i(int num, int *p_i);
-void	ft_printf_u(unsigned int num, int *p_i);
-void	ft_putnbr_u_fd(unsigned int n, int fd);
-void	ft_printf_x(unsigned int num, int *p_i, char c);
-
-#endif
+void	ft_printf_x(unsigned int num, int *p_i, char c)
+{
+	if (num >= 16)
+		ft_printf_x(num / 16, p_i, c);
+	if (c > 65 && c < 90)
+		ft_putchar_fd(ft_toupper(BASE[num % 16]), 1);
+	else
+		ft_putchar_fd(BASE[num % 16], 1);
+	(*p_i)++;
+}
