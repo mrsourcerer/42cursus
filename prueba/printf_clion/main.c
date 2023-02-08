@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:56:52 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/07 07:17:48 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/08 06:34:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	main(void)
 
 	num = 42;
 	u_num = 4147483649;
-	p_num = (void *)16;
+	//p_num = 0;
+	p_num = &num;
 	//p_num = 15;
 	p_null = NULL;
 
@@ -69,7 +70,7 @@ int	main(void)
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
 	printf("Original: *");
-	size = printf("Texto base: %p", (void *)16);
+	size = printf("Texto base: %p", p_num);
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 

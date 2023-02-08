@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 05:58:30 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/07 07:23:55 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/08 07:23:59 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_printf_p(size_t pointer, int *p_i)
 	//ft_putnbr_fd(pointer, 1);
 	(*p_i) = (*p_i) + 2;
 	ft_putstr_fd("0x", 1);
-	ft_printf_x(pointer, p_i, 'p');
+	ft_printf_x((size_t)pointer, p_i, 'p');
 }
 
 void	ft_printf_i(int num, int *p_i)
