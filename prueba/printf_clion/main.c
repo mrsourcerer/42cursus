@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:56:52 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/08 06:34:58 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/09 07:04:19 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,16 @@ int	main(void)
 	size = ft_printf("Texto base: %p", p_num);
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
+	printf("Custom:   *");
+	size = ft_printf("Texto base: %p", NULL);
+	printf("* fin custom\n");
+	printf("Escrito: %i\n", size);
 	printf("Original: *");
 	size = printf("Texto base: %p", p_num);
+	printf("* fin original\n");
+	printf("Escrito: %i\n", size);
+	printf("Original: *");
+	size = printf("Texto base: %p", NULL);
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
