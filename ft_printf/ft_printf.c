@@ -6,13 +6,13 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:17:33 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/09 06:28:48 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/11 08:54:19 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_check(char c, va_list *args)
+static int	ft_check(char c, va_list *args)
 {
 	int	i;
 

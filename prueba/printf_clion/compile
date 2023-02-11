@@ -4,4 +4,4 @@ echo -e $'\n'
 echo -e "********************** Make finalizado **************************"
 echo -e $'\n'
 #gcc -Wall -Wextra -Werror main.c ft_printf.c libftprintf.a && echo -e $'\n' 
-gcc -Wall -Wextra -Werror main.c libftprintf.a && echo -e $'\n' && echo -e "**************** Compilacion finalizada ********************************" && echo -e $'\n' && ./a.out
+gcc -Wall -Wextra -Werror main.c libftprintf.a && echo -e $'\n' && echo -e "**************** Compilacion finalizada ********************************" && echo -e $'\n' && ./a.out | cat -e
