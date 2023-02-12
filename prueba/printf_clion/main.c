@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:56:52 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/11 07:36:03 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/12 12:52:08 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(void)
 	p_null = NULL;
 
 	setbuf(stdout, NULL);
+	printf("Texto base...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base:");
 	printf("* fin custom\n");
@@ -38,6 +39,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo c...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %c", '%');
 	printf("* fin custom\n");
@@ -47,6 +49,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo s...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %s", "string");
 	printf("* fin custom\n");
@@ -65,6 +68,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo p...");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %p", p_num);
 	printf("* fin custom\n");
@@ -82,6 +86,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo i...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %i", num);
 	printf("* fin custom\n");
@@ -91,6 +96,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo d...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %d", num);
 	printf("* fin custom\n");
@@ -100,6 +106,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo u...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %u", u_num);
 	printf("* fin custom\n");
@@ -109,6 +116,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo x...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %x", u_num);
 	printf("* fin custom\n");
@@ -118,6 +126,7 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("tipo X...\n");
 	printf("Custom:   *");
 	size = ft_printf("Texto base: %X", u_num);
 	printf("* fin custom\n");
@@ -127,12 +136,13 @@ int	main(void)
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 
+	printf("variado buscando errores...\n");
 	printf("Custom:   *");
-	size = ft_printf("Esto debe dar error %");
+	size = ft_printf("%x", 4294967295);
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
 	printf("Original: *");
-	size = printf("Esto debe dar error ");
+	size = printf("%x", 4294967295);
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 

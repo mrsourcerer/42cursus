@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:17:33 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/11 08:54:19 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/12 14:01:37 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ static int	ft_check(char c, va_list *args)
 		ft_printf_i(va_arg(*args, int), &i);
 	if (c == 'u')
 		ft_printf_u(va_arg(*args, unsigned int), &i);
-	if (c == 'x' || c == 'X')
-		ft_printf_x(va_arg(*args, unsigned int), &i, c);
+	if (c == 'x')
+		ft_printf_x(va_arg(*args, unsigned int), &i);
+	if (c == 'X')
+		ft_printf_xup(va_arg(*args, unsigned int), &i);
 	if (c == '%')
 		ft_printf_c('%', &i);
 	return (i);
@@ -40,6 +42,7 @@ int	ft_printf(char const *str, ...)
 	size_t	i;
 	int		written;
 	size_t	size;
+	int		tmp;
 
 	i = 0;
 	written = 0;
@@ -48,15 +51,12 @@ int	ft_printf(char const *str, ...)
 	while (i < size)
 	{
 		if (str[i] == '%')
-		{
-			written += ft_check(str[i + 1], &args);
-			i++;
-		}
+			tmp = ft_check(str[(i++) + 1], &args);
 		else
-		{
-			ft_putchar_fd(str[i], 1);
-			written++;
-		}
+			tmp = ft_putchar(str[i], 1);
+		if (tmp == -1)
+			return (-1);
+		written += tmp;
 		i++;
 	}
 	va_end (args);

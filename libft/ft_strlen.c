@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 06:35:19 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/26 18:06:44 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/12 06:37:44 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ size_t	ft_strlen(const char *s)
 {
 	int	len;
 
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
+size_t	ft_len(const char *s)
+{
+	size_t	len;
+
+	if (!s)
+		return (0);
 	len = 0;
 	while (s[len])
 		len++;
