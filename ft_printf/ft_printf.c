@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:17:33 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/12 14:01:37 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/13 22:35:02 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	ft_check(char c, va_list *args)
 	if (c == 'u')
 		ft_printf_u(va_arg(*args, unsigned int), &i);
 	if (c == 'x')
-		ft_printf_x(va_arg(*args, unsigned int), &i);
+		ft_printf_x(va_arg(*args, unsigned int), &i, BASE);
 	if (c == 'X')
-		ft_printf_xup(va_arg(*args, unsigned int), &i);
+		ft_printf_x(va_arg(*args, unsigned int), &i, BASEUP);
 	if (c == '%')
 		ft_printf_c('%', &i);
 	return (i);

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_intutils.c                               :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 05:58:30 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/13 22:29:32 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/13 20:43:08 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/13 20:48:10 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_printf_p(size_t pointer, int *p_i)
+size_t	ft_power(int base, int power)
 {
-	*p_i = ft_putstr("0x", 1);
-	if (*p_i == -1)
-		return ;
-	ft_printf_xp(pointer, p_i, BASE);
-}
+	int		i;
+	size_t	num;
 
-void	ft_printf_i(int num, int *p_i)
-{
-	*p_i = ft_putnbr(num, 1);
-}
-
-void	ft_printf_u(unsigned int num, int *p_i)
-{
-	*p_i = ft_putnbr(num, 1);
+	i = power;
+	num = 1;
+	while (i > 0)
+	{
+		num *= base;
+		i--;
+	}
+	return (num);
 }
