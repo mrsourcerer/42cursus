@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/02/13 20:39:36 by danlopez         ###   ########.fr        #
+#    Updated: 2023/02/14 07:26:26 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,22 +24,27 @@ SRC = ft_isalpha.c ft_isdigit.c ft_toupper.c \
 
 OBJ = $(SRC:.c=.o)
 
+SRC_BONUS = ft_lstnew.c
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
 all: 	$(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re:		fclean all
 
-#bonus:
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
