@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:43:59 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/13 20:42:55 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/15 07:12:03 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -56,5 +62,8 @@ int		ft_putstr(char *s, int fd);
 int		ft_putnbr(long n, int fd);
 char	*ft_itoa_nomalloc(long n);
 size_t	ft_power(int base, int power);
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

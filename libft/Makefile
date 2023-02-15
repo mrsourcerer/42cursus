@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/02/14 07:26:26 by danlopez         ###   ########.fr        #
+#    Updated: 2023/02/15 07:13:10 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_toupper.c \
 
 OBJ = $(SRC:.c=.o)
 
-SRC_BONUS = ft_lstnew.c
+SRC_BONUS = ft_lstnew.c ft_lstadd_front.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
