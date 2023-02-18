@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/02/16 21:18:38 by danlopez         ###   ########.fr        #
+#    Updated: 2023/02/18 07:44:39 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,9 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+#bonus incluided in main
+$(NAME): $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
 .PHONY: all, clean, fclean, re, bonus
 all: 	$(NAME)
