@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 10:41:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/19 06:49:26 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/05 07:20:56 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/05 07:22:22 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_isascii(int c)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
-
-	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	if (d > s)
-	{
-		while (len > 0 && !(!dst && !src))
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
-	}
+	if (c >= 0 && c <= 127)
+		return (1);
 	else
-	{
-		while (i < len && !(!dst && !src))
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
+		return (0);
 }

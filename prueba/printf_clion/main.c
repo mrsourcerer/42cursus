@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:56:52 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/16 22:47:41 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/19 07:09:29 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,11 +138,11 @@ int	main(void)
 
 	printf("variado buscando errores...\n");
 	printf("Custom:   *");
-	size = ft_printf("%%%");
+	size = ft_printf("+-0.45ll 56l 446h 45hh #65 0 - +");
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
 	printf("Original: *");
-	size = printf("%%");
+	size = printf("+-0.45ll 56l 446h 45hh #65 0 - +");
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 

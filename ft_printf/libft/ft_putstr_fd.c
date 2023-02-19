@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 10:41:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/19 06:49:26 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/16 05:37:29 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/12 06:49:52 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
+}
 
-	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	if (d > s)
-	{
-		while (len > 0 && !(!dst && !src))
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
-	}
-	else
-	{
-		while (i < len && !(!dst && !src))
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
+int	ft_putstr(char *s, int fd)
+{
+	int	written;
+
+	if (!s)
+		return (-1);
+	written = write(fd, s, ft_len(s));
+	return (written);
 }

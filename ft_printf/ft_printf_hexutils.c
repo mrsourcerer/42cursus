@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 20:40:37 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/13 22:37:52 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/19 06:50:41 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_printf_x(unsigned int num, int *p_i, char *base)
 			*p_i = -1;
 			return ;
 		}
-		num = num % ft_power(16, cyphers -1);
+		num = num % ft_power(16, cyphers - 1);
 		cyphers--;
 		*p_i += tmp;
 	}
@@ -62,7 +62,7 @@ void	ft_printf_xp(size_t num, int *p_i, char *base)
 			*p_i = -1;
 			return ;
 		}
-		num = num % ft_power(16, cyphers -1);
+		num = num % ft_power(16, cyphers - 1);
 		cyphers--;
 		*p_i += tmp;
 	}

@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 10:41:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/19 06:49:26 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/16 20:52:32 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/16 21:50:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	t_list	*first;
+	t_list	*before;
+	t_list	*tmp;
 
-	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	if (d > s)
+	first = NULL;
+	while (lst)
 	{
-		while (len > 0 && !(!dst && !src))
+		tmp = (t_list *)malloc(1 * sizeof(t_list));
+		if (!tmp)
 		{
-			d[len - 1] = s[len - 1];
-			len--;
+			if (first)
+				ft_lstclear(&first, del);
+			return (NULL);
 		}
+		tmp->next = NULL;
+		tmp->content = f(lst->content);
+		if (!first)
+			first = tmp;
+		else
+			before->next = tmp;
+		before = tmp;
+		lst = lst->next;
 	}
-	else
-	{
-		while (i < len && !(!dst && !src))
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (first);
 }
