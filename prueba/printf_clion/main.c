@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:56:52 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/19 07:09:29 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/19 12:05:28 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(void)
 	unsigned int	u_num;
 	int				*p_num;
 	char			*p_null;
+	float			f_num;
 
 	num = 42;
 	u_num = 4147483649;
@@ -27,6 +28,7 @@ int	main(void)
 	p_num = &num;
 	//p_num = 15;
 	p_null = NULL;
+	f_num = 10.34;
 
 	setbuf(stdout, NULL);
 	printf("Texto base...\n");
@@ -138,11 +140,11 @@ int	main(void)
 
 	printf("variado buscando errores...\n");
 	printf("Custom:   *");
-	size = ft_printf("+-0.45ll 56l 446h 45hh #65 0 - +");
+	size = ft_printf("%i", f_num);
 	printf("* fin custom\n");
 	printf("Escrito: %i\n", size);
 	printf("Original: *");
-	size = printf("+-0.45ll 56l 446h 45hh #65 0 - +");
+	size = printf("%i", 0);
 	printf("* fin original\n");
 	printf("Escrito: %i\n\n", size);
 

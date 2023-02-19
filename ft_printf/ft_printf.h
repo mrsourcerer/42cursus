@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:32:01 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/13 22:35:43 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/19 12:50:11 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "libft/libft.h"
-
-# define BASE "0123456789abcdef"
-# define BASEUP "0123456789ABCDEF"
 
 int		ft_printf(char const *str, ...);
 void	ft_printf_c(char c, int *p_i);
