@@ -1,0 +1,8 @@
+#!/bin/bash
+make
+echo -e $'\n'
+echo -e "********************** Make finalizado **************************"
+echo -e $'\n'
+#gcc -Wall -Wextra -Werror -o server server.c libft/libft.a 
+#gcc -Wall -Wextra -Werror -o client client.c libft/libft.a 
+gcc -Wall -Wextra -Werror -o server server.c libft/libft.a && gcc -Wall -Wextra -Werror -o client client.c libft/libft.a && echo -e $'\n' && echo -e "**************** Compilacion finalizada ********************************" && echo -e $'\n' 
