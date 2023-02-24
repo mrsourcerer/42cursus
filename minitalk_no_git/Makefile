@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 07:17:15 by danlopez          #+#    #+#              #
-#    Updated: 2023/02/22 06:27:36 by danlopez         ###   ########.fr        #
+#    Updated: 2023/02/24 06:25:37 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ NAME_CLIENT = client
 SRC_CLIENT = client.c 
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 
+all: $(NAME_SERVER) $(NAME_CLIENT)
+
 %.o: %.c
 #	cd $(LIBRARY) && $(MAKE)
 	$(CC) $(FLAGS) -c $< -o $@
@@ -37,7 +39,7 @@ $(NAME_CLIENT): $(OBJ_CLIENT)
 	$(CC) $(FLAGS) -o $(NAME_CLIENT) $(OBJ_CLIENT) $(C_LIBRARY)
 
 .PHONY: all, clean, fclean, re
-all: $(NAME_SERVER) $(NAME_CLIENT)
+#all: $(NAME_SERVER) $(NAME_CLIENT)
 
 clean:
 	cd $(LIBRARY) && $(MAKE) clean

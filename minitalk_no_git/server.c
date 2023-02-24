@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 08:38:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/18 12:18:37 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/24 07:22:00 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 void	ft_signal_received(int sig_num)
 {
 	if (sig_num == SIGUSR1)
-		printf("SIGUSR1 signal received\n"); //ft_printf
+		printf("1"); //ft_printf
 	if (sig_num == SIGUSR2)
-		printf("SIGUSR2 signal received\n"); //ft_printf
+		printf("0"); //ft_printf
 }
 
 int	main(void)
