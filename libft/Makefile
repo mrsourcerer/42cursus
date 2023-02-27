@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/02/18 07:44:39 by danlopez         ###   ########.fr        #
+#    Updated: 2023/02/27 06:23:41 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,18 +30,25 @@ SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
+SRC_PRINTF = printf/ft_printf.c printf/ft_printf_charutils.c \
+		printf/ft_printf_hexutils.c printf/ft_printf_intutils.c
+
+OBJ_PRINTF = $(SRC_PRINTF:.c=.o)
+
+OBJ_ALL = $(OBJ) $(OBJ_BONUS) $(OBJ_PRINTF)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 #bonus incluided in main
-$(NAME): $(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+$(NAME): $(OBJ_ALL)
+	ar rcs $(NAME) $(OBJ_ALL)
 
 .PHONY: all, clean, fclean, re, bonus
 all: 	$(NAME)
 
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	rm -f $(OBJ_ALL)
 
 fclean: clean
 	rm -f $(NAME)

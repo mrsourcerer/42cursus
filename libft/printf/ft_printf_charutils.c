@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_printf_charutils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 08:38:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/27 06:49:08 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/03 06:53:04 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/27 06:54:09 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <signal.h>
+#include "ft_printf.h"
 
-void	ft_signal_received(int sig_num)
+void	ft_printf_c(char c, int *p_i)
 {
-	if (sig_num == SIGUSR1)
-		ft_printf("1");
-	if (sig_num == SIGUSR2)
-		ft_printf("0");
+	*p_i = ft_putchar(c, 1);
 }
 
-int	main(void)
+void	ft_printf_s(char *str, int *p_i)
 {
-	int	pid;
-
-	signal(SIGUSR1, ft_signal_received);
-	signal(SIGUSR2, ft_signal_received);
-	pid = getpid();
-	ft_printf("pid: %i\n", pid);
-	while (1)
+	if (str)
 	{
-		usleep(1);
+		*p_i = ft_putstr(str, 1);
 	}
-	return (0);
+	else
+	{
+		*p_i = ft_putstr("(null)", 1);
+	}
 }

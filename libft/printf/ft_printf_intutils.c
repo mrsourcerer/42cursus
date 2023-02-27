@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_printf_intutils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 08:38:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/27 06:49:08 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/03 05:58:30 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/19 12:43:02 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <signal.h>
+#include "ft_printf.h"
 
-void	ft_signal_received(int sig_num)
+void	ft_printf_p(size_t pointer, int *p_i)
 {
-	if (sig_num == SIGUSR1)
-		ft_printf("1");
-	if (sig_num == SIGUSR2)
-		ft_printf("0");
+	*p_i = ft_putstr("0x", 1);
+	if (*p_i == -1)
+		return ;
+	ft_printf_xp(pointer, p_i, "0123456789abcdef");
 }
 
-int	main(void)
+void	ft_printf_i(int num, int *p_i)
 {
-	int	pid;
+	*p_i = ft_putnbr(num, 1);
+}
 
-	signal(SIGUSR1, ft_signal_received);
-	signal(SIGUSR2, ft_signal_received);
-	pid = getpid();
-	ft_printf("pid: %i\n", pid);
-	while (1)
-	{
-		usleep(1);
-	}
-	return (0);
+void	ft_printf_u(unsigned int num, int *p_i)
+{
+	*p_i = ft_putnbr(num, 1);
 }
