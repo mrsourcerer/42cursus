@@ -6,13 +6,12 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:33:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/24 07:25:10 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/27 07:23:15 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <signal.h>
-#include <stdio.h> // quitar en cuanto presente printf y lo integre ***********************
 
 void	ft_send_char(pid_t pid, int c)
 {
@@ -21,6 +20,7 @@ void	ft_send_char(pid_t pid, int c)
 	i = 7;
 	while (i >= 0)
 	{
+		ft_printf("dentro, i: \n", i);
 		if (c >> i & 1)
 			kill(pid, SIGUSR1);
 		else
@@ -51,8 +51,8 @@ int	main(int argc, char *argv[])
 		return (1);
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
-	printf("Num: %i\n", pid);
-	printf("str: %s\n", str);
+	ft_printf("Num: %i\n", pid);
+	ft_printf("str: %s\n", str);
 	sigemptyset(&signal_set);
 	sigaddset(&signal_set, SIGUSR1);
 	sigaddset(&signal_set, SIGUSR2);
