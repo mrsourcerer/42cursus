@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:33:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/27 07:23:15 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/02/28 05:59:14 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	ft_send_char(pid_t pid, int c)
 	i = 7;
 	while (i >= 0)
 	{
-		ft_printf("dentro, i: \n", i);
+		//ft_printf("dentro, i: %i\n", i);
+		//ft_printf("c: %i\n", c);
+		usleep(1);
 		if (c >> i & 1)
 			kill(pid, SIGUSR1);
 		else
