@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/02/27 06:23:41 by danlopez         ###   ########.fr        #
+#    Updated: 2023/03/02 21:07:52 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,22 +20,22 @@ SRC = ft_isalpha.c ft_isdigit.c ft_toupper.c \
 		ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-		ft_putendl_fd.c ft_putnbr_fd.c ft_power.c
-
+		ft_putendl_fd.c ft_putnbr_fd.c ft_power.c ft_freevoid.c
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 		ft_lstmap.c
-
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 SRC_PRINTF = printf/ft_printf.c printf/ft_printf_charutils.c \
 		printf/ft_printf_hexutils.c printf/ft_printf_intutils.c
-
 OBJ_PRINTF = $(SRC_PRINTF:.c=.o)
 
-OBJ_ALL = $(OBJ) $(OBJ_BONUS) $(OBJ_PRINTF)
+SRC_GNL = gnl/get_next_line.c gnl/get_next_line_utils.c
+OBJ_GNL = $(SRC_GNL:.c=.o)
+
+OBJ_ALL = $(OBJ) $(OBJ_BONUS) $(OBJ_PRINTF) $(OBJ_GNL)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
