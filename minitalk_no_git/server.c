@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 08:38:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/01 07:17:28 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/02 07:01:05 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(void)
 	ft_printf("pid: %i\n", pid);
 	while (1)
 	{
-		usleep(1);
+		usleep(0);
 	}
 	return (0);
 }
