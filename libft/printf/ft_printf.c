@@ -6,13 +6,13 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 08:17:33 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/19 12:41:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 06:50:55 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_check(char c, va_list *args)
+static int	ft_check_char(char c, va_list *args)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ int	ft_printf(char const *str, ...)
 	while (i < size)
 	{
 		if (str[i] == '%')
-			tmp = ft_check(str[(i++) + 1], &args);
+			tmp = ft_check_char(str[(i++) + 1], &args);
 		else
 			tmp = ft_putchar(str[i], 1);
 		if (tmp == -1)

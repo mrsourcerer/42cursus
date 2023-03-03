@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:02:56 by danlopez          #+#    #+#             */
-/*   Updated: 2022/12/26 20:20:09 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 06:44:37 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static size_t	ft_next(char const *s, char c, size_t start)
 	return (size);
 }
 
-static void	ft_free(size_t i, char **dict)
+static void	ft_free_dict(size_t i, char **dict)
 {
 	if (i > 0)
 		i--;
@@ -104,7 +104,7 @@ char	**ft_split(char const *s, char c)
 		size = ft_next(s, c, start);
 		dict[i] = ft_add(s, c, start, size);
 		if (!dict[i])
-			return (ft_free(i, dict), (char **)0);
+			return (ft_free_dict(i, dict), (char **)0);
 		start = start + size + 1;
 		i++;
 	}

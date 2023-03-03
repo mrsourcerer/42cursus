@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:17:19 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/26 22:14:10 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 07:08:27 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft.h"
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
 int		ft_check(const char *str, char c);
 void	ft_free(char **s);
 char	*ft_join(char **s1, char **s2);

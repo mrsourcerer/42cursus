@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:23:15 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/29 06:52:05 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 07:05:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ char	*ft_line(char **str)
 	line = ft_get(*str, 0, nl);
 	if (!line)
 		return (ft_free(str), NULL);
-	if ((int)ft_strlen(*str) > nl)
-		tmp = ft_get(*str, nl + 1, (int)ft_strlen(*str) - 1);
+	if ((int)ft_len(*str) > nl)
+		tmp = ft_get(*str, nl + 1, (int)ft_len(*str) - 1);
 	else
 		tmp = ft_get("", 0, 0);
 	ft_free(str);
@@ -95,7 +95,7 @@ char	*get_next_line(int fd)
 			str = ft_str(&str, &buffer);
 		else
 		{
-			if (ft_strlen(str))
+			if (ft_len(str))
 			{
 				line = str;
 				str = NULL;

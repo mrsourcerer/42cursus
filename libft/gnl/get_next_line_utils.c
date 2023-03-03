@@ -6,30 +6,18 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 06:27:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/01/27 06:51:16 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 07:07:51 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-size_t	ft_strlen(const char *s)
-{
-	int	len;
-
-	if (!s)
-		return (0);
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
 
 int	ft_check(const char *s, char c)
 {
 	int	i;
 
 	i = 0;
-	if (ft_strlen(s) == 0)
+	if (ft_len(s) == 0)
 		return (-1);
 	while (s[i])
 	{
@@ -56,8 +44,8 @@ char	*ft_join(char **s1, char **s2)
 	size_t	len1;
 	size_t	len2;
 
-	len1 = ft_strlen(*s1);
-	len2 = ft_strlen(*s2);
+	len1 = ft_len(*s1);
+	len2 = ft_len(*s2);
 	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
 	if (!result)
 		return (ft_free(s1), ft_free(s2), NULL);

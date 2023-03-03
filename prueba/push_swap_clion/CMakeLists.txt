@@ -7,7 +7,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra -g")
 
 set(SOURCE push_swap.c)
 
-find_library(LIBFT_LIBRARY libft.a ./)
+find_library(LIBFT_LIBRARY libft.a ./libft)
 
 add_executable(push_swap ${SOURCE})
 
