@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 # include "libft/libft.h"
 
-int		ft_sort_min(int *a, int *b, int len);
-int		ft_sorted_int(int *a, int len);
+//int		ft_sort_min(int *a, int *b, int len);
+//int		ft_sorted_int(int *a, int len);
 
 //void	ft_swap(int **a, int **b, int len);
 

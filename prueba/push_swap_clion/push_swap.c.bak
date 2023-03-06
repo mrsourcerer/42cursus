@@ -6,12 +6,12 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 07:23:30 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/05 10:48:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
+
 static int	ft_duplicate(int *a, int argc)
 {
 	int	i;
@@ -31,14 +31,12 @@ static int	ft_duplicate(int *a, int argc)
 	}
 	return (0);
 }
-*/
 
-static int	ft_to_stack(char *argv[], t_list **a)
+static int	ft_to_stack(char *argv[], int **a)
 {
 	int		i;
 	char	*p;
 	long	tmp;
-	t_list	*new;
 
 	i = 1;
 	while (argv[i])
@@ -58,15 +56,11 @@ static int	ft_to_stack(char *argv[], t_list **a)
 				p++;
 			}
 		}
-		new = ft_lstnew((int *)tmp);
-		ft_lstadd_front(a, new);
-		i++;
+		(*a)[i++ - 1] = (int)tmp;
 	}
-	return (0);
-	//return (ft_duplicate(*a, --i));
+	return (ft_duplicate(*a, --i));
 }
 
-/*
 int	ft_sorted_int(int *a, int len)
 {
 	int	i;
@@ -80,24 +74,23 @@ int	ft_sorted_int(int *a, int len)
 	}
 	return (1);
 }
-*/
+
 int	main(int argc, char *argv[])
 {
-	t_list	*a;
-	//t_list	*b;
+	int		*a;
+	int		*b;
 	//int		i;
 
 	if (argc < 2)
 		return (ft_printf("Error\n"), -1);
-	//a = (int *)malloc((argc) * sizeof(int));
-	//b = (int *)malloc((argc) * sizeof(int));
-//	if (!a || !b)
-//		return (ft_frint(&a), ft_frint(&b), -1);
+	a = (int *)malloc((argc) * sizeof(int));
+	b = (int *)malloc((argc) * sizeof(int));
+	if (!a || !b)
+		return (ft_frint(&a), ft_frint(&b), -1);
 	if (ft_to_stack(argv, &a))
-		return (-1);
-//		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
-//	if (ft_sort_min(a, b, argc) == -1)
-//		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
+		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
+	if (ft_sort_min(a, b, argc) == -1)
+		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
 /*
 	i = argc;
 	while (i > 1)
@@ -108,8 +101,8 @@ int	main(int argc, char *argv[])
 		i--;
 	}
 */
-//	if (ft_sorted_int(a, argc))
-//		return (ft_frint(&a), ft_frint(&b), 0);
-//	ft_sort_min(a, b, argc);
+	if (ft_sorted_int(a, argc))
+		return (ft_frint(&a), ft_frint(&b), 0);
+	ft_sort_min(a, b, argc);
 	return (0);
 }
