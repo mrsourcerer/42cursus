@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 07:23:30 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/07 07:26:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static int	ft_to_stack(char *argv[], t_list **a)
 	int		i;
 	char	*p;
 	long	tmp;
+	int		i_tmp;
 	t_list	*new;
 
 	i = 1;
@@ -58,7 +59,8 @@ static int	ft_to_stack(char *argv[], t_list **a)
 				p++;
 			}
 		}
-		new = ft_lstnew((int *)tmp);
+		i_tmp = (int)tmp;
+		new = ft_lstnew(&i_tmp);
 		ft_lstadd_front(a, new);
 		i++;
 	}
@@ -84,8 +86,9 @@ int	ft_sorted_int(int *a, int len)
 int	main(int argc, char *argv[])
 {
 	t_list	*a;
+	t_list	*tmp;
 	//t_list	*b;
-	//int		i;
+	int		i;
 
 	if (argc < 2)
 		return (ft_printf("Error\n"), -1);
@@ -98,16 +101,17 @@ int	main(int argc, char *argv[])
 //		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
 //	if (ft_sort_min(a, b, argc) == -1)
 //		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
-/*
-	i = argc;
-	while (i > 1)
+
+	i = 0;
+	tmp = a;
+	while (tmp != NULL)
 	{
-		ft_printf("Puntero: %p - ", a);
-		ft_printf("%i\n", *a);
-		a++;
-		i--;
+		ft_printf("i: %i - Content: %i - ", i, *(int *)(tmp->content));
+		ft_printf("Next Pointer: %p\n", tmp->next);
+		tmp = tmp->content;
+		i++;
 	}
-*/
+
 //	if (ft_sorted_int(a, argc))
 //		return (ft_frint(&a), ft_frint(&b), 0);
 //	ft_sort_min(a, b, argc);
