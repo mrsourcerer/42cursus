@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 07:22:56 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/09 07:27:46 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ static int	ft_to_int(char *argv[], int **values)
 	int		i;
 	char	*p;
 	long	tmp;
-	//int		i_tmp;
-	//t_list	*new;
 
 	i = 1;
 	while (argv[i])
@@ -59,21 +57,18 @@ static int	ft_to_int(char *argv[], int **values)
 				p++;
 			}
 		}
-		*(values[i - 1]) = (int)tmp; //da segmentation fault, corregir
-		//new = ft_lstnew(&i_tmp);
-		//ft_lstadd_front(a, new);
+		(*values)[i - 1] = (int)tmp;
 		i++;
 	}
-	values[i - 1] = NULL;
+	(values)[i - 1] = NULL;
 	return (0);
-	//return (ft_duplicate(*a, --i));
 }
 
 int	ft_value_to_list(int *values, t_list **a)
 {
 	t_list	*new;
 
-	while (values)
+	while (values) //no encuentro el que apunta a NULL ¿?
 	{
 		new = ft_lstnew(values);
 		ft_lstadd_back(a, new);
