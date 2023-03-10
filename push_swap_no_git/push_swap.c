@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/09 22:02:20 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/10 07:27:12 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	ft_sorted_int(t_list *a, int len)
 	i = 0;
 	while (i < len)
 	{
-		if (a->content > a->next->content)
+		if (*(int *)a->content > *(int *)a->next->content)
 			return (0);
 		i++;
 	}
@@ -116,15 +116,26 @@ int	main(int argc, char *argv[])
 	tmp = a;
 	while (tmp != NULL)
 	{
-		ft_printf("i: %i - Content: %i - ", i, *(int *)(tmp->content));
+		ft_printf("i: %i - a: %p - Content: %i - ", i, tmp, *(int *)(tmp->content));
 		ft_printf("Next Pointer: %p\n", tmp->next);
 		tmp = tmp->next;
 		i++;
 	}
-	ft_printf("Starting push_swap\n");
 	if (ft_sorted_int(a, argc - 1))
-		return (0);
-//		return (ft_frint(&a), ft_frint(&b), 0);
+		return (ft_frint(&values), 0); //hay que liberar la lista tambien ver como
+	ft_printf("Starting sorting\n");
 //	ft_sort_min(a, b, argc);
+
+
+
+	i = 0;
+	tmp = a;
+	while (tmp != NULL)
+	{
+		ft_printf("i: %i - a: %p - Content: %i - ", i, tmp, *(int *)(tmp->content));
+		ft_printf("Next Pointer: %p\n", tmp->next);
+		tmp = tmp->next;
+		i++;
+	}
 	return (76);
 }
