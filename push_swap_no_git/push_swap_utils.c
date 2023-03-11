@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 06:54:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 13:09:53 by danlopez         ###   ########.fr       */
+/*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
+/*   Updated: 2023/03/11 12:30:11 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_sorted_int(t_list *a, int len)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
+	int	i;
+
+	if (len < 2)
+		return (1);
+	i = 0;
+	while (i < len)
 	{
-		lst = lst->next;
+		if (*(int *)a->content > *(int *)a->next->content)
+			return (0);
+		i++;
 	}
-	return (lst);
+	return (1);
 }
 
-t_list	*ft_lstbeforelast(t_list *lst)
+int	ft_duplicated(int *a, int len)
 {
-	t_list	*tmp;
+	int	i;
+	int	j;
 
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
+	i = 0;
+	while (i < len)
 	{
-		tmp = lst;
-		lst = lst->next;
+		j = i + 1;
+		while (j < len)
+		{
+			if (a[i] == a[j])
+				return (-1);
+			j++;
+		}
+		i++;
 	}
-	return (tmp);
+	return (0);
 }

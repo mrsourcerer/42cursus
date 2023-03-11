@@ -6,32 +6,11 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 07:27:12 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:30:42 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-static int	ft_duplicate(int *a, int argc)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < argc - 1)
-	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (a[i] == a[j])
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-*/
 
 static int	ft_to_int(char *argv[], int **values)
 {
@@ -67,6 +46,8 @@ static int	ft_value_to_list(int *values, t_list **a, int len)
 {
 	t_list	*new;
 
+	if (ft_duplicated(values, len))
+		return (-1);
 	while (len)
 	{
 		new = ft_lstnew(values);
@@ -74,27 +55,28 @@ static int	ft_value_to_list(int *values, t_list **a, int len)
 		values++;
 		len--;
 	}
+
 	return (0);
 }
 
-
-int	ft_sorted_int(t_list *a, int len)
+static int	ft_sort_menu(t_list **a, t_list **b, int len)
 {
-	int	i;
-
-	i = 0;
-	while (i < len)
+	if (ft_sorted_int(*a, len))
+		return (0);
+	if (len < 3)
 	{
-		if (*(int *)a->content > *(int *)a->next->content)
-			return (0);
-		i++;
+		ft_swap(a, b, 'a');
+		return (0);
 	}
-	return (1);
+	if (len < 4)
+		ft_sort_min(a, b);
+	return (-1);
 }
 
 int	main(int argc, char *argv[])
 {
 	t_list	*a;
+	t_list	*b;
 	int		*values;
 	int		i;
 	t_list	*tmp;
@@ -106,12 +88,8 @@ int	main(int argc, char *argv[])
 		return (ft_frint(&values), -1);
 	if (ft_to_int(argv, &values))
 		return (ft_frint(&values), -1);
-//		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
-//	if (ft_sort_min(a, b, argc) == -1)
-//		return (ft_frint(&a), ft_frint(&b), ft_printf("Error\n"), -1);
 	if (ft_value_to_list(values, &a, argc - 1))
-		return (0);
-		//return (ft_frint(&values), -1); // hay que free la lista
+		return (ft_frint(&values), ft_printf("Error\n"), -1);
 	i = 0;
 	tmp = a;
 	while (tmp != NULL)
@@ -121,13 +99,9 @@ int	main(int argc, char *argv[])
 		tmp = tmp->next;
 		i++;
 	}
-	if (ft_sorted_int(a, argc - 1))
-		return (ft_frint(&values), 0); //hay que liberar la lista tambien ver como
-	ft_printf("Starting sorting\n");
-//	ft_sort_min(a, b, argc);
-
-
-
+	ft_printf("________Sorting Start_______\n");
+	ft_sort_menu(&a, &b, argc - 1);
+	ft_printf("________Sorting End_________\n");
 	i = 0;
 	tmp = a;
 	while (tmp != NULL)
@@ -138,4 +112,5 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	return (76);
+	//return (ft_frint(&values), 76); //hay que liberar a y si no hemos trasladado b a a tambien
 }

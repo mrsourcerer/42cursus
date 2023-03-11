@@ -6,31 +6,13 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 09:09:18 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 06:24:56 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/11 13:41:07 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
-static void	ft_swap(int **a, int **b, char c)
-{
-	int	tmp;
-
-	if (c == 'a' || c == 's')
-	{
-		tmp = (*a)[0];
-		(*a)[0] = (*a)[1];
-		(*a)[1] = tmp;
-	}
-	if (c == 'b' || c == 's')
-	{
-		tmp = (*b)[0];
-		(*b)[0] = (*b)[1];
-		(*b)[1] = tmp;
-	}
-	ft_printf("s%c\n", c);
-}
-
 static void	ft_push(int **a, int **b, char c, int *ab_len[2])
 {
 	int	i;
@@ -60,23 +42,21 @@ static void	ft_push(int **a, int **b, char c, int *ab_len[2])
 			(*b)[i] = (*b)[i + 1];
 	}
 }
-
-int	ft_sort_min(int *a, int *b, int len)
-{
-	int	i;
-	int	ab_len[2];
-
-	ab_len[0] = len - 1;
-	ab_len[1] = 0;
-	while (1)
-	{
-		i = 0;
-		while (i < len - 1)
-		{
-
-		}
-		if (ft_sorted_int(a, len))
-			return (0);
-	}
-}
 */
+int	ft_sort_min(t_list **a, t_list **b)
+{
+	t_list	*tmp;
+
+	ft_printf("ft_sort_min: %i elementos\n", ft_lstsize(*a));
+	tmp = ft_lstlast(*a);
+	if (*(int *)(*a)->content > *(int *)tmp->content)
+		ft_rotate(a, b, 'a');
+	if (*(int *)(*a)->content > *(int *)(*a)->next->content)
+		ft_swap(a, b, 'a');
+	if (ft_sorted_int(*a, ft_lstsize(*a)))
+		return (0);
+	ft_revrotate(a, b, 'a');
+	if (*(int *)(*a)->content > *(int *)(*a)->next->content)
+		ft_swap(a, b, 'a');
+	return (0);
+}

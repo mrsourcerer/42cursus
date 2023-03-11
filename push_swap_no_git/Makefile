@@ -16,7 +16,7 @@ FLAGS = -Werror -Wall -Wextra
 CC = gcc
 
 NAME = push_swap
-SRC = push_swap.c ft_sort_min.c
+SRC = push_swap.c ft_sort_min.c push_swap_operators.c push_swap_utils.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME) 
