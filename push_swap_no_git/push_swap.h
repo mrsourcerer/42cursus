@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 08:55:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 13:44:57 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:22:52 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "libft/libft.h"
 
 int		ft_sort_min(t_list **a, t_list **b);
+int		ft_sort_mid(t_list **a, t_list **b);
 int		ft_sorted_int(t_list *a, int len);
 int		ft_duplicated(int *a, int len);
 

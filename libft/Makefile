@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/03/02 21:07:52 by danlopez         ###   ########.fr        #
+#    Updated: 2023/03/13 21:14:23 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c ft_lstprintf.c
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 SRC_PRINTF = printf/ft_printf.c printf/ft_printf_charutils.c \

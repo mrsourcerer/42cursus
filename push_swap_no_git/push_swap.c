@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 12:30:42 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:39:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@ static int	ft_to_int(char *argv[], int **values)
 {
 	int		i;
 	char	*p;
-	long	tmp;
 
 	i = 1;
 	while (argv[i])
 	{
 		p = argv[i];
-		tmp = ft_atol(p);
-		if (tmp > 2147483647 || tmp < -2147483648)
+		if (ft_atoi(p) != ft_atol(p))
 			return (-1);
-		if (tmp == 0)
+		/*if (ft_atoi(p) == 0)
 		{
 			while (*p)
 			{
@@ -35,8 +33,8 @@ static int	ft_to_int(char *argv[], int **values)
 					return (-1);
 				p++;
 			}
-		}
-		(*values)[i - 1] = (int)tmp;
+		}*/
+		(*values)[i - 1] = (int)ft_atoi(p);
 		i++;
 	}
 	return (0);
@@ -55,7 +53,6 @@ static int	ft_value_to_list(int *values, t_list **a, int len)
 		values++;
 		len--;
 	}
-
 	return (0);
 }
 
@@ -78,8 +75,6 @@ int	main(int argc, char *argv[])
 	t_list	*a;
 	t_list	*b;
 	int		*values;
-	int		i;
-	t_list	*tmp;
 
 	if (argc < 2)
 		return (ft_printf("Error\n"), -1);
@@ -87,30 +82,13 @@ int	main(int argc, char *argv[])
 	if (!values)
 		return (ft_frint(&values), -1);
 	if (ft_to_int(argv, &values))
-		return (ft_frint(&values), -1);
+		return (ft_frint(&values), ft_printf("Error\n"), -1);
 	if (ft_value_to_list(values, &a, argc - 1))
 		return (ft_frint(&values), ft_printf("Error\n"), -1);
-	i = 0;
-	tmp = a;
-	while (tmp != NULL)
-	{
-		ft_printf("i: %i - a: %p - Content: %i - ", i, tmp, *(int *)(tmp->content));
-		ft_printf("Next Pointer: %p\n", tmp->next);
-		tmp = tmp->next;
-		i++;
-	}
+	ft_lstprintf(a, 'i');
 	ft_printf("________Sorting Start_______\n");
 	ft_sort_menu(&a, &b, argc - 1);
 	ft_printf("________Sorting End_________\n");
-	i = 0;
-	tmp = a;
-	while (tmp != NULL)
-	{
-		ft_printf("i: %i - a: %p - Content: %i - ", i, tmp, *(int *)(tmp->content));
-		ft_printf("Next Pointer: %p\n", tmp->next);
-		tmp = tmp->next;
-		i++;
-	}
+	ft_lstprintf(a, 'i');
 	return (76);
-	//return (ft_frint(&values), 76); //hay que liberar a y si no hemos trasladado b a a tambien
 }

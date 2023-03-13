@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 07:39:24 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 13:24:49 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 20:07:44 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,24 @@ void	ft_rotate(t_list **a, t_list **b, char c)
 
 void	ft_revrotate(t_list **a, t_list **b, char c)
 {
-	// implementar reverse rotate
+	t_list	*tmp_beforelast;
+	t_list	*tmp_last;
+
+	if (c == 'a' || c == 'r')
+	{
+	tmp_beforelast = ft_lstbeforelast(*a);
+	tmp_last = ft_lstlast(*a);
+	tmp_beforelast->next = NULL;
+	tmp_last->next = *a;
+	*a = tmp_last;
+	}
+	if (c == 'b' || c == 'r')
+	{
+		tmp_beforelast = ft_lstbeforelast(*b);
+		tmp_last = ft_lstlast(*b);
+		tmp_beforelast->next = NULL;
+		tmp_last->next = *b;
+		*b = tmp_last;
+	}
+	ft_printf("rr%c\n", c);
 }

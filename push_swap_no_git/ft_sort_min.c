@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 09:09:18 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 13:41:07 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:33:32 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,23 @@ static void	ft_push(int **a, int **b, char c, int *ab_len[2])
 */
 int	ft_sort_min(t_list **a, t_list **b)
 {
-	t_list	*tmp;
+	t_list	*last;
 
 	ft_printf("ft_sort_min: %i elementos\n", ft_lstsize(*a));
-	tmp = ft_lstlast(*a);
-	if (*(int *)(*a)->content > *(int *)tmp->content)
-		ft_rotate(a, b, 'a');
+	last = ft_lstlast(*a);
 	if (*(int *)(*a)->content > *(int *)(*a)->next->content)
 		ft_swap(a, b, 'a');
 	if (ft_sorted_int(*a, ft_lstsize(*a)))
 		return (0);
 	ft_revrotate(a, b, 'a');
-	if (*(int *)(*a)->content > *(int *)(*a)->next->content)
-		ft_swap(a, b, 'a');
+	if (ft_sorted_int(*a, ft_lstsize(*a)))
+		return (0);
+	ft_swap(a, b, 'a');
+	return (0);
+}
+
+int	ft_sort_mid(t_list **a, t_list **b)
+{
+	ft_swap(a, b, 'a');
 	return (0);
 }

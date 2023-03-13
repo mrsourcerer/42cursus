@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 12:30:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:27:16 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ int	ft_sorted_int(t_list *a, int len)
 	if (len < 2)
 		return (1);
 	i = 0;
-	while (i < len)
+	while (i < len - 1)
 	{
 		if (*(int *)a->content > *(int *)a->next->content)
 			return (0);
 		i++;
+		a = a->next;
 	}
 	return (1);
 }
