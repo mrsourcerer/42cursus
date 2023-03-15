@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 22:39:58 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/15 07:07:25 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ static int	ft_sort_menu(t_list **a, t_list **b, int len)
 	}
 	if (len < 4)
 		ft_sort_min(a, b);
-	return (-1);
+	if (len < 6)
+		ft_sort_min_five(a, b);
+	return (1);
 }
 
 int	main(int argc, char *argv[])
@@ -76,6 +78,8 @@ int	main(int argc, char *argv[])
 	t_list	*b;
 	int		*values;
 
+	a = NULL;
+	b = NULL;
 	if (argc < 2)
 		return (ft_printf("Error\n"), -1);
 	values = (int *)malloc((argc - 1) * sizeof(int));
@@ -89,6 +93,9 @@ int	main(int argc, char *argv[])
 	ft_printf("________Sorting Start_______\n");
 	ft_sort_menu(&a, &b, argc - 1);
 	ft_printf("________Sorting End_________\n");
+	ft_printf("stack a\n");
 	ft_lstprintf(a, 'i');
+	ft_printf("\nstack b\n");
+	ft_lstprintf(b, 'i');
 	return (76);
 }

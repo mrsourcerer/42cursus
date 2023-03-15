@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 07:39:24 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 20:07:44 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/15 06:47:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,29 @@ void	ft_revrotate(t_list **a, t_list **b, char c)
 		*b = tmp_last;
 	}
 	ft_printf("rr%c\n", c);
+}
+
+void	ft_push(t_list **a, t_list **b, char c)
+{
+	t_list	*tmp;
+
+	if (c == 'a')
+	{
+		if (*b == NULL)
+			return ;
+		tmp = *b;
+		*b = (*b)->next;
+		tmp->next = *a;
+		*a = tmp;
+	}
+	if (c == 'b')
+	{
+		if (*a == NULL)
+			return ;
+		tmp = *a;
+		*a = (*a)->next;
+		tmp->next = *b;
+		*b = tmp;
+	}
+	ft_printf("p%c\n", c);
 }

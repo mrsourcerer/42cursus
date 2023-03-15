@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 09:09:18 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 22:33:32 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/15 07:31:27 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,7 @@ static void	ft_push(int **a, int **b, char c, int *ab_len[2])
 */
 int	ft_sort_min(t_list **a, t_list **b)
 {
-	t_list	*last;
-
-	ft_printf("ft_sort_min: %i elementos\n", ft_lstsize(*a));
-	last = ft_lstlast(*a);
+	ft_printf("ft_sort_min: %i elements\n", ft_lstsize(*a));
 	if (*(int *)(*a)->content > *(int *)(*a)->next->content)
 		ft_swap(a, b, 'a');
 	if (ft_sorted_int(*a, ft_lstsize(*a)))
@@ -60,8 +57,20 @@ int	ft_sort_min(t_list **a, t_list **b)
 	return (0);
 }
 
-int	ft_sort_mid(t_list **a, t_list **b)
+int	ft_sort_min_five(t_list **a, t_list **b)
 {
-	ft_swap(a, b, 'a');
+	int	i;
+
+	ft_printf("ft_sort_min_five: %i elements\n", ft_lstsize(*a));
+	i = 0;
+	while (i++ < 2)
+	{
+		if (*(int *) (*a)->content > *(int *) (*a)->next->content)
+			ft_swap(a, b, 'a');
+		ft_push(a, b, 'b');
+	}
+	if (ft_content(*a) > ft_content((*a)->next) && ft_content(*b) > ft_content((*b)->next)) //error
+		ft_swap(a, b, 's');
+
 	return (0);
 }
