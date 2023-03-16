@@ -67,6 +67,8 @@ static int	ft_sort_menu(t_list **a, t_list **b, int len)
 	}
 	if (len < 4)
 		ft_sort_min(a, b);
+	if (len < 5)
+		ft_sort_min_four(a, b);
 	if (len < 6)
 		ft_sort_min_five(a, b);
 	return (1);

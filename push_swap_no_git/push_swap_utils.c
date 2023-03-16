@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 07:25:51 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/15 07:36:59 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ int	ft_duplicated(int *a, int len)
 
 int	ft_content(t_list *a)
 {
-	return (*(int *)a->content)
+	return (*(int *)a->content);
 }
