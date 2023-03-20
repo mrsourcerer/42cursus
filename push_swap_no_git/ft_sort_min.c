@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 09:09:18 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/16 07:30:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/20 06:58:06 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ int	ft_sort_min_four(t_list **a, t_list **b)
 
 int	ft_sort_min_five(t_list **a, t_list **b)
 {
-	ft_swap(a, b, 's');
+	int	pos;
+
+	pos = ft_min_pos(*a);
+	ft_printf("pos: %i\n", pos);
+	ft_push(a, b, 'b');
+	ft_sort_min_four(a, b);
 	return (0);
 }

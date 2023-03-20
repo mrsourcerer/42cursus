@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 07:36:59 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/20 06:57:26 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,26 @@ int	ft_duplicated(int *a, int len)
 int	ft_content(t_list *a)
 {
 	return (*(int *)a->content);
+}
+
+int	ft_min_pos(t_list *a)
+{
+	int	min;
+	int	min_pos;
+	int	i;
+
+	min_pos = 0;
+	i = 1;
+	min = ft_content(a);
+	while (a)
+	{
+		if (ft_content(a) < min)
+		{
+			min = ft_content(a);
+			min_pos = i;
+		}
+		i++;
+		a = a->next;
+	}
+	return (min_pos);
 }
