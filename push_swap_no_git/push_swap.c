@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/20 22:31:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/21 06:25:10 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ static int	ft_sort_menu(t_list **a, t_list **b, int len)
 	}
 	if (len < 4)
 		ft_sort_min(a, b);
-	//else if (len < 5)
-	//	ft_sort_min_four(a, b);
+	else if (len < 11)
+		ft_sort_min_general(a, b);
 	//else if (len < 6)
 	//	ft_sort_min_five(a, b);
 	else
-		ft_sort_min_general(a, b);
+		ft_sort_mid(a, b);
 	return (1);
 }
 
