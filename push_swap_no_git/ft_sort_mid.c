@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/21 07:26:34 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/22 20:52:59 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,34 @@ int	ft_swap_what(t_list **a, t_list **b)
 	return (sw_a + sw_b);
 }
 
+int ft_rotate_what(t_list **a, t_list **b)
+{
+	ft_rotate(a, b);
+}
+
+int	ft_revrotate_what(t_list **a, t_list **b)
+{
+	ft_revrotate(a, b);
+}
+
+int	ft_sort_mid(t_list **a, t_list **b)
+{
+	while (!ft_sorted_int(*a))
+	{
+		ft_swap_what(a, b);
+		if (ft_sorted_int(*a))
+			return (1);
+		ft_rotate_what(a, b);
+		if (ft_sorted_int(*a))
+			return (2);
+		ft_revrotate_what(a, b);
+		if (ft_sorted_int(*a))
+			return (3);
+	}
+	return (0);
+}
+
+/*
 int	ft_sort_mid(t_list **a, t_list **b)
 {
 	int	step_1;
@@ -72,4 +100,4 @@ int	ft_sort_mid(t_list **a, t_list **b)
 		}
 	}
 	return (0);
-}
+}*/
