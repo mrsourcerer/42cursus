@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 07:39:24 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 06:47:54 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/24 06:51:59 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,9 @@ void	ft_push(t_list **a, t_list **b, char c)
 		*b = tmp;
 	}
 	ft_printf("p%c\n", c);
+}
+
+int	ft_content(t_list *a)
+{
+	return (*(int *)a->content);
 }
