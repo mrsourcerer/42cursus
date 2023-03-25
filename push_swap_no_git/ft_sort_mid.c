@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/24 07:12:31 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:59:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,32 +101,52 @@ int	ft_sort_mid(t_list **a, t_list **b)
 	{
 		if (ft_content(*a) < 7)
 			ft_push(a, b, 'b');
-		ft_rotate(a, b, 'a');
+		else
+			ft_rotate(a, b, 'a');
+		//ft_printf("________\nstack a\n");
+		//ft_lstprintf(*a, 'i');
+		//ft_printf("\nstack b\n");
+		//ft_lstprintf(*b, 'i');
+		//ft_printf("--------\n");
 	}
 	ft_printf("stack a\n");
 	ft_lstprintf(*a, 'i');
 	ft_printf("\nstack b\n");
 	ft_lstprintf(*b, 'i');
-	while (!a_ok && !b_ok)
+	while (!a_ok || !b_ok)
 	{
-		ft_swap_what(a, b, &a_ok, &b_ok);
-		ft_printf("stack a\n");
-		ft_lstprintf(*a, 'i');
-		ft_printf("\nstack b\n");
-		ft_lstprintf(*b, 'i');
-
-		ft_rotate_what(a, b, &a_ok, &b_ok);
-		ft_printf("stack a\n");
-		ft_lstprintf(*a, 'i');
-		ft_printf("\nstack b\n");
-		ft_lstprintf(*b, 'i');
-
-		ft_revrotate_what(a, b, &a_ok, &b_ok);
-		ft_printf("stack a\n");
-		ft_lstprintf(*a, 'i');
-		ft_printf("\nstack b\n");
-		ft_lstprintf(*b, 'i');
-
+		if (ft_swap_what(a, b, &a_ok, &b_ok))
+		{
+			ft_printf("________\nstack a\n");
+			ft_lstprintf(*a, 'i');
+			ft_printf("\nstack b\n");
+			ft_lstprintf(*b, 'i');
+			ft_printf("--------\n");
+		}
+		if (ft_rotate_what(a, b, &a_ok, &b_ok))
+		{
+			ft_printf("________\nstack a\n");
+			ft_lstprintf(*a, 'i');
+			ft_printf("\nstack b\n");
+			ft_lstprintf(*b, 'i');
+			ft_printf("--------\n");
+		}
+		if (ft_swap_what(a, b, &a_ok, &b_ok))
+		{
+			ft_printf("________\nstack a\n");
+			ft_lstprintf(*a, 'i');
+			ft_printf("\nstack b\n");
+			ft_lstprintf(*b, 'i');
+			ft_printf("--------\n");
+		}
+		if (ft_revrotate_what(a, b, &a_ok, &b_ok))
+		{
+			ft_printf("________\nstack a\n");
+			ft_lstprintf(*a, 'i');
+			ft_printf("\nstack b\n");
+			ft_lstprintf(*b, 'i');
+			ft_printf("--------\n");
+		}
 	}
 	while (ft_lstsize(*b) > 0)
 	{
