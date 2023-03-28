@@ -6,11 +6,17 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/25 10:59:35 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/28 06:57:32 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_check_special(t_list **a, t_list **b, int *a_ok, int *b_ok)
+{
+	// checkear si primero de A es el menor sin estar ordenado
+	// checkear si primero de B es el mayor sin estar ordenado ¿?¿?
+}
 
 int	ft_swap_what(t_list **a, t_list **b, int *a_ok, int *b_ok)
 {
@@ -35,6 +41,7 @@ int	ft_swap_what(t_list **a, t_list **b, int *a_ok, int *b_ok)
 		*a_ok = 1;
 	if (ft_revsorted_int(*b))
 		*b_ok = 1;
+	ft_check_special(a, b, a_ok, b_ok);
 	return (sw_a + sw_b);
 }
 
@@ -119,32 +126,32 @@ int	ft_sort_mid(t_list **a, t_list **b)
 		{
 			ft_printf("________\nstack a\n");
 			ft_lstprintf(*a, 'i');
-			ft_printf("\nstack b\n");
-			ft_lstprintf(*b, 'i');
+			//ft_printf("\nstack b\n");
+			//ft_lstprintf(*b, 'i');
 			ft_printf("--------\n");
 		}
 		if (ft_rotate_what(a, b, &a_ok, &b_ok))
 		{
 			ft_printf("________\nstack a\n");
 			ft_lstprintf(*a, 'i');
-			ft_printf("\nstack b\n");
-			ft_lstprintf(*b, 'i');
+			//ft_printf("\nstack b\n");
+			//ft_lstprintf(*b, 'i');
 			ft_printf("--------\n");
 		}
 		if (ft_swap_what(a, b, &a_ok, &b_ok))
 		{
 			ft_printf("________\nstack a\n");
 			ft_lstprintf(*a, 'i');
-			ft_printf("\nstack b\n");
-			ft_lstprintf(*b, 'i');
+			//ft_printf("\nstack b\n");
+			//ft_lstprintf(*b, 'i');
 			ft_printf("--------\n");
 		}
 		if (ft_revrotate_what(a, b, &a_ok, &b_ok))
 		{
 			ft_printf("________\nstack a\n");
 			ft_lstprintf(*a, 'i');
-			ft_printf("\nstack b\n");
-			ft_lstprintf(*b, 'i');
+			//ft_printf("\nstack b\n");
+			//ft_lstprintf(*b, 'i');
 			ft_printf("--------\n");
 		}
 	}
