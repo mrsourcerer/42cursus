@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/28 06:57:32 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/29 07:16:12 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,40 @@
 
 int	ft_check_special(t_list **a, t_list **b, int *a_ok, int *b_ok)
 {
-	// checkear si primero de A es el menor sin estar ordenado
-	// checkear si primero de B es el mayor sin estar ordenado ¿?¿?
-}
+	int		tmp;
+	int		exec;
+	t_list	*l_tmp;
+
+	exec = 1;
+	if (!(*a_ok))
+	{
+		tmp = ft_content(*a);
+		l_tmp = (*a)->next;
+		while (l_tmp)
+		{
+			if (ft_content(l_tmp) < tmp)
+				exec = 0;
+			l_tmp = l_tmp->next;
+		}
+		if (exec)
+			ft_rotate(a, b, 'a');
+	}
+	exec = 1;
+	if (!(*b_ok))
+	{
+		tmp = ft_content(*b);
+		l_tmp = (*b)->next;
+		while (l_tmp)
+		{
+			if (ft_content(l_tmp) > tmp)
+				exec = 0;
+			l_tmp = l_tmp->next;
+		}
+		if (exec)
+			ft_revrotate(a, b, 'b');
+	}
+	return (0);
+} // too many lines
 
 int	ft_swap_what(t_list **a, t_list **b, int *a_ok, int *b_ok)
 {
