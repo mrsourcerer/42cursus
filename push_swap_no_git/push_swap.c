@@ -6,11 +6,31 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/24 07:38:45 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 06:20:06 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_duplicated(int *a, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < len)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (a[i] == a[j])
+				return (-1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 static int	ft_to_int(char *argv[], int **values)
 {

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/24 07:26:54 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 06:25:07 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,7 @@ int	ft_revsorted_int(t_list *a)
 	return (1);
 }
 
-int	ft_duplicated(int *a, int len)
-{
-	int	i;
-	int	j;
 
-	i = 0;
-	while (i < len)
-	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (a[i] == a[j])
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
 
 int	ft_min_pos(t_list *a)
 {
@@ -90,6 +72,28 @@ int	ft_min_pos(t_list *a)
 		a = a->next;
 	}
 	return (min_pos);
+}
+
+int	ft_max_pos(t_list *a)
+{
+	int	max;
+	int	max_pos;
+	int	i;
+
+	max_pos = 1;
+	i = 1;
+	max = ft_content(a);
+	while (a)
+	{
+		if (ft_content(a) > max)
+		{
+			max = ft_content(a);
+			max_pos = i;
+		}
+		i++;
+		a = a->next;
+	}
+	return (max_pos);
 }
 
 int	ft_min_on_top(t_list **a, t_list **b)

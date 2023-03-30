@@ -6,48 +6,22 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/29 07:16:12 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 06:29:36 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_special(t_list **a, t_list **b, int *a_ok, int *b_ok)
+int	ft_check_special(t_list **a, t_list **b, int *ok, char c)
 {
-	int		tmp;
-	int		exec;
-	t_list	*l_tmp;
-
-	exec = 1;
-	if (!(*a_ok))
-	{
-		tmp = ft_content(*a);
-		l_tmp = (*a)->next;
-		while (l_tmp)
-		{
-			if (ft_content(l_tmp) < tmp)
-				exec = 0;
-			l_tmp = l_tmp->next;
-		}
-		if (exec)
-			ft_rotate(a, b, 'a');
-	}
-	exec = 1;
-	if (!(*b_ok))
-	{
-		tmp = ft_content(*b);
-		l_tmp = (*b)->next;
-		while (l_tmp)
-		{
-			if (ft_content(l_tmp) > tmp)
-				exec = 0;
-			l_tmp = l_tmp->next;
-		}
-		if (exec)
-			ft_revrotate(a, b, 'b');
-	}
+	if (!(*ok) && c == 'a')
+		if (ft_min_pos(*a) == 1)
+			ft_rotate(a, b, c);
+	if (!(*ok) && c == 'b')
+		if (ft_max_pos(*b) == 1)
+			ft_revrotate(a, b, c);
 	return (0);
-} // too many lines
+}
 
 int	ft_swap_what(t_list **a, t_list **b, int *a_ok, int *b_ok)
 {
@@ -72,7 +46,8 @@ int	ft_swap_what(t_list **a, t_list **b, int *a_ok, int *b_ok)
 		*a_ok = 1;
 	if (ft_revsorted_int(*b))
 		*b_ok = 1;
-	ft_check_special(a, b, a_ok, b_ok);
+	ft_check_special(a, b, a_ok, 'a');
+	ft_check_special(a, b, b_ok, 'b');
 	return (sw_a + sw_b);
 }
 
