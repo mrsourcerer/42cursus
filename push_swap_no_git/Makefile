@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 07:17:15 by danlopez          #+#    #+#              #
-#    Updated: 2023/03/02 21:24:09 by danlopez         ###   ########.fr        #
+#    Updated: 2023/03/30 21:42:11 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC = gcc
 
 NAME = push_swap
 SRC = push_swap.c ft_sort_min.c push_swap_operators.c push_swap_utils.c \
-		ft_sort_mid.c
+		ft_sort_mid.c push_swap_utils_math.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME) 

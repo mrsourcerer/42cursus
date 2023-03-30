@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 08:55:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/30 06:21:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:23:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_content(t_list *a);
 int		ft_min_pos(t_list *a);
 int		ft_max_pos(t_list *a);
 int		ft_min_on_top(t_list **a, t_list **b);
+int		ft_mid_element(t_list *a, int size);
 
 void	ft_swap(t_list **a, t_list **b, char c);
 void	ft_rotate(t_list **a, t_list **b, char c);
