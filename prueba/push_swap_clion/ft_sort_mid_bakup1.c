@@ -6,35 +6,12 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/04/01 12:57:21 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/04/01 10:29:51 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_sort_mid(t_list **a, t_list **b)
-{
-	int	i;
-	int	j;
-
-	i = ft_lstsize(*a) - 3;
-	j = i;
-	while (i > 0)
-	{
-		ft_min_on_top(a, b);
-		i--;
-		ft_push(a, b, 'b');
-	}
-	ft_sort_min(a, b);
-	while (j > 0)
-	{
-		ft_push(a, b, 'a');
-		j--;
-	}
-	return (0);
-}
-
-/*
 int	ft_check_special(t_list **a, t_list **b, int *ok, char c)
 {
 	if (!(*ok) && c == 'a')
@@ -197,7 +174,7 @@ int	ft_sort_mid(t_list **a, t_list **b)
 	}
 	return (0);
 }
-*/
+
 /*
 int	ft_sort_mid(t_list **a, t_list **b)
 {
