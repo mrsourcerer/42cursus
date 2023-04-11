@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/30 06:25:07 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/04/11 07:24:52 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,10 @@ int	ft_min_on_top(t_list **a, t_list **b)
 		i = pos - 1;
 	while (i > 0)
 	{
+		/// this could be problematic
+		if (ft_content(*a) > ft_content((*a)->next))
+			ft_swap(a, b, 'a');
+		///
 		if (rotate)
 			ft_rotate(a, b, 'a');
 		else
