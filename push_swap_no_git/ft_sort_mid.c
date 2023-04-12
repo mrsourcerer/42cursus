@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 07:25:49 by danlopez          #+#    #+#             */
-/*   Updated: 2023/04/01 12:57:21 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/04/12 06:26:04 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int ft_sort_mid(t_list **a, t_list **b)
 	{
 		ft_min_on_top(a, b);
 		i--;
-		ft_push(a, b, 'b');
+		if (ft_sorted_int(*a))
+			i = 0;
+		else
+			ft_push(a, b, 'b');
 	}
 	ft_sort_min(a, b);
 	while (j > 0)
