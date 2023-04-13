@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/04/01 12:56:33 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:42:44 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,6 @@ static int	ft_to_int(char *argv[], int **values)
 		p = argv[i];
 		if (ft_atoi(p) != ft_atol(p))
 			return (-1);
-		/*if (ft_atoi(p) == 0)
-		{
-			while (*p)
-			{
-				if (*p == '+' || *p == '-')
-					p++;
-				if (*p != '0')
-					return (-1);
-				p++;
-			}
-		}*/
 		(*values)[i - 1] = (int)ft_atoi(p);
 		i++;
 	}
