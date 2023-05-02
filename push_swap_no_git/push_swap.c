@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/04/13 06:42:44 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/02 07:16:27 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,21 @@ static int	ft_to_int(char *argv[], int **values)
 static int	ft_value_to_list(int *values, t_list **a, int len)
 {
 	t_list	*new;
+	int		i;
+	int		min;
+	int		max;
 
 	if (ft_duplicated(values, len))
 		return (-1);
+	i = 0;
+	while (i < len)
+	{
+		if (values[i] < min)
+			min = values[i];
+		if (values[i] > max)
+			max = values[i];
+		i++;
+	}
 	while (len)
 	{
 		new = ft_lstnew(values);
