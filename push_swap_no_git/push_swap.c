@@ -59,14 +59,8 @@ static int	ft_value_to_list(int *values, t_list **a, int len)
 	if (ft_duplicated(values, len))
 		return (-1);
 	i = 0;
-	while (i < len)
-	{
-		if (values[i] < min)
-			min = values[i];
-		if (values[i] > max)
-			max = values[i];
-		i++;
-	}
+	min = ft_min_max_values(values, len, -1);
+	max = ft_min_max_values(values, len, +1);
 	while (len)
 	{
 		new = ft_lstnew(values);

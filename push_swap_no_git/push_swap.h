@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 08:55:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/30 21:23:54 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/03 06:15:38 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ void	ft_swap(t_list **a, t_list **b, char c);
 void	ft_rotate(t_list **a, t_list **b, char c);
 void	ft_revrotate(t_list **a, t_list **b, char c);
 void	ft_push(t_list **a, t_list **b, char c);
+
+int		ft_min_max_values(int *values, int len, int operation);
 
 #endif
