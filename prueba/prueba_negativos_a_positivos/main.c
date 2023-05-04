@@ -6,23 +6,27 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 06:57:01 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/04 07:26:49 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/04 21:54:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_get_original(int **original, int argc, char *argv[])
+void	ft_get_original(int **original, int argc, char *argv[])
 {
 	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
+		printf("argv[i]: %i\n", atoi(argv[i]));
 		*(original[i - 1]) = atoi(argv[i]);
+		//**original = atoi(argv[i]);
+		printf("**original: %i\n", *(original[i - 1]));
 		i++;
 	}
+	//(**original) = 42;
 }
 
 int	main(int argc, char *argv[])
