@@ -1,1 +1,1 @@
-../../push_swap_no_git/ft_sort_min.c
+../../push_swap/ft_sort_min.c

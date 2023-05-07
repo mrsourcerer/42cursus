@@ -17,7 +17,7 @@ CC = gcc
 
 NAME = push_swap
 SRC = push_swap.c ft_sort_min.c push_swap_operators.c push_swap_utils.c \
-		ft_sort_mid.c push_swap_utils_math.c
+		ft_sort_mid.c push_swap_utils_math.c ft_sort_max.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME) 

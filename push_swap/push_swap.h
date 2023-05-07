@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 08:55:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/03 06:15:38 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/07 11:18:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		ft_rotate_what(t_list **a, t_list **b, int *a_ok, int *b_ok);
 int		ft_revrotate_what(t_list **a, t_list **b, int *a_ok, int *b_ok);
 int		ft_check_special(t_list **a, t_list **b, int *ok, char c);
 
+int		ft_sort_max(t_list **a, t_list **b);
+
 int		ft_sorted_int(t_list *a);
 int		ft_revsorted_int(t_list *a);
 int		ft_duplicated(int *a, int len);
@@ -40,5 +42,6 @@ void	ft_revrotate(t_list **a, t_list **b, char c);
 void	ft_push(t_list **a, t_list **b, char c);
 
 int		ft_min_max_values(int *values, int len, int operation);
+void	ft_order_array(int **ordered, int *values, int len);
 
 #endif

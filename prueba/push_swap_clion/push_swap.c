@@ -1,1 +1,1 @@
-../../push_swap_no_git/push_swap.c
+../../push_swap/push_swap.c

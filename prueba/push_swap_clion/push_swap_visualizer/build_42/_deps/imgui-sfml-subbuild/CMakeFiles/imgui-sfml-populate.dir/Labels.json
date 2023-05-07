@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/CMakeFiles/imgui-sfml-populate"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/CMakeFiles/imgui-sfml-populate.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/CMakeFiles/imgui-sfml-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-build.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-download.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-install.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-test.rule"
+		},
+		{
+			"file" : "/Users/danlopez/projects/prueba/push_swap_clion/push_swap_visualizer/build_42/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/imgui-sfml-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"imgui-sfml-populate"
+		],
+		"name" : "imgui-sfml-populate"
+	}
+}

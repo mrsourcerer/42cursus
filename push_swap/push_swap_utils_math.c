@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:08:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/03 06:15:38 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/07 08:08:34 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,29 @@ int	ft_min_max_values(int *values, int len, int operation)
 	if (operation < 0)
 		return (min);
 	return (0);
+}
+
+void	ft_order_array(int **ordered, int *values, int len)
+{
+	int			i;
+	int			j;
+	int			value;
+	long int	last;
+
+	i = 0;
+	last = -2147483649;
+	while (i < len)
+	{
+		j = 0;
+		value = 2147483647;
+		while (j < len)
+		{
+			if (values[j] < value && values[j] > last)
+				value = values[j];
+			j++;
+		}
+		(*ordered)[i] = (int)value;
+		last = (int)value;
+		i++;
+	}
 }
