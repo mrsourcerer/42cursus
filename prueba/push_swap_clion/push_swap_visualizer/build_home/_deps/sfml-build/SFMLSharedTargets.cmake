@@ -54,14 +54,14 @@ unset(_cmake_expected_targets)
 add_library(sfml-system SHARED IMPORTED)
 
 set_target_properties(sfml-system PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include"
 )
 
 # Create imported target sfml-window
 add_library(sfml-window SHARED IMPORTED)
 
 set_target_properties(sfml-window PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include"
   INTERFACE_LINK_LIBRARIES "sfml-system"
 )
 
@@ -93,7 +93,7 @@ set_target_properties(UDev PROPERTIES
 add_library(sfml-graphics SHARED IMPORTED)
 
 set_target_properties(sfml-graphics PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include"
   INTERFACE_LINK_LIBRARIES "sfml-window"
 )
 
@@ -108,21 +108,21 @@ set_target_properties(Freetype PROPERTIES
 # Import target "sfml-system" for configuration ""
 set_property(TARGET sfml-system APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-system PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.so.2.5.1"
+  IMPORTED_LOCATION_NOCONFIG "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-build/lib/libsfml-system.so.2.5.1"
   IMPORTED_SONAME_NOCONFIG "libsfml-system.so.2.5"
   )
 
 # Import target "sfml-window" for configuration ""
 set_property(TARGET sfml-window APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-window PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-window.so.2.5.1"
+  IMPORTED_LOCATION_NOCONFIG "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-build/lib/libsfml-window.so.2.5.1"
   IMPORTED_SONAME_NOCONFIG "libsfml-window.so.2.5"
   )
 
 # Import target "sfml-graphics" for configuration ""
 set_property(TARGET sfml-graphics APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-graphics PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.so.2.5.1"
+  IMPORTED_LOCATION_NOCONFIG "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-build/lib/libsfml-graphics.so.2.5.1"
   IMPORTED_SONAME_NOCONFIG "libsfml-graphics.so.2.5"
   )
 

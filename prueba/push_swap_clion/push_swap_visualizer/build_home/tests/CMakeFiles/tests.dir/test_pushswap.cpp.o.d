@@ -1,7 +1,7 @@
 tests/CMakeFiles/tests.dir/test_pushswap.cpp.o: \
  /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/tests/test_pushswap.cpp \
  /usr/include/stdc-predef.h \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/catch2-src/single_include/catch2/catch.hpp \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/catch2-src/single_include/catch2/catch.hpp \
  /usr/include/c++/11/cstddef \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

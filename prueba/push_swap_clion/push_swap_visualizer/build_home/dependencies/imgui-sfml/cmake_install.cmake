@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-sfml-build/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-sfml-build/cmake_install.cmake")
 endif()
 

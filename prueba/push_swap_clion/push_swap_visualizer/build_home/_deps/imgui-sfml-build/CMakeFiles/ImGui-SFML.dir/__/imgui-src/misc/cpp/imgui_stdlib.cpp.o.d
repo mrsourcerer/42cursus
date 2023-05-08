@@ -1,15 +1,15 @@
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/__/imgui-src/misc/cpp/imgui_stdlib.cpp.o: \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-src/misc/cpp/imgui_stdlib.cpp \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-src/misc/cpp/imgui_stdlib.cpp \
  /usr/include/stdc-predef.h \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-src/imgui.h \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-sfml-src/imconfig-SFML.h \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include/SFML/Config.hpp \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include/SFML/System/Vector2.hpp \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src/include/SFML/System/Vector2.inl \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-sfml-src/imgui-SFML_export.h \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-src/imconfig.h \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-src/imgui.h \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-sfml-src/imconfig-SFML.h \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include/SFML/Config.hpp \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include/SFML/System/Vector2.hpp \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src/include/SFML/System/Vector2.inl \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-sfml-src/imgui-SFML_export.h \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-src/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h /usr/include/string.h \
@@ -24,7 +24,7 @@ _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/__/imgui-src/misc/cpp/imgui_std
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/assert.h \
- /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-src/misc/cpp/imgui_stdlib.h \
+ /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-src/misc/cpp/imgui_stdlib.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

@@ -7,5 +7,5 @@ events:
       - "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
       - "CMakeLists.txt:10 (project)"
     message: |
-      The system is: Linux - 5.15.0-58-generic - x86_64
+      The system is: Linux - 5.19.0-41-generic - x86_64
 ...

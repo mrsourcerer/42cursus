@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/snap/cmake/1288/bin/cmake;-P;/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/tmp/imgui-sfml-populate-gitclone.cmake
-source_dir=/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/imgui-sfml-src
-work_dir=/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps
+command=/snap/cmake/1288/bin/cmake;-P;/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/tmp/imgui-sfml-populate-gitclone.cmake
+source_dir=/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/imgui-sfml-src
+work_dir=/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps
 repository=https://github.com/eliasdaler/imgui-sfml
 remote=origin
 init_submodules=TRUE

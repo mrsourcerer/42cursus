@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

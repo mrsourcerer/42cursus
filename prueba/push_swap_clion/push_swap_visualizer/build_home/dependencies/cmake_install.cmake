@@ -44,16 +44,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/dependencies/imgui-sfml/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/dependencies/imgui-sfml/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/dependencies/sfml/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/dependencies/sfml/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/dependencies/catch2/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/dependencies/catch2/cmake_install.cmake")
 endif()
 

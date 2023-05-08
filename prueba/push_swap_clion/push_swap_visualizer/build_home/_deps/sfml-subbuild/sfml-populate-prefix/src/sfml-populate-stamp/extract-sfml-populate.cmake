@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 
 # Make file names absolute:
 #
-get_filename_component(filename "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/SFML-2.5.1-sources.zip" ABSOLUTE)
-get_filename_component(directory "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/_deps/sfml-src" ABSOLUTE)
+get_filename_component(filename "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-subbuild/sfml-populate-prefix/src/SFML-2.5.1-sources.zip" ABSOLUTE)
+get_filename_component(directory "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/_deps/sfml-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

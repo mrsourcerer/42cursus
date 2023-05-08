@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build
+CMAKE_BINARY_DIR = /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/CMakeFiles /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/CMakeFiles /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

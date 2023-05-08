@@ -10,8 +10,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.26.3/CMakeSystem.cmake"
   "CMakeLists.txt"
   "imgui-populate-prefix/tmp/imgui-populate-mkdirs.cmake"
+  "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake"
   "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeGenericSystem.cmake"
   "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake"
+  "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeSystem.cmake.in"
   "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake"
   "/snap/cmake/1288/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake"
   "/snap/cmake/1288/share/cmake-3.26/Modules/ExternalProject.cmake"
@@ -32,6 +34,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/3.26.3/CMakeSystem.cmake"
   "imgui-populate-prefix/tmp/imgui-populate-mkdirs.cmake"
   "imgui-populate-prefix/tmp/imgui-populate-gitclone.cmake"
   "imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-gitinfo.txt"

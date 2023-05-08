@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build
+CMAKE_BINARY_DIR = /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/CMakeFiles /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/dependencies/sfml//CMakeFiles/progress.marks
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/CMakeFiles 0
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/CMakeFiles /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/dependencies/sfml//CMakeFiles/progress.marks
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/clean
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,17 +148,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/preinstall
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/preinstall
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/sfml/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -184,6 +184,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -44,17 +44,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/dependencies/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/dependencies/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/src/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/tests/cmake_install.cmake")
+  include("/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sourcerer/projects/42cursus/prueba/push_swap_clion/push_swap_visualizer/build_home/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
