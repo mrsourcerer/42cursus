@@ -6,13 +6,13 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 07:17:15 by danlopez          #+#    #+#              #
-#    Updated: 2023/03/30 21:42:11 by danlopez         ###   ########.fr        #
+#    Updated: 2023/05/09 07:04:42 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBRARY = ./libft
 C_LIBRARY = ./libft/libft.a
-FLAGS = -Werror -Wall -Wextra
+FLAGS = -Werror -Wall -Wextra -g
 CC = gcc
 
 NAME = push_swap
