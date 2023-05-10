@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/04/12 06:57:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/10 07:03:57 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ int	ft_revsorted_int(t_list *a)
 	return (1);
 }
 
-
-
 int	ft_min_pos(t_list *a)
 {
 	int	min;
@@ -74,6 +72,7 @@ int	ft_min_pos(t_list *a)
 	return (min_pos);
 }
 
+/*
 int	ft_max_pos(t_list *a)
 {
 	int	max;
@@ -95,6 +94,7 @@ int	ft_max_pos(t_list *a)
 	}
 	return (max_pos);
 }
+*/
 
 int	ft_min_on_top(t_list **a, t_list **b)
 {
@@ -113,10 +113,6 @@ int	ft_min_on_top(t_list **a, t_list **b)
 		i = pos - 1;
 	while (i > 0)
 	{
-		/// this could be problematic
-	//	if ((ft_content(*a) > ft_content((*a)->next)) && (i % 2 == 0))
-	//		ft_swap(a, b, 'a');
-		///
 		if (rotate)
 			ft_rotate(a, b, 'a');
 		else
@@ -124,4 +120,12 @@ int	ft_min_on_top(t_list **a, t_list **b)
 		i--;
 	}
 	return (0);
+}
+
+void	del(void *content)
+{
+	int	*ptr;
+
+	ptr = (int *)content;
+	free(ptr);
 }

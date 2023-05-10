@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/09 07:20:08 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/10 06:52:41 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,9 @@ int	main(int argc, char *argv[])
 		ft_printf("original: %i	   transformed: %i    ordered: %i\n", ft_atoi(argv[i + 1]), values[i], ordered[i]);
 		i++;
 	} */
-	ft_frint(&ordered);
-	ft_frint(&values);
+	//ft_frint(&ordered);
+	//ft_frint(&values);
+	ft_lstclear(&a, del);
+	ft_lstclear(&b, del);
 	return (76); //to free 2 list and 2 arrays is needed
 }
