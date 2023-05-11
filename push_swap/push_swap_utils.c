@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/10 07:03:57 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/11 07:23:02 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,4 +128,20 @@ void	del(void *content)
 
 	ptr = (int *)content;
 	free(ptr);
+}
+
+void	ft_free_list(t_list **a)
+{
+	t_list	*element;
+	t_list	*tmp;
+
+	element = *a;
+	while (element)
+	{
+		tmp = element;
+		element = element->next;
+		free(tmp->content);
+		free(tmp);
+	}
+	free(element);
 }

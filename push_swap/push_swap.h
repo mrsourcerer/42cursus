@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 08:55:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/10 06:50:58 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/11 07:18:19 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int		ft_min_max_values(int *values, int len, int operation);
 void	ft_order_array(int **ordered, int *values, int len);
 
 void	del(void *content); //intentar pasar esto a libft
+void	ft_free_list(t_list **a);
 
 #endif
