@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 07:17:15 by danlopez          #+#    #+#              #
-#    Updated: 2023/05/09 07:04:42 by danlopez         ###   ########.fr        #
+#    Updated: 2023/05/12 05:58:53 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ $(NAME): $(OBJ)
 .PHONY: all, clean, fclean, re
 clean:
 	cd $(LIBRARY) && $(MAKE) clean
-	rm -f $(OBJ_SERVER) $(OBJ_CLIENT)
+	rm -f $(OBJ)
 
 fclean: clean
 	cd $(LIBRARY) && $(MAKE) fclean
-	rm -f $(NAME_SERVER) $(NAME_CLIENT)
+	rm -f $(NAME)
 
 re: fclean all

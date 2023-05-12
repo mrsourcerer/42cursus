@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/11 07:23:02 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/12 06:57:04 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,8 @@ void	ft_free_list(t_list **a)
 	{
 		tmp = element;
 		element = element->next;
-		free(tmp->content);
+		//free(tmp->next);
+		//ft_freevoid(&(tmp->content));
 		free(tmp);
 	}
 	free(element);

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/11 07:19:22 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/12 07:03:45 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,9 +133,12 @@ int	main(int argc, char *argv[])
 		i++;
 	} */
 	//ft_frint(&ordered);
+	free(ordered);
+	free(values);
 	//ft_frint(&values);
 	//ft_lstclear(&a, del);
 	//ft_lstclear(&b, del);
 	ft_free_list(&a);
+	ft_free_list(&b);
 	return (76); //to free 2 list and 2 arrays is needed
 }
