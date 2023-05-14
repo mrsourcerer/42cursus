@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 11:13:25 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/08 07:03:32 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/14 07:28:21 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ static void	ft_return(t_list **a, t_list **b, int j, int max)
 		else if (((ft_content(*b) >> (j + 1)) & 1) == 0)
 			ft_rotate(a, b, 'b');
 		else
-		{
 			ft_push(a, b, 'a');
-			//ft_rotate(a, b, 'a');
-		}
 		i++;
 	}
 }
@@ -82,11 +79,6 @@ int	ft_sort_max(t_list **a, t_list **b)
 		ft_push_radix(a, b, j, len);
 		ft_return(a, b, j, len);
 		j++;
-		//if (ft_sorted_int(*a) && ft_revsorted_int(*b))
-		//{
-		//	ft_return(a, b, len, len);
-		//	return (74);
-		//}
 	}
 	return (0);
 }

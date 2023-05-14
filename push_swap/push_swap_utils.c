@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:09:43 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/12 06:57:04 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/14 07:33:29 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,6 @@ int	ft_min_pos(t_list *a)
 	return (min_pos);
 }
 
-/*
-int	ft_max_pos(t_list *a)
-{
-	int	max;
-	int	max_pos;
-	int	i;
-
-	max_pos = 1;
-	i = 1;
-	max = ft_content(a);
-	while (a)
-	{
-		if (ft_content(a) > max)
-		{
-			max = ft_content(a);
-			max_pos = i;
-		}
-		i++;
-		a = a->next;
-	}
-	return (max_pos);
-}
-*/
-
 int	ft_min_on_top(t_list **a, t_list **b)
 {
 	int	pos;
@@ -122,14 +98,6 @@ int	ft_min_on_top(t_list **a, t_list **b)
 	return (0);
 }
 
-void	del(void *content)
-{
-	int	*ptr;
-
-	ptr = (int *)content;
-	free(ptr);
-}
-
 void	ft_free_list(t_list **a)
 {
 	t_list	*element;
@@ -140,8 +108,6 @@ void	ft_free_list(t_list **a)
 	{
 		tmp = element;
 		element = element->next;
-		//free(tmp->next);
-		//ft_freevoid(&(tmp->content));
 		free(tmp);
 	}
 	free(element);

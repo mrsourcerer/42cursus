@@ -12,7 +12,7 @@
 
 LIBRARY = ./libft
 C_LIBRARY = ./libft/libft.a
-FLAGS = -Werror -Wall -Wextra -g
+FLAGS = -Werror -Wall -Wextra
 CC = gcc
 
 NAME = push_swap
