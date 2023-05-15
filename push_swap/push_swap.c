@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/14 09:43:31 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/15 07:19:34 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,23 @@ int	ft_duplicated(int *a, int len)
 	return (0);
 }
 
-static int	ft_to_int(char *argv[], int **values)
+static int	ft_to_int(char *argv[], int **values, int *args)
 {
 	int		i;
 	char	*p;
+	char	**new_argv;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	if (*args == 2)
+		new_argv = ft_split(argv[1], ' '); // make this inside a new function and free values and remalloc
+	else
 	{
-		p = argv[i];
+		i = 1;
+		new_argv = argv;
+	}
+	while (new_argv[i])
+	{
+		p = new_argv[i];
 		if (ft_check_no_num(p))
 			return (-1);
 		if (ft_atoi(p) != ft_atol(p))
@@ -48,6 +56,7 @@ static int	ft_to_int(char *argv[], int **values)
 		(*values)[i - 1] = (int)ft_atoi(p);
 		i++;
 	}
+	*args = i;
 	return (0);
 }
 
@@ -121,7 +130,7 @@ int	main(int argc, char *argv[])
 	ordered = (int *)malloc((argc - 1) * sizeof(int));
 	if (!values || !ordered)
 		return (ft_frint(&values), ft_frint(&ordered), -1);
-	if (ft_to_int(argv, &values))
+	if (ft_to_int(argv, &values, &argc))
 		return (ft_frint(&values), ft_frint(&ordered), ft_printf("Error\n"), -1);
 	ft_order_array(&ordered, values, argc - 1);
 	if (ft_value_to_list(values, ordered, &a, argc - 1))
