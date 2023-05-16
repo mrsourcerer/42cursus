@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:43:59 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 21:13:30 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/16 07:16:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,7 @@ void	ft_lstprintf(t_list *lst, char c);
 
 void	ft_freevoid(void **p);
 void	ft_frint(int **p);
+size_t	ft_num_argc(char *s, char c);
+char	**ft_get_argv(char *s, char c);
 
 #endif

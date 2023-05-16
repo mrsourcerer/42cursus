@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/01 21:42:01 by danlopez          #+#    #+#              #
-#    Updated: 2023/03/13 21:14:23 by danlopez         ###   ########.fr        #
+#    Updated: 2023/05/16 06:07:57 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC = ft_isalpha.c ft_isdigit.c ft_toupper.c \
 		ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-		ft_putendl_fd.c ft_putnbr_fd.c ft_power.c ft_freevoid.c
+		ft_putendl_fd.c ft_putnbr_fd.c ft_power.c ft_freevoid.c \
+		ft_argc_argv.c
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
