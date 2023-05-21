@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 06:46:44 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/16 07:02:58 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:32:13 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,12 @@ char	**ft_get_argv(char *s, char c)
 
 	if (!s)
 		return (0);
-	count = ft_num_argc(s, c);
-	dict = (char **)malloc((count + 1) * sizeof(size_t));
+	count = ft_num_argc(s, c) + 1;
+	dict = (char **)malloc((count + 2) * sizeof(size_t));
 	if (!dict)
 		return (0);
 	start = 0;
-	i = 0;
+	i = 1;
 	while (i < count)
 	{
 		size = ft_next(s, c, start);
@@ -108,5 +108,5 @@ char	**ft_get_argv(char *s, char c)
 		start = start + size + 1;
 		i++;
 	}
-	return (dict[count] = 0, dict);
+	return (dict[0] = ft_strdup("custom"), dict[count] = 0, dict);
 }

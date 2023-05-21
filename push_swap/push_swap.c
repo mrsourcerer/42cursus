@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:05:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/15 07:19:34 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/21 11:30:02 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ static int	ft_to_int(char *argv[], int **values, int *args)
 	char	*p;
 	char	**new_argv;
 
-	i = 0;
+	i = 1;
+	new_argv = argv;
 	if (*args == 2)
-		new_argv = ft_split(argv[1], ' '); // make this inside a new function and free values and remalloc
-	else
-	{
-		i = 1;
-		new_argv = argv;
-	}
+		new_argv = ft_get_argv(argv[1], ' ');
+	if (!new_argv)
+		return (-1);
 	while (new_argv[i])
 	{
 		p = new_argv[i];
@@ -56,7 +54,10 @@ static int	ft_to_int(char *argv[], int **values, int *args)
 		(*values)[i - 1] = (int)ft_atoi(p);
 		i++;
 	}
-	*args = i;
+	if (*args == 2)
+		ft_freestr(new_argv);
+	if (*args == 2)
+		*args = i;
 	return (0);
 }
 
@@ -113,21 +114,17 @@ int	main(int argc, char *argv[])
 	t_list	*b;
 	int		*values;
 	int		*ordered;
-	int		i; //--------------------------------**********************************************************************
+	size_t	args;
 
-	i = 1;
-	while (i < argc)
-	{
-		ft_printf("--|%s|--\n", argv[i]);
-		i++;
-	}
-	// ------------------------------------------**********************************************************************
 	a = NULL;
 	b = NULL;
 	if (argc < 2)
 		return (-1);
-	values = (int *)malloc((argc - 1) * sizeof(int));
-	ordered = (int *)malloc((argc - 1) * sizeof(int));
+	args = argc;
+	if (argc == 2)
+		args = ft_num_argc(argv[1], ' ') + 1;
+	values = (int *)malloc((args - 1) * sizeof(int));
+	ordered = (int *)malloc((args - 1) * sizeof(int));
 	if (!values || !ordered)
 		return (ft_frint(&values), ft_frint(&ordered), -1);
 	if (ft_to_int(argv, &values, &argc))
@@ -136,9 +133,6 @@ int	main(int argc, char *argv[])
 	if (ft_value_to_list(values, ordered, &a, argc - 1))
 		return (ft_frint(&values), ft_frint(&ordered), ft_printf("Error\n"), -1);
 	ft_sort_menu(&a, &b, argc - 1);
-	free(ordered);
-	free(values);
-	ft_free_list(&a);
-	ft_free_list(&b);
-	return (76);
+	ft_frint(&ordered);
+	return (ft_frint(&values), ft_free_list(&a), ft_free_list(&b), 76);
 }
