@@ -1,1 +1,1 @@
-../../minitalk_no_git/server.c
+../../minitalk/server.c

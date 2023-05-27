@@ -1,1 +1,1 @@
-../../minitalk_no_git/Makefile
+../../minitalk/Makefile
