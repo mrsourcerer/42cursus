@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:08:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/14 09:38:40 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/05/31 07:00:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,16 @@ int	ft_check_no_num(char *string)
 {
 	int		ok;
 	size_t	i;
+	size_t	len;
 
+	len = ft_len(string);
 	ok = 0;
-	i = 1;
-	while (i < ft_len(string))
+	i = 0;
+	while (i < len)
 	{
 		if (!ft_isdigit(string[i]))
-			ok = 1;
+			if (!((string[i] == '+' || string[i] == '-') && i == 0 && len > 1))
+				ok = 1;
 		i++;
 	}
 	return (ok);
