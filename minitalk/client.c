@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:33:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/03/02 19:26:56 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/06/02 06:34:01 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ void	ft_send_str(pid_t pid, char *str)
 	ft_send_char(pid, '\n');
 }
 
+int	ft_no_ok(char *str_num)
+{
+	if (ft_atoi(str_num) != ft_atol(str_num))
+		return (-1);
+	while (*str_num)
+	{
+		if (!ft_isdigit(*str_num))
+			return (-1);
+		str_num++;
+	}
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	pid_t		pid;
@@ -46,7 +59,9 @@ int	main(int argc, char *argv[])
 	sigset_t	signal_set;
 
 	if (argc < 3)
-		return (1);
+		return (-1);
+	if (ft_no_ok(argv[1]))
+		return (-1);
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
 	ft_printf("Num: %i\n", pid);
