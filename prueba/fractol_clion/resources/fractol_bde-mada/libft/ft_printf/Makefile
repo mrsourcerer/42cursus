@@ -3,40 +3,44 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
+#    By: bde-mada <bde-mada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/03 11:00:39 by danlopez         ###   ########.fr        #
+#    Created: 2023/04/17 15:41:01 by bde-mada          #+#    #+#              #
+#    Updated: 2023/04/18 11:59:01 by bde-mada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MINILIBX = ./include/minilibx_mms_20191025_beta
+NAME		= libftprintf.a
 
-LIBRARY = ./include/libft
-C_LIBRARY = ./include/libft/libft.a
-FLAGS = -Werror -Wall -Wextra
-CC = gcc
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
 
-NAME = fractol
-SRC = fractol.c
+# .SILENT:
+# DO NOT PRINT THE EXECUTION MESSAGES
+
+SRC_DIR		= src/
+LIBFT_DIR	= libft/
+
+SRC_FILES 	= ft_printf.c ft_printf_utils.c ft_putchar.c
+OBJ_FILES	= $(SRC_FILES:.c=.o)
+
+SRC			= $(addprefix $(SRC_DIR), $(SRC_FILES))
+
+LNK			= -0fast
+
+all: $(NAME)
+
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME) 
-
-%.o: %.c
-	$(CC) $(FLAGS) $(MINILIBX) -c $< -o $@
-
 $(NAME): $(OBJ)
-	cd $(LIBRARY) && $(MAKE)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(C_LIBRARY)
+	ar rcsu $(NAME) $(OBJ)
 
-.PHONY: all, clean, fclean, re
 clean:
-	cd $(LIBRARY) && $(MAKE) clean
-	rm -f $(OBJ)
+	rm -Rf $(OBJ)
 
 fclean: clean
-	cd $(LIBRARY) && $(MAKE) fclean
 	rm -f $(NAME)
 
 re: fclean all
+
+.phony: all clean fclean re
