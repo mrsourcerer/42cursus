@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:33:14 by danlopez          #+#    #+#             */
-/*   Updated: 2023/06/02 06:34:01 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/06/05 07:08:57 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char *argv[])
 	char		*str;
 	sigset_t	signal_set;
 
-	if (argc < 3)
+	if (argc != 3)
 		return (-1);
 	if (ft_no_ok(argv[1]))
 		return (-1);
