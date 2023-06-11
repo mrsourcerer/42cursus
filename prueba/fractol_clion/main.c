@@ -28,7 +28,7 @@ void	errors_exit(int error_id, t_data *param)
 		errno = 83;
 	if (error_id == 0)
 		exit(EXIT_SUCCESS);
-	perror("Fract'ol");
+	perror("fractol");
 	if (error_id == 22)
 		write(1, "parameter_menu function", 23);
 		//parameter_menu();
@@ -40,7 +40,7 @@ void	errors_exit(int error_id, t_data *param)
 int	exit_hook(t_data *param)
 {
 	errors_exit(0, param);
-	return (1);
+	return (0);
 }
 
 int	key_press(int key, t_data *data)
@@ -52,17 +52,18 @@ int	key_press(int key, t_data *data)
 
 int	main(void)
 {
-	t_data	data;
+	t_data	*data;
 
-	data.mlx_ptr = mlx_init();
-	data.win_ptr = mlx_new_window(data.mlx_ptr, 640, 360, "Tutorial Window - Create Image");
+	data = (t_data *)malloc(1 * sizeof(t_data));
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, 640, 360, "Tutorial Window - Create Image");
 	
-	mlx_pixel_put(data.mlx_ptr, data.win_ptr, 640/1.5, 360/1.5, 0xFFFFFF);
+	mlx_pixel_put(data->mlx_ptr, data->win_ptr, 640/1.5, 360/1.5, 0xFFFFFF);
 
-	mlx_hook(data.win_ptr, 2, 0, &key_press, &data);
-	mlx_hook(data.win_ptr, 17, 0, &exit_hook, &data);
+	mlx_hook(data->win_ptr, 2, 0, key_press, data);
+	//mlx_hook(data->win_ptr, 17, 0, exit_hook, data); // when this line is present it makes segmentation fault... dunno why
 
-	mlx_loop(data.mlx_ptr);
+	mlx_loop(data->mlx_ptr);
 
 	//mlx_destroy_display(mlx);
 	//if (data.win_ptr)
@@ -71,5 +72,6 @@ int	main(void)
 	//	free(data.mlx_ptr);
 	//if (data)
 	//	free(data);
+	free_alloc(data);
 	return (0);
 }
