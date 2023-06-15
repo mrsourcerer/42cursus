@@ -6,9 +6,12 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/14 07:10:16 by danlopez         ###   ########.fr        #
+#    Updated: 2023/06/15 07:25:47 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+ACCENT	:= "\033[92;3;4;1m"
+NONE	:= "\033[0m"
 
 MLX_MAC = ./include/minilibx_mms_20191025_beta
 C_MLX_MAC =  ./include/minilibx_mms_20191025_beta/libmlx.a
@@ -24,6 +27,7 @@ ifeq ($(OS), Darwin)
 else
 	MLX=$(MLX_LINUX)
 	C_MLX=$(C_MLX_LINUX)
+	LINK= -lXext -lX11
 endif
 
 LIBFT = ./include/libft
@@ -41,17 +45,19 @@ all: $(NAME)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	cd $(MLX) && $(MAKE)
-	cd $(LIBFT) && $(MAKE)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(C_LIBFT) $(C_MLX)
+	@make -sC $(MLX)
+	@make -sC $(LIBFT)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(C_LIBFT) $(C_MLX) $(LINK)
+	@echo $(ACCENT)"$(NAME) compiled ✅"$(NONE)
 
 .PHONY: all, clean, fclean, re
 clean:
-	cd $(LIBFT) && $(MAKE) clean
-	rm -f $(OBJ)
+	@make clean -sC $(MLX)
+	@make clean -sC $(LIBFT)
+	@rm -f $(OBJ)
 
 fclean: clean
-	cd $(LIBFT) && $(MAKE) fclean
-	rm -f $(NAME)
+	@make fclean -sC $(LIBFT)
+	@rm -f $(NAME)
 
 re: fclean all
