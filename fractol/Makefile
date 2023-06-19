@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/19 07:01:46 by danlopez         ###   ########.fr        #
+#    Updated: 2023/06/19 20:31:57 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OS = $(shell uname -s)
 ifeq ($(OS), Darwin)
 	MLX=$(MLX_MAC)
 	C_MLX=$(C_MLX_MAC)
-	LINK= -framework OpenGL -framework AppKit
+	LINK= -lm -lmlx -framework OpenGL -framework AppKit
 else
 	MLX=$(MLX_LINUX)
 	C_MLX=$(C_MLX_LINUX)
