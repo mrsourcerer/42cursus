@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/15 19:49:05 by danlopez         ###   ########.fr        #
+#    Updated: 2023/06/19 07:01:46 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ ifeq ($(OS), Darwin)
 else
 	MLX=$(MLX_LINUX)
 	C_MLX=$(C_MLX_LINUX)
-	LINK= -lXext -lX11
+	LINK= -lXext -lX11 -lm -lz -L/usr/lib
 endif
 
 LIBFT = ./include/libft
