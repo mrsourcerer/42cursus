@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/19 20:31:57 by danlopez         ###   ########.fr        #
+#    Updated: 2023/06/20 07:22:21 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ GREEN	:= "\033[0;33m"
 ACCENT	:= "\033[1;33m"
 NONE	:= "\033[0m"
 
-MLX_MAC = ./include/minilibx_mms_20191025_beta
-C_MLX_MAC =  ./include/minilibx_mms_20191025_beta/libmlx.dylib
-MLX_NAME_MAC = libmlx.dylib
+#MLX_MAC = ./include/minilibx_mms_20191025_beta
+#C_MLX_MAC =  ./include/minilibx_mms_20191025_beta/libmlx.dylib
+#MLX_NAME_MAC = libmlx.dylib
 
-#MLX_MAC = ./include/minilibx_opengl_20191021
-#C_MLX_MAC =  ./include/minilibx_opengl_20191021/libmlx.a
-#MLX_NAME_MAC = libmlx.a
+MLX_MAC = ./include/minilibx_opengl_20191021
+C_MLX_MAC =  ./include/minilibx_opengl_20191021/libmlx.a
+MLX_NAME_MAC = libmlx.a
 
 MLX_LINUX = ./include/minilibx-linux
 C_MLX_LINUX = ./include/minilibx-linux/libmlx_Linux.a
