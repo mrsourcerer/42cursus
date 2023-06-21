@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/21 20:53:12 by danlopez         ###   ########.fr        #
+#    Updated: 2023/06/20 07:22:21 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,44 +40,31 @@ endif
 
 LIBFT = ./include/libft
 C_LIBFT = ./include/libft/libft.a
-
 FLAGS = -Werror -Wall -Wextra -g
 CC = gcc
 
 NAME = fractol
-
-SRC = fractol.c
-
-SRC_DIR = src/
-OBJ_DIR = obj/
-
+SRC = main.c
 OBJ = $(SRC:.c=.o)
-
-SRCS = $(addprefix $(SRC_DIR), $(SRC))
-OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
 
 all: $(NAME) 
 
-obj_dir:
-	@mkdir -p $(OBJ_DIR)
+%.o: %.c
+	$(CC) $(FLAGS) -I$(MLX) -c $< -o $@
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	$(CC) $(FLAGS) -I$(MLX) -I$(LIBFT) -c $< -o $@
-
-$(NAME): obj_dir $(OBJS)
+$(NAME): $(OBJ)
 	make -sC $(MLX) && cp $(C_MLX) ./
 	@echo $(GREEN)"$(C_MLX) compiled ✅"$(NONE)
 	make -sC $(LIBFT)
 	@echo $(GREEN)"$(C_LIBFT) compiled ✅"$(NONE)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(C_LIBFT) $(C_MLX) $(LINK)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(C_LIBFT) $(C_MLX) $(LINK)
 	@echo $(ACCENT)"$(NAME) compiled ✅"$(NONE)
 
 .PHONY: all, clean, fclean, re
-
 clean:
 	@make clean -sC $(MLX)
 	@make clean -sC $(LIBFT)
-	@rm -rf $(OBJ_DIR)
+	@rm -f $(OBJ)
 
 fclean: clean
 	@make fclean -sC $(LIBFT)
