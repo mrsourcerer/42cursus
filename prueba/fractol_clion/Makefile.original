@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/22 07:24:48 by danlopez         ###   ########.fr        #
+#    Updated: 2023/06/22 05:47:35 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,28 +61,16 @@ all: $(NAME)
 obj_dir:
 	@mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | obj_dir
-	#@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(FLAGS) -I$(MLX) -I$(LIBFT) -c $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME): obj_dir $(OBJS)
 	make -sC $(MLX) && cp $(C_MLX) ./
 	@echo $(GREEN)"$(C_MLX) compiled ✅"$(NONE)
 	make -sC $(LIBFT)
 	@echo $(GREEN)"$(C_LIBFT) compiled ✅"$(NONE)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(C_LIBFT) $(C_MLX) $(LINK)
 	@echo $(ACCENT)"$(NAME) compiled ✅"$(NONE)
-
-make_libs: make_libft make_mlx
-
-make_libft:
-	make -sC $(LIBFT)
-	@echo $(GREEN)"$(C_LIBFT) compiled ✅"$(NONE)
-
-make_mlx:
-	make -sC $(MLX) && cp $(C_MLX) ./
-	@echo $(GREEN)"$(C_MLX) compiled ✅"$(NONE)
-
 
 .PHONY: all, clean, fclean, re
 
