@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 06:13:24 by danlopez          #+#    #+#             */
-/*   Updated: 2023/02/12 06:59:04 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/06/25 12:59:57 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,34 @@ char	*ft_itoa_nomalloc(long n)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa_nomalloc(n), fd);
+	unsigned int	div;
+	unsigned int	nb;
+
+	div = 1;
+	nb = n;
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = -n;
+	}
+	while (nb / div >= 10)
+		div *= 10;
+	while (div > 1)
+	{
+		ft_putchar_fd((nb / div) + '0', fd);
+		nb %= div;
+		div /= 10;
+	}
+	ft_putchar_fd(nb + '0', fd);
 }
 
 int	ft_putnbr(long n, int fd)
 {
-	int	written;
+	int		written;
+	char	*num_str;
 
-	written = ft_putstr(ft_itoa_nomalloc(n), fd);
+	num_str = ft_itoa(n);
+	written = ft_putstr(num_str, fd);
+	free(num_str);
 	return (written);
 }

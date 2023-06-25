@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:43:59 by danlopez          #+#    #+#             */
-/*   Updated: 2023/05/21 10:23:54 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/06/25 11:56:01 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,12 @@ size_t	ft_len(const char *s);
 int		ft_putchar(char c, int fd);
 int		ft_putstr(char *s, int fd);
 int		ft_putnbr(long n, int fd);
+int		ft_putnbrf(double f, int precision, int fd);
 char	*ft_itoa_nomalloc(long n);
+char	*ft_ftoa(double n, int precision);
 size_t	ft_power(int base, int power);
 long	ft_atol(const char *str);
+double	ft_atof(const char *str);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -83,5 +86,6 @@ void	ft_frint(int **i);
 void	ft_freestr(char **str);
 size_t	ft_num_argc(char *s, char c);
 char	**ft_get_argv(char *s, char c);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

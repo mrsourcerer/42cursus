@@ -25,6 +25,8 @@ static int	ft_check_char(char c, va_list *args)
 		ft_printf_p(va_arg(*args, size_t), &i);
 	if (c == 'd' || c == 'i')
 		ft_printf_i(va_arg(*args, int), &i);
+	if (c == 'f')
+		ft_printf_f(va_arg(*args, double), &i);
 	if (c == 'u')
 		ft_printf_u(va_arg(*args, unsigned int), &i);
 	if (c == 'x')
