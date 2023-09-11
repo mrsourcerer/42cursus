@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 10:43:59 by danlopez          #+#    #+#             */
-/*   Updated: 2023/06/25 11:56:01 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/11 07:18:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "printf/ft_printf.h"
+//# include "/home/sourcerer/projects/42cursus/libft/printf/ft_printf.h"
 # include "gnl/get_next_line.h"
+//# include "/home/sourcerer/projects/42cursus/libft/gnl/get_next_line.h"
 
 typedef struct s_list
 {
