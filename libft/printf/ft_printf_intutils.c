@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 05:58:30 by danlopez          #+#    #+#             */
-/*   Updated: 2023/06/25 10:35:14 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/11 06:39:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ void	ft_printf_u(unsigned int num, int *p_i)
 
 void	ft_printf_f(double num, int *p_i)
 {
-	*p_i = ft_putnbrf(num, 1);
+	*p_i = ft_putnbrf(num, 4, 1);
 }
