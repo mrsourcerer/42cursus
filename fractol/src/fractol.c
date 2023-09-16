@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/12 07:20:59 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:43:14 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_args_ok(int argc, char *argv[])
 	{
 		ft_printf("argc 3: %f\n", ft_atof(argv[2]));
 		ft_printf("argc 4: %f\n", ft_atof(argv[3]));
+		printf("printf argc 4: %f\n", ft_atof(argv[3]));
 		ft_printf("test  : %f\n", 2.12345);
 		if (!ft_strcmp(argv[1], "julia"))
 			bad_args = 1;
