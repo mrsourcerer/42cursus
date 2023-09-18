@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 06:37:02 by danlopez          #+#    #+#             */
-/*   Updated: 2023/06/26 07:14:00 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/18 07:24:33 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,22 @@ static void	ft_int_part(int n, size_t size, char *str)
 static void	ft_pre_part(double n, size_t i_p, size_t p_p, char *str)
 {
 	size_t	i;
+	int		size;
+	int		num;
 
 	str[i_p - 1] = '.';
 	i = 0;
+	if (n < 0)
+		n = n * -1;
+	size = (int)p_p - 1;
+	n = (n - (int)n) * ft_pow(size);
+	if (n - (int)n >= 0.5)
+		n = n + 1;
+	num = (int)n;
 	while (i < p_p - 1)
 	{
-		n = n - (int)n;
-		str[i_p + i] = (int)(n * 10) + '0';
-		n = n * 10;
+		str[i_p + i] = (num / ft_pow(size - i - 1)) + '0';
+		num = num % ft_pow(size - i -1);
 		i++;
 	}
 	str[i_p + p_p - 1] = '\0';
