@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/06/22 07:24:48 by danlopez         ###   ########.fr        #
+#    Updated: 2023/09/19 06:38:49 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ CC = gcc
 
 NAME = fractol
 
-SRC = fractol.c
+SRC = fractol.c julia.c mandelbrot.c
 
 SRC_DIR = src/
 OBJ_DIR = obj/

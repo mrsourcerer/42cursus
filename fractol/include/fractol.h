@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/06/21 06:41:56 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/19 07:14:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ typedef struct s_vars
 //	t_image	*buf1;
 //	t_image	*buf2;
 }	t_vars;
+
+void	ft_julia(void);
+void	ft_mandelbrot(void);
 
 #endif
