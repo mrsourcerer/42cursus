@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/19 07:14:35 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/20 07:04:49 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,30 @@ typedef struct s_image
 	int		endian;
 }	t_image;
 
-/*typedef	struct s_complex
+typedef struct s_complex
 {
 	double	re;
 	double	im;
-}	t_complex;*/
+}	t_complex;
 
 typedef struct s_vars
 {
+	int		argc;
+	char	**argv;
 	void	*mlx;
 	void	*win;
 //	t_image	*buf1;
 //	t_image	*buf2;
 }	t_vars;
 
+//julia.c
 void	ft_julia(void);
+
+//mandelbrot.c
 void	ft_mandelbrot(void);
+
+//complex.c
+t_complex	ft_z(double re, double im);
+
 
 #endif
