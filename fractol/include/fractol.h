@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/20 07:04:49 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/21 07:17:41 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@
 # include  <errno.h>  // don't know if it's allowed --------------------------------
 # include <math.h>
 
+# define WIDTH 1000
+# define HEIGHT 1000
+
 typedef struct s_image
 {
 	void	*img;
@@ -50,6 +53,7 @@ typedef struct s_vars
 {
 	int		argc;
 	char	**argv;
+	char	*name;
 	void	*mlx;
 	void	*win;
 //	t_image	*buf1;

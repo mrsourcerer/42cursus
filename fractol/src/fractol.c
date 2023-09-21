@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/19 07:25:18 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/21 07:24:12 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,28 @@ int	ft_args_ok(int argc, char *argv[])
 	return (0);
 }
 
+void	ft_init_vars(int argc, char **argv, t_vars *vars)
+{
+	vars->argc = argc;
+	vars->argv = argv;
+	vars->name = ft_strjoin("Fract'ol: ", argv[1]);
+	vars->mlx = mlx_init();
+	if (!vars->mlx)
+		return ; // gestionar errores *************************************************************
+	vars->win = mlx_new_window(vars->mlx, WIDTH, HEIGHT, vars->name);
+	if (!vars->win)
+		return ; // gestionar errores *************************************************************
+}
+
 int	main(int argc, char *argv[])
 {
+	t_vars	*vars;
+
 	if (!ft_args_ok(argc, argv))
 		return (-1);
+	vars = (t_vars *)malloc(sizeof(t_vars) * 1);
+	if (!vars)
+		return (-1); // gestionar errores *********************************************************
+	ft_init_vars(argc, argv, vars);
 	return (0);
 }
