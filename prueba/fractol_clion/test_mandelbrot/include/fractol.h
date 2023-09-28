@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/21 07:17:41 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/28 06:55:39 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ typedef struct s_complex
 	double	im;
 }	t_complex;
 
+typedef struct s_color
+{
+	u_int8_t	channel[4];
+}	t_color;
+
 typedef struct s_vars
 {
 	int		argc;
@@ -56,6 +61,7 @@ typedef struct s_vars
 	char	*name;
 	void	*mlx;
 	void	*win;
+	t_image	*img;
 //	t_image	*buf1;
 //	t_image	*buf2;
 }	t_vars;

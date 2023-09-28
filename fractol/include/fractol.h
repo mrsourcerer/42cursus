@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/21 07:17:41 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/28 06:40:40 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ typedef struct s_complex
 	double	re;
 	double	im;
 }	t_complex;
+
+typedef struct s_color
+{
+	uint8_t	channel[4];
+}	t_color;
 
 typedef struct s_vars
 {
