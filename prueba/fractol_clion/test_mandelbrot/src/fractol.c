@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/21 07:24:12 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/29 07:19:25 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ void	ft_init_vars(int argc, char **argv, t_vars *vars)
 	vars->win = mlx_new_window(vars->mlx, WIDTH, HEIGHT, vars->name);
 	if (!vars->win)
 		return ; // gestionar errores *************************************************************
+	vars->img = ft_init_image(vars);
+	vars->color = 0;
+	//mlx_hook(vars->win, 17, 0, exit_hook, vars); // definir exit_hook ***************************
 }
 
 int	main(int argc, char *argv[])
@@ -64,5 +67,8 @@ int	main(int argc, char *argv[])
 	if (!vars)
 		return (-1); // gestionar errores *********************************************************
 	ft_init_vars(argc, argv, vars);
+	ft_draw(vars);
+	mlx_loop(vars->mlx);
+	//free_alloc(vars); // definir frees ************************************************************
 	return (0);
 }

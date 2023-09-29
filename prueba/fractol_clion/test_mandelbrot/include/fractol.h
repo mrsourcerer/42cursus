@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/28 06:55:39 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/09/29 07:18:38 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,23 @@ typedef struct s_vars
 	void	*mlx;
 	void	*win;
 	t_image	*img;
-//	t_image	*buf1;
-//	t_image	*buf2;
+	int		color;
 }	t_vars;
 
 //julia.c
-void	ft_julia(void);
+void		ft_julia(void);
 
 //mandelbrot.c
-void	ft_mandelbrot(void);
+void		ft_mandelbrot(void);
 
 //complex.c
 t_complex	ft_z(double re, double im);
+
+//draw.c
+void		ft_draw(t_vars *vars);
+
+//draw_utils.c
+t_image		*ft_init_image(t_vars *vars);
 
 
 #endif
