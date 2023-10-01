@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/29 07:25:36 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/01 10:37:11 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_color	ft_color(t_vars *vars)
 	t_color	color;
 
 	color.channel[0] = 0;
-	color.channel[(0 + vars->color) % 3 + 1] = (u_int8_t)1;
-	color.channel[(1 + vars->color) % 3 + 1] = (u_int8_t)1;
-	color.channel[(2 + vars->color) % 3 + 1] = (u_int8_t)1;
+	color.channel[(0 + vars->color) % 3 + 1] = (uint8_t)255; //red
+	color.channel[(1 + vars->color) % 3 + 1] = (uint8_t)0; //green
+	color.channel[(2 + vars->color) % 3 + 1] = (uint8_t)0; //blue
 	return (color);
 }
 

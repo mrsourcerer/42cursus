@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/28 06:40:40 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/01 09:11:16 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 # include <stdio.h>
 # include  <errno.h>  // don't know if it's allowed --------------------------------
 # include <math.h>
+// To use uint8_t
+# include <stdint.h> // re-think if it is neccesary --------------------------------
 
 # define WIDTH 1000
 # define HEIGHT 1000

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/29 07:19:25 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/01 10:24:49 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,20 @@
 
 int	ft_args_ok(int argc, char *argv[])
 {
-	int	bad_args;
-
-	bad_args = 0;
-	if (argc < 2 || argc == 3 || argc > 4)
-		bad_args = 1;
-	if (argc == 2)
+	if (argc == 2 && ft_strcmp(argv[1], "mandelbrot"))
 	{
-		if (!ft_strcmp(argv[1], "mandelbrot"))
-			bad_args = 1;
 		ft_mandelbrot();
 	}
-	if (argc == 4)
+	else if (argc == 4 && ft_strcmp(argv[1], "julia"))
 	{
-		//ft_printf("argc 3: %f\n", ft_atof(argv[2])); ******************************************
-		//ft_printf("argc 4: %f\n", ft_atof(argv[3])); ******************************************
-		if (!ft_strcmp(argv[1], "julia"))
-			bad_args = 1;
 		ft_julia();
 	}
-	if (bad_args)
+	else
 	{
 		ft_printf("Usage: fractol mandelbrot or fractol julia num1 num2\n");
-		return (1);
+		return (0);
 	}
-	return (0);
+	return (1);
 }
 
 void	ft_init_vars(int argc, char **argv, t_vars *vars)
@@ -54,7 +43,9 @@ void	ft_init_vars(int argc, char **argv, t_vars *vars)
 		return ; // gestionar errores *************************************************************
 	vars->img = ft_init_image(vars);
 	vars->color = 0;
-	//mlx_hook(vars->win, 17, 0, exit_hook, vars); // definir exit_hook ***************************
+	mlx_hook(vars->win, 17, 0, ft_exit_hook, vars);
+	//mlx_hook(vars->win, 2, 0, key_press, vars);
+	//mlx_hook(vars->win, 4, 0, mouse_press_hook, vars);
 }
 
 int	main(int argc, char *argv[])
@@ -69,6 +60,6 @@ int	main(int argc, char *argv[])
 	ft_init_vars(argc, argv, vars);
 	ft_draw(vars);
 	mlx_loop(vars->mlx);
-	//free_alloc(vars); // definir frees ************************************************************
+	ft_free_alloc(vars);
 	return (0);
 }

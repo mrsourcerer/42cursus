@@ -31,7 +31,8 @@ OS = $(shell uname -s)
 ifeq ($(OS), Darwin)
 	MLX=$(MLX_MAC)
 	C_MLX=$(C_MLX_MAC)
-	LINK= -lm -lmlx -framework OpenGL -framework AppKit
+	LINK= -L$(MLX) -lm -Imlx -lmlx -framework OpenGL -framework AppKit
+	#LINK= -lm -lmlx -framework OpenGL -framework AppKit
 else
 	MLX=$(MLX_LINUX)
 	C_MLX=$(C_MLX_LINUX)
@@ -46,7 +47,8 @@ CC = gcc
 
 NAME = fractol
 
-SRC = fractol.c julia.c mandelbrot.c complex.c draw.c draw_utils.c
+SRC = fractol.c julia.c mandelbrot.c complex.c draw.c draw_utils.c \
+		fractol_exit.c
 
 SRC_DIR = src/
 OBJ_DIR = obj/
