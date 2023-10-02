@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/01 10:37:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:58:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ t_color	ft_color(t_vars *vars)
 {
 	t_color	color;
 
-	color.channel[0] = 0;
-	color.channel[(0 + vars->color) % 3 + 1] = (uint8_t)255; //red
-	color.channel[(1 + vars->color) % 3 + 1] = (uint8_t)0; //green
-	color.channel[(2 + vars->color) % 3 + 1] = (uint8_t)0; //blue
+	color.channel[0 + vars->color] = 0;
+	color.channel[1] = (uint8_t)255; //red not necessary to cast = (uint8_t)255
+	color.channel[2] = (uint8_t)255; //green not necessary to cast (uint8_t)
+	color.channel[3] = (uint8_t)255; //blue not necessary to cast (uint8_t)
 	return (color);
 }
 
@@ -28,10 +28,10 @@ void	ft_put_pixel(t_vars *vars, int x, int y, t_color color)
 	int	offset;
 
 	offset = y * vars->img->line_length + x * (vars->img->bits_per_pixel / 8);
-	vars->img->addr[offset] = color.channel[3];
-	vars->img->addr[++offset] = color.channel[2];
-	vars->img->addr[++offset] = color.channel[1];
-	vars->img->addr[++offset] = color.channel[0];
+	vars->img->addr[offset] = (char)color.channel[3];
+	vars->img->addr[++offset] = (char)color.channel[2];
+	vars->img->addr[++offset] = (char)color.channel[1];
+	vars->img->addr[++offset] = (char)color.channel[0];
 }
 
 void	ft_final_draw(t_vars *vars)
