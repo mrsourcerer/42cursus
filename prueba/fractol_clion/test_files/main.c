@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 19:25:21 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/03 07:16:43 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/04 07:17:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 	void	*win;
 }				t_vars;*/
 
+/*
 int	ft_close(t_vars *vars)
 {
 	mlx_destroy_window(vars->mlx, vars->win);
@@ -34,6 +35,18 @@ int ft_key_press(int key, void *param)
 		ft_close(param);
 	return (0);
 }
+*/
+
+/*#include <mlx.h>
+
+typedef struct s_image {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_image;
+*/
 
 void my_pixel_put(t_image *img, int x, int y, int color)
 {
@@ -48,6 +61,9 @@ int	main(void)
 	void	*mlx;
 	void	*mlx_win;
 	t_image	img;
+	int		x;
+	int		y;
+	int		color;
 
 /*
 	mlx = mlx_init();
@@ -57,12 +73,43 @@ int	main(void)
 */	
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 640, 480, "Hello world!");
-	img.img = mlx_new_image(mlx, 640, 480);
+	mlx_win = mlx_new_window(mlx, 4, 4, "Hello world!");
+	ft_printf("bpp: %i ; line_length: %i ; endian: %i\n", img.bits_per_pixel, img.line_length, img.endian);
+	img.img = mlx_new_image(mlx, 4, 4);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
-	//mlx_pixel_put(mlx, mlx_win, 100, 100, 0x00FF0000);
-	my_pixel_put(&img, 100, 100, 0x00FF0000);
+	ft_printf("bpp: %i ; line_length: %i ; endian: %i\n", img.bits_per_pixel, img.line_length, img.endian);
+	x = 1;
+	y = 1;
+	while(x <= 4)
+	{
+		while(y <= 4)
+		{
+			color = *(unsigned int*)(img.addr + (y * img.line_length + x * img.bits_per_pixel / 8));
+			ft_printf("x0: %i ; y0: %i ; color: %X\n", x, y, color);
+			y++;
+		}
+		y = 1;
+		x++;
+	}
+	mlx_pixel_put(mlx, mlx_win, 1, 1, 0x0000FF00);
+	my_pixel_put(&img, 2, 2, 0x00FF0000);
+	my_pixel_put(&img, 3, 3, 0x0000FF00);
+	my_pixel_put(&img, 4, 4, 0x000000FF);
+	x = 1;
+	y = 1;
+	while(x <= 4)
+	{
+		while(y <= 4)
+		{
+			color = *(unsigned int*)(img.addr + (y * img.line_length + x * img.bits_per_pixel / 8));
+			ft_printf("x: %i ; y: %i ; color: %X\n", x, y, color);
+			y++;
+		}
+		y = 1;
+		x++;
+	}
+
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 
