@@ -6,20 +6,20 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/01 11:58:53 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/05 21:09:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-t_color	ft_color(t_vars *vars)
+t_color	ft_color(t_vars *vars, int x, int y)
 {
 	t_color	color;
 
 	color.channel[0 + vars->color] = 0;
-	color.channel[1] = (uint8_t)255; //red not necessary to cast = (uint8_t)255
-	color.channel[2] = (uint8_t)255; //green not necessary to cast (uint8_t)
-	color.channel[3] = (uint8_t)255; //blue not necessary to cast (uint8_t)
+	color.channel[1] = (uint8_t)(x * 255 / WIDTH + y - y); //red not necessary to cast = (uint8_t)255
+	color.channel[2] = (uint8_t)(x - x + y * 255 / HEIGHT); //green not necessary to cast (uint8_t)
+	color.channel[3] = (uint8_t)(x * 255 / WIDTH + y * 255 / HEIGHT); //blue not necessary to cast (uint8_t)
 	return (color);
 }
 
@@ -51,7 +51,7 @@ void	ft_draw(t_vars *vars)
 		x = 0;
 		while (x < WIDTH)
 		{
-			color = ft_color(vars);
+			color = ft_color(vars, x, y);
 			ft_put_pixel(vars, x++, HEIGHT - y, color);
 		}
 		y--;

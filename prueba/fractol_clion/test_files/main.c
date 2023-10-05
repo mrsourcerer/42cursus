@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 19:25:21 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/05 06:31:35 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:45:51 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ int	main(void)
 */	
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 4, 4, "Hello world!");
+	mlx_win = mlx_new_window(mlx, 640, 480, "Hello world!");
 	ft_printf("bpp: %i ; line_length: %i ; endian: %i\n", img.bits_per_pixel, img.line_length, img.endian);
-	img.img = mlx_new_image(mlx, 4, 4);
+	img.img = mlx_new_image(mlx, 640, 480);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								&img.endian);
 	ft_printf("bpp: %i ; line_length: %i ; endian: %i\n", img.bits_per_pixel, img.line_length, img.endian);
@@ -93,9 +93,14 @@ int	main(void)
 		x++;
 	}
 	mlx_pixel_put(mlx, mlx_win, 1, 1, 0x0000FF00);
-	my_pixel_put(&img, 2, 2, 0x00FF0000);
-	my_pixel_put(&img, 3, 3, 0x0000FF00);
-	my_pixel_put(&img, 4, 4, 0x000000FF);
+	x = 0;
+	while(x < 100)
+	{
+		my_pixel_put(&img, x, 20, 0x00FF0000);
+		my_pixel_put(&img, x, 30, 0x0000FF00);
+		my_pixel_put(&img, x, 40, 0x000000FF);
+		x++;
+	}
 	x = 0;
 	y = 0;
 	while(x <= 4)
@@ -110,7 +115,7 @@ int	main(void)
 		x++;
 	}
 
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 1, 1);
+	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 
 
