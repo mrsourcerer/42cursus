@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 19:25:21 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/04 07:17:53 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/05 06:31:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ int	main(void)
 	my_pixel_put(&img, 2, 2, 0x00FF0000);
 	my_pixel_put(&img, 3, 3, 0x0000FF00);
 	my_pixel_put(&img, 4, 4, 0x000000FF);
-	x = 1;
-	y = 1;
+	x = 0;
+	y = 0;
 	while(x <= 4)
 	{
 		while(y <= 4)
@@ -106,11 +106,11 @@ int	main(void)
 			ft_printf("x: %i ; y: %i ; color: %X\n", x, y, color);
 			y++;
 		}
-		y = 1;
+		y = 0;
 		x++;
 	}
 
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+	mlx_put_image_to_window(mlx, mlx_win, img.img, 1, 1);
 	mlx_loop(mlx);
 
 
