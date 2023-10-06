@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/05 21:09:58 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/06 06:56:34 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_color	ft_color(t_vars *vars, int x, int y)
 	color.channel[0 + vars->color] = 0;
 	color.channel[1] = (uint8_t)(x * 255 / WIDTH + y - y); //red not necessary to cast = (uint8_t)255
 	color.channel[2] = (uint8_t)(x - x + y * 255 / HEIGHT); //green not necessary to cast (uint8_t)
-	color.channel[3] = (uint8_t)(x * 255 / WIDTH + y * 255 / HEIGHT); //blue not necessary to cast (uint8_t)
+	color.channel[3] = (uint8_t)(x * 255 / WIDTH + y * 255 / HEIGHT) * 0; //blue not necessary to cast (uint8_t)
 	return (color);
 }
 

@@ -6,7 +6,7 @@
 #    By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 10:30:12 by danlopez          #+#    #+#              #
-#    Updated: 2023/10/05 19:22:39 by danlopez         ###   ########.fr        #
+#    Updated: 2023/10/06 07:17:52 by danlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ ifeq ($(OS), Darwin)
 else
 	MLX=$(MLX_LINUX)
 	C_MLX=$(C_MLX_LINUX)
-	LINK= -lXext -lX11 -lm -lz -L/usr/lib -lbsd
+	LINK= -lXext -lX11 -lm -lz -L/usr/lib 
 	#LINK= -lXext -lX11 -lm -lz -L/usr/lib
 endif
 
@@ -51,7 +51,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME) 
 
 %.o: %.c
-	$(CC) $(FLAGS) -I$(MLX) -c $< -o $@
+	$(CC) $(FLAGS) -I$(MLX) -I$(LIBFT) -c $< -o $@
 
 $(NAME): $(OBJ)
 	make -sC $(MLX) && cp $(C_MLX) ./
