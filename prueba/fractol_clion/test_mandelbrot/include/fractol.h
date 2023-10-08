@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/01 08:58:47 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/08 09:24:14 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_vars
 	void	*win;
 	t_image	*img;
 	int		color;
+	int		max;
 }	t_vars;
 
 //julia.c
@@ -72,6 +73,7 @@ void		ft_julia(void);
 
 //mandelbrot.c
 void		ft_mandelbrot(void);
+int			ft_check_mandelbrot(double c_x, double c_y, int max);
 
 //complex.c
 t_complex	ft_z(double re, double im);
