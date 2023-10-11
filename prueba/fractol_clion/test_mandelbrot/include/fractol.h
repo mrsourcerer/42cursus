@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/08 09:24:14 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/11 07:15:36 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,9 @@ void		ft_draw(t_vars *vars);
 
 //draw_utils.c
 t_image		*ft_init_image(t_vars *vars);
+
+//controls.c
+int			key_press(int key, t_vars *vars);
 
 //fractol_exit.c
 int			ft_exit_hook(t_vars *vars);

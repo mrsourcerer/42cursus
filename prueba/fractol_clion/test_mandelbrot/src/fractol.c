@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/08 11:58:31 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/11 07:14:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_init_vars(int argc, char **argv, t_vars *vars)
 	vars->color = 0;
 	vars->max = 20;
 	mlx_hook(vars->win, 17, 0, ft_exit_hook, vars);
-	//mlx_hook(vars->win, 2, 0, key_press, vars);
+	mlx_hook(vars->win, 2, 0, key_press, vars);
 	//mlx_hook(vars->win, 4, 0, mouse_press_hook, vars);
 }
 

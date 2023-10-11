@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 19:25:21 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/09 06:34:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/11 07:24:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ int	main(void)
 	ft_printf("bpp: %i ; line_length: %i ; endian: %i\n", img.bits_per_pixel, img.line_length, img.endian);
 	x = 1;
 	y = 1;
-	while(x <= 4)
+	while(x <= 200)
 	{
-		while(y <= 4)
+		while(y <= 200)
 		{
 			color = *(unsigned int*)(img.addr + (y * img.line_length + x * img.bits_per_pixel / 8));
 			ft_printf("x0: %i ; y0: %i ; color: %X\n", x, y, color);
