@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 06:41:16 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/01 07:32:31 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/13 08:37:03 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_free_alloc(t_vars *vars)
 		free(vars);
 }
 
-int	ft_exit_hook(t_vars *vars)
+int	ft_exit(t_vars *vars)
 {
 	ft_errors_exit(0, vars);
 	return (1);

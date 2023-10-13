@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/11 07:15:36 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:08:02 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ typedef struct s_vars
 	t_image	*img;
 	int		color;
 	int		max;
+	double	zoom;
+	double	offset_x;
+	double	offset_y;
 }	t_vars;
 
 //julia.c
@@ -85,10 +88,11 @@ void		ft_draw(t_vars *vars);
 t_image		*ft_init_image(t_vars *vars);
 
 //controls.c
-int			key_press(int key, t_vars *vars);
+int			ft_key_press(int key, t_vars *vars);
+int			ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars);
 
 //fractol_exit.c
-int			ft_exit_hook(t_vars *vars);
+int			ft_exit(t_vars *vars);
 void		ft_free_alloc(t_vars *vars);
 void		ft_errors_exit(int error_id, t_vars *vars);
 

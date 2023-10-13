@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/08 12:45:33 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/13 12:02:10 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,27 @@ uint8_t	ft_255(int c_x, int c_y)
 	return ((uint8_t)(sqrt(c_x * c_x + c_y * c_y) / sqrt(WIDTH * WIDTH / 4.0 + HEIGHT * HEIGHT / 4.0) * 255));
 }
 
-double	ft_get_cx(int x)
+double	ft_get_cx(int x, t_vars *vars)
 {
 	double	c_x;
+	double	zoom;
+	double	z_x;
 
-	c_x = (2 * x - WIDTH) / (WIDTH / 2.0);
+	zoom = vars->zoom;
+	z_x = vars->offset_x;
+	c_x = (2 * x - WIDTH) / ((WIDTH / 2.0) * zoom) - z_x;
 	return (c_x);
 }
 
-double	ft_get_cy(int y)
+double	ft_get_cy(int y, t_vars *vars)
 {
 	double	c_y;
+	double	zoom;
+	double	z_y;
 
-	c_y = (2 * y - HEIGHT) / (HEIGHT / 2.0);
+	zoom = vars->zoom;
+	z_y = vars->offset_y;
+	c_y = (2 * y - HEIGHT) / ((HEIGHT / 2.0) * zoom) - z_y;
 	return (c_y);
 }
 
@@ -40,8 +48,8 @@ t_color	ft_color(t_vars *vars, int x, int y)
 	double	c_y;
 	int		check;
 
-	c_x = ft_get_cx(x);
-	c_y = ft_get_cy(y);
+	c_x = ft_get_cx(x, vars);
+	c_y = ft_get_cy(y, vars);
 	//if (x == 250 && y >= 0)
 	//	ft_printf("x: %i c_x: %f ; y: %i c_y: %f\n", x, c_x, y, c_y);
 	check = ft_check_mandelbrot(c_x, c_y, vars->max);

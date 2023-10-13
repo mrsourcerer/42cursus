@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/11 07:14:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:09:56 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,13 @@ void	ft_init_vars(int argc, char **argv, t_vars *vars)
 		return ; // gestionar errores *************************************************************
 	vars->img = ft_init_image(vars);
 	vars->color = 0;
-	vars->max = 20;
-	mlx_hook(vars->win, 17, 0, ft_exit_hook, vars);
-	mlx_hook(vars->win, 2, 0, key_press, vars);
-	//mlx_hook(vars->win, 4, 0, mouse_press_hook, vars);
+	vars->max = 15;
+	vars->zoom = 1.0;
+	vars->offset_x = 0.0;
+	vars->offset_y = 0.0;
+	mlx_hook(vars->win, 17, 0, ft_exit, vars);
+	mlx_hook(vars->win, 2, 0, ft_key_press, vars);
+	mlx_hook(vars->win, 4, 0, ft_mouse_press, vars);
 }
 
 int	main(int argc, char *argv[])
