@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 07:06:00 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/16 06:11:52 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/18 06:59:30 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,15 @@ int	ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars)
 
 	old_zoom = vars->zoom;
 	name = vars->name;
-	ft_printf("llega\n");
 	if (key == M_SCR_U)
 	{
 		vars->zoom = vars->zoom * 1.2;
-		vars->max = vars->max + (int)vars->zoom * 0;
+		vars->max = vars->max + (int)(vars->zoom * 0.3);
 	}
 	if (key == M_SCR_D)
 	{
 		vars->zoom = vars->zoom / 1.2;
-		vars->max = vars->max - (int)vars->zoom * 0;
+		vars->max = vars->max - (int)(vars->zoom * 0.3);
 	}
 	if (pos_x < WIDTH / 2)
 		vars->offset_x = 2 * ((2 / old_zoom) - (2 / vars->zoom));

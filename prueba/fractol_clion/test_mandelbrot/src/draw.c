@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/13 12:02:10 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/18 07:02:21 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ double	ft_get_cx(int x, t_vars *vars)
 
 	zoom = vars->zoom;
 	z_x = vars->offset_x;
-	c_x = (2 * x - WIDTH) / ((WIDTH / 2.0) * zoom) - z_x;
+	c_x = (2 * x - WIDTH) / ((WIDTH / 2.0) * zoom) - z_x * vars->zoom;
 	return (c_x);
 }
 
@@ -37,7 +37,7 @@ double	ft_get_cy(int y, t_vars *vars)
 
 	zoom = vars->zoom;
 	z_y = vars->offset_y;
-	c_y = (2 * y - HEIGHT) / ((HEIGHT / 2.0) * zoom) - z_y;
+	c_y = (2 * y - HEIGHT) / ((HEIGHT / 2.0) * zoom) - z_y * vars->zoom;
 	return (c_y);
 }
 
