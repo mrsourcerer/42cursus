@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/13 11:08:02 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:55:14 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ typedef struct s_vars
 	int		color;
 	int		max;
 	double	zoom;
-	double	offset_x;
-	double	offset_y;
+	int		offset_x;
+	int		offset_y;
 }	t_vars;
 
 //julia.c
