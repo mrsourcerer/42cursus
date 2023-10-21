@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/19 20:35:05 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:18:42 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ double	ft_get_cx(int x, t_vars *vars)
 	zoom = vars->zoom;
 	z_x = vars->offset_x;
 	//c_x = (2 * x - z_x) / ((z_x / 2.0) * zoom);
-	c_x = (x - z_x) * 4 / WIDTH;
+	//c_x = (x - z_x) * 4 / WIDTH;
+	c_x = (x + z_x - WIDTH) * 4 / WIDTH / zoom;
 	return (c_x);
 }
 
@@ -39,7 +40,7 @@ double	ft_get_cy(int y, t_vars *vars)
 	zoom = vars->zoom;
 	z_y = vars->offset_y;
 	//c_y = (2 * y - z_y) / ((z_y / 2.0) * zoom);
-	c_y = (y - z_y) * 4 / HEIGHT;
+	c_y = (y + z_y - HEIGHT) * 4 / HEIGHT / zoom;
 	return (c_y);
 }
 
@@ -52,8 +53,8 @@ t_color	ft_color(t_vars *vars, int x, int y)
 
 	c_x = ft_get_cx(x, vars);
 	c_y = ft_get_cy(y, vars);
-	//if (x == 250 && y >= 0)
-	//	ft_printf("x: %i c_x: %f ; y: %i c_y: %f\n", x, c_x, y, c_y);
+	if ((x == 0 && y == 0) || (x == WIDTH - 1 && y == HEIGHT - 1))
+		ft_printf("x: %i ; y: %i <--> c_x: %f c_y: %f <--> max: %i\n", x, y, c_x, c_y, vars->max);
 	check = ft_check_mandelbrot(c_x, c_y, vars->max);
 	if (check > vars->max)
 	{

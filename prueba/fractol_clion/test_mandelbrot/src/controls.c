@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 07:06:00 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/19 20:53:14 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:21:36 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,23 @@ int	ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars)
 
 	old_zoom = vars->zoom;
 	name = vars->name;
-	if (key == M_SCR_U)
+	if ((key == M_SCR_U || key == M_CLK_L) && (vars->zoom <= 2048))
 	{
-		vars->zoom = vars->zoom * 1.2;
-		vars->max = vars->max + (int)(vars->zoom * 0.3);
+		vars->zoom = vars->zoom * 1.5;
+		vars->max = vars->max + (int)(vars->zoom * 0.01);
 	}
-	if (key == M_SCR_D)
+	if (key == M_SCR_D || key == M_CLK_R)
 	{
-		vars->zoom = vars->zoom / 1.2;
-		vars->max = vars->max - (int)(vars->zoom * 0.3);
+		vars->zoom = vars->zoom / 1.5;
+		vars->max = vars->max - (int)(old_zoom * 0.01);
+		ft_printf("reduccion zoom: old_zoom: %f -> zoom: %f\n", old_zoom, vars->zoom);
+		//old_zoom = vars->zoom;
 	}
-	vars->offset_x = pos_x - WIDTH / 2;
-	vars->offset_y = pos_y - HEIGHT / 2;
+	vars->offset_x = pos_x + (vars->offset_x - WIDTH / 2) * vars->zoom / old_zoom;
+	vars->offset_y = pos_y + (vars->offset_y - HEIGHT / 2) * vars->zoom / old_zoom;
 	if (vars->zoom <= 1.0)
 		ft_reset_zoom(vars);
-	ft_printf("%s pressed: M_SCR_U %i  pos_x: %i  pos_y: %i  zoom: %f\n", name, key, pos_x, pos_y, vars->zoom);
+	ft_printf("%s pressed: mouse %i  pos_x: %i  pos_y: %i  zoom: %f\n", name, key, pos_x, pos_y, vars->zoom);
 	ft_draw(vars);
 	return (0);
 }

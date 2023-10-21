@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 06:14:51 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/28 19:12:28 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/21 11:25:14 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@
 */
 
 # define M_CLK_L 1
-# define M_CLK_R 3
-# define M_CLK_M 2
+# define M_CLK_R 2
+# define M_CLK_M 3
 # define M_SCR_U 4
 # define M_SCR_D 5
 
