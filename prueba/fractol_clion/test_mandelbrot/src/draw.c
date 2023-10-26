@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 07:14:42 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/21 13:18:42 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:59:05 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ t_color	ft_color(t_vars *vars, int x, int y)
 	c_x = ft_get_cx(x, vars);
 	c_y = ft_get_cy(y, vars);
 	if ((x == 0 && y == 0) || (x == WIDTH - 1 && y == HEIGHT - 1))
-		ft_printf("x: %i ; y: %i <--> c_x: %f c_y: %f <--> max: %i\n", x, y, c_x, c_y, vars->max);
-	check = ft_check_mandelbrot(c_x, c_y, vars->max);
+		ft_printf("x: %i ; y: %i <--> c_x: %f c_y: %f <--> max: %i <--> j_re: %f j_im: %f\n", x, y, c_x, c_y, vars->max, vars->j_re, vars->j_im);
+	check = ft_check_julia(c_x, c_y, vars);
+	//check = ft_check_mandelbrot(c_x, c_y, vars->max);
 	if (check > vars->max)
 	{
 		color.channel[0 + vars->color] = 0;

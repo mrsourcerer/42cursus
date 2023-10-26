@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/19 19:55:14 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:01:26 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,14 @@ typedef struct s_vars
 	double	zoom;
 	int		offset_x;
 	int		offset_y;
+	int		julia;
+	double	j_re;
+	double	j_im;
 }	t_vars;
 
 //julia.c
 void		ft_julia(void);
+int			ft_check_julia(double c_x, double c_y, t_vars *vars);
 
 //mandelbrot.c
 void		ft_mandelbrot(void);

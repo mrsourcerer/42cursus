@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:50 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/08 11:33:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:58:34 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	ft_check_mandelbrot(double c_x, double c_y, int max)
 
 	c = ft_z(c_x, c_y);
 	z0 = ft_z(0, 0);
+	//z0 = ft_z(c_x, c_y);
+	//c = ft_z(0, 0);
 	i = 0;
 	while (i <= max)
 	{
