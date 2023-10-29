@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 06:37:02 by danlopez          #+#    #+#             */
-/*   Updated: 2023/09/18 07:24:33 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/10/29 12:51:42 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ static int	ft_pow(int n)
 	return (i);
 }
 
-static void	ft_int_part(int n, size_t size, char *str)
+static void	ft_int_part(double d, size_t size, char *str)
 {
 	size_t	i;
+	int		n;
 
+	n = (int)d;
 	i = 0;
-	if (n < 0)
+	if (d < 0)
 	{
 		str[i] = '-';
 		n = n * -1;
@@ -100,7 +102,8 @@ char	*ft_ftoa(double n, int precision)
 	str = (char *)malloc((int_part + pre_part) * sizeof(char));
 	if (!str)
 		return (0);
-	ft_int_part((int)n, int_part - 1, str);
+	ft_int_part(n, int_part - 1, str);
+	//ft_int_part((int)n, int_part - 1, str);
 	if (pre_part)
 		ft_pre_part(n, int_part, pre_part, str);
 	else
