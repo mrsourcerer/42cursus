@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/10/01 09:11:16 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/04 12:48:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,45 @@ typedef struct s_vars
 	char	*name;
 	void	*mlx;
 	void	*win;
-//	t_image	*buf1;
-//	t_image	*buf2;
+	t_image	*img;
+	int		color;
+	int		max;
+	double	zoom;
+	int		offset_x;
+	int		offset_y;
+	int		julia;
+	double	j_re;
+	double	j_im;
 }	t_vars;
 
 //julia.c
-void	ft_julia(void);
+void		ft_julia(t_vars *vars);
+int			ft_check_julia(double c_x, double c_y, t_vars *vars);
 
 //mandelbrot.c
-void	ft_mandelbrot(void);
+void		ft_mandelbrot(t_vars *vars);
+int			ft_check_mandelbrot(double c_x, double c_y, t_vars *vars);
+
 
 //complex.c
 t_complex	ft_z(double re, double im);
 
+//draw.c
+void		ft_draw(t_vars *vars);
+
+//draw_utils.c
+double		ft_get_cx(int x, t_vars *vars);
+double		ft_get_cy(int y, t_vars *vars);
+void		ft_channel(t_color *color, uint8_t c1, uint8_t c2, uint8_t c3);
+t_image		*ft_init_image(t_vars *vars);
+
+//controls.c
+int			ft_key_press(int key, t_vars *vars);
+int			ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars);
+
+//fractol_exit.c
+int			ft_exit(t_vars *vars);
+void		ft_errors_exit(int error_id, t_vars *vars);
+void		ft_free_alloc(t_vars *vars);
 
 #endif

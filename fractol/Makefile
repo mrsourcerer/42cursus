@@ -46,7 +46,8 @@ CC = gcc
 
 NAME = fractol
 
-SRC = fractol.c julia.c mandelbrot.c complex.c
+SRC = fractol.c julia.c mandelbrot.c complex.c controls.c \
+		draw.c draw_utils.c fractol_exit.c
 
 SRC_DIR = src/
 OBJ_DIR = obj/
