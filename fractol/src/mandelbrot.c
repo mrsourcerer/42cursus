@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:50 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/04 10:21:59 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/06 07:19:35 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ int	ft_check_mandelbrot(double c_x, double c_y, t_vars *vars)
 		zn = ft_z(pow(z0.re, 2.0) + pow(z0.im, 2.0) + c.re, \
 				2 * z0.re * z0.im + c.im);
 		if (pow(zn.re, 2.0) + pow(zn.im, 2.0) > 4)
-			return (i);
+			return (ft_printf("c_x: %f c_y: %f tries: %i\n", c_x, c_y, i), i);
 		i++;
 		z0 = zn;
 	}
+	ft_printf("c_x: %f c_y: %f tries: %i\n", c_x, c_y, vars->max + 1);
 	return (vars->max + 1);
 }
