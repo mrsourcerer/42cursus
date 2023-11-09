@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/07 07:10:18 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:53:11 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
 // To use uint8_t
 # include <stdint.h> // re-think if it is neccesary --------------------------------
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 100
+# define HEIGHT 100
 
 typedef struct s_image
 {
