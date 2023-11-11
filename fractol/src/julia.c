@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:32 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/06 06:48:09 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/11 11:53:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int	ft_check_julia(double c_x, double c_y, t_vars *vars)
 	t_complex	zn;
 	int			i;
 
-	//c = ft_z(c_x, c_y);
-	//z0 = ft_z(vars->j_re, vars->j_im);
-	z0 = ft_z(c_x, c_y);
+	//if (vars->j_re < 0)
+	//c_x = -c_x;
+	z0 = ft_z(-c_x, c_y);
 	c = ft_z(vars->j_re, vars->j_im);
 	i = 0;
 	while (i <= vars->max)
 	{
-		zn = ft_z(z0.re * z0.re + z0.im * z0.im + c.re, \
+		zn = ft_z(pow(z0.re, 2) - pow(z0.im, 2) + c.re, \
 				2 * z0.re * z0.im + c.im);
-		if (pow(zn.re, 2.0) + pow(zn.im, 2.0) > 4)
+		if (pow(zn.re, 2) + pow(zn.im, 2) > 4)
 			return (i);
 		i++;
 		z0 = zn;

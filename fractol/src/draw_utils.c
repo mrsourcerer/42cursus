@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 07:03:21 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/06 07:05:44 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/11 11:25:38 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ double	ft_get_cy(int y, t_vars *vars)
 	zoom = vars->zoom;
 	z_y = vars->offset_y;
 	c_y = (HEIGHT - (y + z_y)) * 4 / HEIGHT / zoom;
-	//c_y = (y + z_y - HEIGHT) * 4 / HEIGHT / zoom;
 	return (c_y);
 }
 

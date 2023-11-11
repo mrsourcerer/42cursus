@@ -6,17 +6,19 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 07:02:50 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/09 19:31:36 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/11 11:21:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
+/*
 uint8_t	ft_255(int c_x, int c_y)
 {
 	return ((uint8_t)(sqrt(c_x * c_x + c_y * c_y) / \
 		sqrt(WIDTH * WIDTH / 4.0 + HEIGHT * HEIGHT / 4.0) * 255));
 }
+*/
 
 t_color	ft_color(t_vars *vars, int x, int y)
 {
@@ -37,24 +39,9 @@ t_color	ft_color(t_vars *vars, int x, int y)
 	color.channel[0] = 0;
 	if (check > vars->max)
 		ft_channel(&color, 10, 10, 50);
-	/*{
-		//ft_channel(&color, 10, 10, 50);
-		color.channel[1] = 10; //red not necessary to cast = (uint8_t)255
-		color.channel[2] = 10; //green not necessary to cast = (uint8_t)255
-		color.channel[3] = 50; //blue not necessary to cast = (uint8_t)255
-	}*/
 	else
 		ft_channel(&color, check * 255 / (vars->max + 1), \
 					check * 200 / (vars->max + 1), 0);
-	/*
-	{
-		ft_channel(&color, check * 255 / (vars->max + 1), \
-					check * 200 / (vars->max + 1), 0);
-
-		color.channel[1] = check * 255 / (vars->max + 1); //red not necessary to cast = (uint8_t)255
-		color.channel[2] = check * 200 / (vars->max + 1); //green not necessary to cast = (uint8_t)255
-		color.channel[3] = 0 / (vars->max + 1); //blue not necessary to cast = (uint8_t)255
-	}*/
 	return (color);
 }
 
