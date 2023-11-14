@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/04 10:12:31 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/14 07:10:58 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,6 @@ void	ft_init_vars(int argc, char **argv, t_vars *vars)
 	vars->offset_x = WIDTH / 2;
 	vars->offset_y = HEIGHT / 2;
 	ft_init_j(argv, vars);
-	//if (ft_strcmp(argv[1], "julia"))
-	//{
-	//	vars->j_re = ft_atof(argv[2]);
-	//	vars->j_im = ft_atof(argv[3]);
-	//}
 	mlx_hook(vars->win, 17, 1L << 17, ft_exit, vars);
 	mlx_hook(vars->win, 2, 1L << 0, ft_key_press, vars);
 	mlx_mouse_hook(vars->win, ft_mouse_press, vars);
@@ -75,7 +70,6 @@ void	ft_init_vars(int argc, char **argv, t_vars *vars)
 int	main(int argc, char *argv[])
 {
 	t_vars	*vars;
-
 
 	vars = (t_vars *)malloc(sizeof(t_vars) * 1);
 	if (!vars)

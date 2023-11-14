@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:50 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/11 11:52:46 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/14 07:09:06 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_mandelbrot(t_vars *vars)
 {
-	ft_printf("Entering mandelbrot\n");
+	ft_printf("Type mandelbrot, no more params\n");
 	vars->julia = 0;
 }
 
