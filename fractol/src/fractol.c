@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/14 07:10:58 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/15 07:11:08 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	ft_args_ok(int argc, char *argv[], t_vars *vars)
 	{
 		ft_mandelbrot(vars);
 	}
-	else if (argc == 4 && ft_strcmp(argv[1], "julia"))
+	/*else if (argc == 4 && ft_strcmp(argv[1], "julia") \
+				&& ft_julia_ok(argc, argv, vars))
+	*/
+	else if (ft_julia_ok(argc, argv, vars))
 	{
 		ft_julia(vars);
 	}
@@ -74,6 +77,9 @@ int	main(int argc, char *argv[])
 	vars = (t_vars *)malloc(sizeof(t_vars) * 1);
 	if (!vars)
 		return (-1); // gestionar errores *********************************************************
+	//checkear va bien lo de meter los argumentos en vars!!!!!
+	vars->argc = argc;
+	vars->argv = argv;
 	if (!ft_args_ok(argc, argv, vars))
 		return (free(vars), -1);
 	ft_init_vars(argc, argv, vars);

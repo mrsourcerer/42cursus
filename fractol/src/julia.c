@@ -6,11 +6,21 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:32 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/14 07:08:21 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/15 07:11:56 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+
+int	ft_julia_ok(int argc, char **argv, t_vars *vars)
+{
+	if (argc != 4)
+		return (0);
+	if (!ft_strcmp(argv[1], "julia"))
+		return (0);
+	ft_printf("argc: %i\n", vars->argc);
+	return (1);
+}
 
 void	ft_julia(t_vars *vars)
 {

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/11 08:17:25 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/15 06:57:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct s_vars
 }	t_vars;
 
 //julia.c
+int			ft_julia_ok(int argc, char **argv, t_vars *vars);
 void		ft_julia(t_vars *vars);
 int			ft_check_julia(double c_x, double c_y, t_vars *vars);
 
