@@ -6,19 +6,49 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:32 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/15 07:11:56 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:00:32 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	ft_julia_ok(int argc, char **argv, t_vars *vars)
+int	ft_is_allnum(char *str)
 {
-	if (argc != 4)
+	int	dot;
+
+	dot = 0;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str != '\0')
+	{
+		if (!ft_isdigit(*str))
+		{
+			if (*str == '.')
+				dot++;
+			else
+				return (0);
+		}
+		str++;
+	}
+	if (dot > 1)
 		return (0);
-	if (!ft_strcmp(argv[1], "julia"))
+	return (1);
+}
+
+int	ft_julia_ok(t_vars *vars)
+{
+	if (vars->argc != 4)
+		return (0);
+	if (!ft_strcmp(vars->argv[1], "julia"))
 		return (0);
 	ft_printf("argc: %i\n", vars->argc);
+	if (!ft_is_allnum(vars->argv[2]))
+		return (0);
+	if (!ft_is_allnum(vars->argv[3]))
+		return (0);
+	vars->j_re = ft_atof(vars->argv[2]);
+	vars->j_im = ft_atof(vars->argv[3]);
+	ft_printf("julia_ok termina con 1\n");
 	return (1);
 }
 
