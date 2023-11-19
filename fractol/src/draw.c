@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 07:02:50 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/13 05:48:41 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/19 13:37:06 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,19 @@ t_color	ft_color(t_vars *vars, int x, int y)
 		check = ft_check_julia(c_x, c_y, vars);
 	else
 		check = ft_check_mandelbrot(c_x, c_y, vars);
-	if ((x == 0 && y == 0) || (x == WIDTH - 1 && y == HEIGHT - 1) \
+	/*if ((x == 0 && y == 0) || (x == WIDTH - 1 && y == HEIGHT - 1) \
 		|| (x == 500 && y == 500) || (x == 0 && y == 500) || (x == 999 && y == 500))
 		ft_printf("x: %i ; y: %i <--> c_x: %f c_y: %f <--> check: %i <--> max: %i <--> j_re: %f j_im: %f <--> julia: %i\n", x, y, c_x, c_y, check, vars->max, vars->j_re, vars->j_im, vars->julia);
+	*/
 	color.channel[0] = 0;
 	if (check > vars->max)
-		ft_channel(&color, 10, 10, 50);
+		ft_channel(&color, 255, 255, 255);
+		//ft_channel(&color, 10, 10, 50);
 	else
-		ft_channel(&color, check * 255 / (vars->max + 1), \
+		ft_channel(&color, check % 7 * 255 / 7, check % 15 * 255 / 15, check % 16 * 255 / 16);
+		/*ft_channel(&color, check * 255 / (vars->max + 1), \
 					check * 200 / (vars->max + 1), 0);
+					*/
 	return (color);
 }
 

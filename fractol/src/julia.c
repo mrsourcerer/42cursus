@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:32 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/16 21:00:32 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/19 08:17:04 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,12 @@ int	ft_julia_ok(t_vars *vars)
 		return (0);
 	if (!ft_strcmp(vars->argv[1], "julia"))
 		return (0);
-	ft_printf("argc: %i\n", vars->argc);
 	if (!ft_is_allnum(vars->argv[2]))
 		return (0);
 	if (!ft_is_allnum(vars->argv[3]))
 		return (0);
 	vars->j_re = ft_atof(vars->argv[2]);
 	vars->j_im = ft_atof(vars->argv[3]);
-	ft_printf("julia_ok termina con 1\n");
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/16 20:23:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/19 12:45:05 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ int			ft_check_julia(double c_x, double c_y, t_vars *vars);
 //mandelbrot.c
 void		ft_mandelbrot(t_vars *vars);
 int			ft_check_mandelbrot(double c_x, double c_y, t_vars *vars);
-
 
 //complex.c
 t_complex	ft_z(double re, double im);

@@ -6,7 +6,7 @@
 /*   By: bde-mada <bde-mada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:58:48 by bde-mada          #+#    #+#             */
-/*   Updated: 2023/11/19 09:37:42 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:09:24 by bde-mada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,12 @@ void	errors_exit(int error_id, t_param *param)
 	if (error_id == 83)
 		errno = 83;
 	if (error_id == 0)
-	{
-		system("leaks fractol");
 		exit(EXIT_SUCCESS);
-	}
 	perror("Fract'ol");
 	if (error_id == 22)
 		parameter_menu();
 	if (param)
 		free_alloc(param);
-	system("leaks fractol");
 	exit(EXIT_FAILURE);
 }
 	//ft_printf("I'm in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
