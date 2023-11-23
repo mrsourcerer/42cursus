@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/19 08:58:22 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:30:33 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(int argc, char *argv[])
 	ft_init_vars(vars);
 	ft_draw(vars);
 	mlx_loop(vars->mlx);
-	ft_free_alloc(vars);
+	//ft_free_alloc(vars);
 	//system("leaks fractol");
 	return (0);
 }

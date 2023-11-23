@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 08:05:57 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/19 11:29:26 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:46:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,15 @@ void	ft_free_alloc(t_vars *vars)
 	ft_printf("Pasa free(vars->img->img\n");
 	if (vars->img)
 		mlx_destroy_image(vars->mlx, vars->img);
+	if (vars->img)
+		ft_printf("valor vars->img despues de destroy: %p\n", vars->img);
+		//free(vars->img);
 	ft_printf("Pasa mlx_destroy_image\n");
 	if (vars->win)
 		mlx_destroy_window(vars->mlx, vars->win);
+	if (vars->win)
+		ft_printf("valor vars->win despues de destroy: %p\n", vars->win);
+		//free(vars->win);
 	ft_printf("Pasa mlx_destroy_window\n");
 	if (vars->mlx)
 		free(vars->mlx);
@@ -37,12 +43,12 @@ void	ft_free_alloc(t_vars *vars)
 	ft_printf("Pasa free(vars->name)\n");
 	//free(vars->argv);
 	//ft_printf("Pasa free(vars->argv)\n");
-	/*if (vars)
+	if (vars != NULL)
 	{
 		ft_printf("Entra a liberar free(vars)\n");
 		free(vars);
 	}
-	*/
+
 	//free(vars);
 	ft_printf("Pasa free(vars)\n");
 }
