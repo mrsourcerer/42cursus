@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 08:05:57 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/23 20:46:53 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/14 20:54:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ void	ft_errors_exit(int error_id, t_vars *vars)
 		errno = 6;
 	if (error_id == 0)
 	{
-		system("leaks --list -- fractol");
+		//system("leaks --list -- fractol");  /*************************************************************
 		exit(EXIT_SUCCESS);
 	}
 	if (error_id == 22)
 		ft_print_usage();
 	//if (vars)
 	//	ft_free_alloc(vars);
-	system("leaks fractol");
+	//system("leaks fractol");  /***************************************************************************
 	exit(EXIT_FAILURE);
 }
 

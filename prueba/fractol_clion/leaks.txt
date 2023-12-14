@@ -1,0 +1,3 @@
+direccion vars: 0x10f37d6c0
+Type mandelbrot, no more params
+direccion vars->name: 0x10f37d760
