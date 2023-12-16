@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/23 20:30:33 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/16 09:31:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,15 @@ int	main(int argc, char *argv[])
 	vars->argv = argv;
 	ft_secure_vars(vars);
 	ft_args_ok(vars);
+	ft_printf("en el main\n");
 	ft_init_vars(vars);
 	ft_draw(vars);
+	ft_printf("I'm in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	mlx_loop(vars->mlx);
-	//ft_free_alloc(vars);
-	//system("leaks fractol");
+	// a partir de aqui sobra todo hasta el return
+	/*free(vars);*/
+	ft_free_alloc(vars);
+	ft_printf("Inesperadamente LLEGA aqui\n");
+	system("leaks fractol");
 	return (0);
 }
