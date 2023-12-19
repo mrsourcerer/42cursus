@@ -20,11 +20,9 @@ t_image	*ft_init_image(t_vars *vars)
 	if (!img)
 		ft_errors_exit(6, vars);
 	ft_printf("direccion img: %p\n", img); //
-	//	return (NULL); // gestionar errores *******************************************
 	img->img = mlx_new_image(vars->mlx, WIDTH, HEIGHT);
 	if (!img->img)
 		ft_errors_exit(6, vars);
-		//return (NULL); // gestionar errores *******************************************
 	ft_printf("direccion img->img: %p\n", img->img); //
 	img->addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel), \
 				&(img->line_length), &(img->endian));

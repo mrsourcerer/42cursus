@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 08:05:57 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/16 07:18:00 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/19 06:44:57 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	ft_free_alloc(t_vars *vars)
 		free(vars->img->img);
 	}
 	ft_printf("Pasa free(vars->img->img\n");
+	//if (vars->img)
+		//mlx_destroy_image(vars->mlx, vars->img);
 	if (vars->img)
-		mlx_destroy_image(vars->mlx, vars->img);
-	if (vars->img)
-		ft_printf("valor vars->img despues de destroy: %p\n", vars->img);
-		//free(vars->img);
+		//ft_printf("valor vars->img despues de destroy: %p\n", vars->img);
+		free(vars->img);
 	ft_printf("Pasa mlx_destroy_image\n");
 	if (vars->win)
 		mlx_destroy_window(vars->mlx, vars->win);
@@ -74,14 +74,14 @@ void	ft_errors_exit(int error_id, t_vars *vars)
 		errno = 6;
 	if (error_id == 0)
 	{
-		system("leaks fractol");  //----------------------------------------------------------------------
+		//system("leaks fractol");  //----------------------------------------------------------------------
 		exit(EXIT_SUCCESS);
 	}
 	if (error_id == 22)
 		ft_print_usage();
 	//if (vars)
 	//	ft_free_alloc(vars);
-	system("leaks fractol");  //---------------------------------------------------------------------------
+	//system("leaks fractol");  //---------------------------------------------------------------------------
 	exit(EXIT_FAILURE);
 }
 
