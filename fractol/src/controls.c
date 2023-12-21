@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 08:05:46 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/11 09:52:49 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:45:25 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_key_press(int key, t_vars *vars)
 {
-	ft_printf("pressed: %i\n", key);
 	if (key == K_ESC || key == K_Q)
 	{
 		ft_errors_exit(0, vars);
@@ -37,11 +36,9 @@ void	ft_reset_zoom(t_vars *vars)
 
 int	ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars)
 {
-	char	*name;
 	double	old_zoom;
 
 	old_zoom = vars->zoom;
-	name = vars->name;
 	if ((key == M_SCR_U || key == M_CLK_L) && (vars->zoom <= 2048))
 	{
 		vars->zoom = vars->zoom * 1.5;
@@ -51,7 +48,6 @@ int	ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars)
 	{
 		vars->zoom = vars->zoom / 1.5;
 		vars->max = vars->max - 1;
-		ft_printf("reduccion zoom: old_zoom: %f -> zoom: %f\n", old_zoom, vars->zoom);
 	}
 	vars->offset_x = pos_x + (vars->offset_x - WIDTH / 2) \
 						* vars->zoom / old_zoom;
@@ -59,7 +55,6 @@ int	ft_mouse_press(int key, int pos_x, int pos_y, t_vars *vars)
 						* vars->zoom / old_zoom;
 	if (vars->zoom <= 1.0)
 		ft_reset_zoom(vars);
-	ft_printf("%s pressed: mouse %i  pos_x: %i  pos_y: %i  zoom: %f\n", name, key, pos_x, pos_y, vars->zoom);
 	ft_draw(vars);
 	return (0);
 }

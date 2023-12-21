@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 08:05:57 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/19 06:44:57 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:33:11 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,30 @@
 
 void	ft_free_alloc(t_vars *vars)
 {
-	ft_printf("Llega ft_free_alloc\n");
-	//if (vars->img->addr)
-	//	free(vars->img->addr);
-	//ft_printf("Pasa free(vars->img->addr\n");
+	if (vars->img)
+		free(vars->img->img);
+	if (vars->img)
+		mlx_destroy_image(vars->mlx, vars->img);
 	if (vars->img)
 	{
-		free(vars->img->img);
+		ft_printf("vars->img %p\n", vars->img);
+		//next line:  pointer being freed was not allocated
+		//free(vars->img);
 	}
-	ft_printf("Pasa free(vars->img->img\n");
-	//if (vars->img)
-		//mlx_destroy_image(vars->mlx, vars->img);
-	if (vars->img)
-		//ft_printf("valor vars->img despues de destroy: %p\n", vars->img);
-		free(vars->img);
-	ft_printf("Pasa mlx_destroy_image\n");
 	if (vars->win)
 		mlx_destroy_window(vars->mlx, vars->win);
 	if (vars->win)
-		ft_printf("valor vars->win despues de destroy: %p\n", vars->win);
+	{
+		ft_printf("vars->win %p\n", vars->win);
+		//next line:  pointer being freed was not allocated
 		//free(vars->win);
-	ft_printf("Pasa mlx_destroy_window\n");
+	}
 	if (vars->mlx)
 		free(vars->mlx);
-	ft_printf("Pasa free(vars->mlx)\n");
 	if (vars->name)
 		free(vars->name);
-	ft_printf("Pasa free(vars->name)\n");
-	//free(vars->argv);
-	//ft_printf("Pasa free(vars->argv)\n");
 	if (vars != NULL)
-	{
-		ft_printf("Entra a liberar free(vars)\n");
 		free(vars);
-	}
-
-	//free(vars);
-	ft_printf("Pasa free(vars)\n");
 }
 
 void	ft_print_usage(void)
@@ -59,13 +46,12 @@ void	ft_print_usage(void)
 	ft_printf("fractol mandelbrot\n");
 	ft_printf("         or              \n");
 	ft_printf("fractol julia num1 num2\n");
-	ft_printf("\n (num1-> real part up to 4 decimal)\n");
-	ft_printf(" (num2-> imaginary part up to 4 decimal)\n");
+	ft_printf("\n (num1-> real part up to 4 decimal rounded)\n");
+	ft_printf(" (num2-> imaginary part up to 4 decimal rounded)\n");
 }
 
 void	ft_errors_exit(int error_id, t_vars *vars)
 {
-	ft_printf("Llega ft_errors_exit\n");
 	if (vars)
 		ft_free_alloc(vars);
 	if (error_id == 22)
@@ -87,7 +73,6 @@ void	ft_errors_exit(int error_id, t_vars *vars)
 
 int	ft_exit(t_vars *vars)
 {
-	ft_printf("Llega ft_exit\n");
 	ft_errors_exit(0, vars);
 	return (1);
 }

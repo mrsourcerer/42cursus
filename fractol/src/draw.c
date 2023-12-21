@@ -6,19 +6,11 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 07:02:50 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/19 13:37:06 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:40:19 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
-
-/*
-uint8_t	ft_255(int c_x, int c_y)
-{
-	return ((uint8_t)(sqrt(c_x * c_x + c_y * c_y) / \
-		sqrt(WIDTH * WIDTH / 4.0 + HEIGHT * HEIGHT / 4.0) * 255));
-}
-*/
 
 t_color	ft_color(t_vars *vars, int x, int y)
 {
@@ -33,19 +25,12 @@ t_color	ft_color(t_vars *vars, int x, int y)
 		check = ft_check_julia(c_x, c_y, vars);
 	else
 		check = ft_check_mandelbrot(c_x, c_y, vars);
-	/*if ((x == 0 && y == 0) || (x == WIDTH - 1 && y == HEIGHT - 1) \
-		|| (x == 500 && y == 500) || (x == 0 && y == 500) || (x == 999 && y == 500))
-		ft_printf("x: %i ; y: %i <--> c_x: %f c_y: %f <--> check: %i <--> max: %i <--> j_re: %f j_im: %f <--> julia: %i\n", x, y, c_x, c_y, check, vars->max, vars->j_re, vars->j_im, vars->julia);
-	*/
 	color.channel[0] = 0;
 	if (check > vars->max)
 		ft_channel(&color, 255, 255, 255);
-		//ft_channel(&color, 10, 10, 50);
 	else
-		ft_channel(&color, check % 7 * 255 / 7, check % 15 * 255 / 15, check % 16 * 255 / 16);
-		/*ft_channel(&color, check * 255 / (vars->max + 1), \
-					check * 200 / (vars->max + 1), 0);
-					*/
+		ft_channel(&color, check % 7 * 255 / 7, check % 15 * 255 / 15, \
+				check % 16 * 255 / 16);
 	return (color);
 }
 

@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/16 09:31:54 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:36:01 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,13 @@ int	ft_args_ok(t_vars *vars)
 void	ft_init_vars(t_vars *vars)
 {
 	vars->name = ft_strjoin("Fract'ol: ", vars->argv[1]);
-	ft_printf("direccion vars->name: %p\n", vars->name); //
 	vars->mlx = mlx_init();
 	if (!vars->mlx)
 		ft_errors_exit(6, vars);
-	ft_printf("direccion vars->mlx: %p\n", vars->mlx); //
 	vars->win = mlx_new_window(vars->mlx, WIDTH, HEIGHT, vars->name);
 	if (!vars->win)
 		ft_errors_exit(6, vars);
-	ft_printf("direccion vars->win: %p\n", vars->win); //
 	vars->img = ft_init_image(vars);
-	ft_printf("direccion vars->img: %p\n", vars->img); //
 	vars->color = 0;
 	vars->max = 20;
 	vars->zoom = 1.0;
@@ -70,20 +66,14 @@ int	main(int argc, char *argv[])
 	vars = (t_vars *)malloc(sizeof(t_vars) * 1);
 	if (!vars)
 		return (-1);
-	ft_printf("direccion vars: %p\n", vars); //
 	vars->argc = argc;
 	vars->argv = argv;
 	ft_secure_vars(vars);
 	ft_args_ok(vars);
-	ft_printf("en el main\n");
 	ft_init_vars(vars);
 	ft_draw(vars);
-	ft_printf("I'm in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	mlx_loop(vars->mlx);
 	// a partir de aqui sobra todo hasta el return
 	/*free(vars);*/
-	ft_free_alloc(vars);
-	ft_printf("Inesperadamente LLEGA aqui\n");
-	system("leaks fractol");
 	return (0);
 }

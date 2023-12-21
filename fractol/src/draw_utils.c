@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 07:03:21 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/19 09:05:17 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:39:56 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ t_image	*ft_init_image(t_vars *vars)
 	img = (t_image *)malloc(sizeof(t_image) * 1);
 	if (!img)
 		ft_errors_exit(6, vars);
-	ft_printf("direccion img: %p\n", img); //
 	img->img = mlx_new_image(vars->mlx, WIDTH, HEIGHT);
 	if (!img->img)
 		ft_errors_exit(6, vars);
-	ft_printf("direccion img->img: %p\n", img->img); //
 	img->addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel), \
 				&(img->line_length), &(img->endian));
-	ft_printf("direccion img->addr: %p\n", img->addr); //
 	return (img);
 }
 

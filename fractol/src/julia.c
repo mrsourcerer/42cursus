@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 06:34:32 by danlopez          #+#    #+#             */
-/*   Updated: 2023/11/19 08:17:04 by danlopez         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:31:33 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_julia_ok(t_vars *vars)
 
 void	ft_julia(t_vars *vars)
 {
-	ft_printf("Type julia params j_re: %f j_im: %f\n", vars->j_re, vars->j_im);
+	ft_printf("Julia params re: %f; im: %f\n", vars->j_re, vars->j_im);
 	vars->julia = 1;
 }
 
