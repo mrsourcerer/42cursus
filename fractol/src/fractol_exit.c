@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 08:05:57 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 20:33:11 by danlopez         ###   ########.fr       */
+/*   Updated: 2024/01/08 07:15:38 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,36 @@
 
 void	ft_free_alloc(t_vars *vars)
 {
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->img)
 		free(vars->img->img);
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->img)
-		mlx_destroy_image(vars->mlx, vars->img);
+		mlx_destroy_image(vars->mlx, vars->img); //works in 42 not at home linux
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->img)
 	{
 		ft_printf("vars->img %p\n", vars->img);
 		//next line:  pointer being freed was not allocated
 		//free(vars->img);
 	}
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->win)
 		mlx_destroy_window(vars->mlx, vars->win);
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->win)
 	{
 		ft_printf("vars->win %p\n", vars->win);
 		//next line:  pointer being freed was not allocated
 		//free(vars->win);
 	}
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->mlx)
 		free(vars->mlx);
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars->name)
 		free(vars->name);
+	ft_printf("exiting... in %s, line %d, file %s\n", __func__, __LINE__, __FILE__);
 	if (vars != NULL)
 		free(vars);
 }
