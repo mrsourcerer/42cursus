@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/06 06:35:19 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/12 06:37:44 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+size_t	ft_strlen(const char *s)
 {
-	t_complex	z;
+	int	len;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
+size_t	ft_len(const char *s)
+{
+	size_t	len;
+
+	if (!s)
+		return (0);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

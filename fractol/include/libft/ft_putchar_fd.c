@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/15 22:51:41 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/12 06:44:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	ft_putchar_fd(char c, int fd)
 {
-	t_complex	z;
+	write(fd, &c, 1);
+}
 
-	z.re = re;
-	z.im = im;
-	return (z);
+int	ft_putchar(char c, int fd)
+{
+	int	written;
+
+	written = write(fd, &c, 1);
+	return (written);
 }

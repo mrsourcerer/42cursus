@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 08:47:23 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/19 06:47:16 by danlopez         ###   ########.fr       */
+/*   Updated: 2024/01/13 09:40:39 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,15 @@
 # endif
 
 # include "libft/libft.h"
-//# include "minilibx-linux/mlx.h"
-//# include "minilibx_opengl_20191021/mlx.h"
-//# include "minilibx_mms_20191025_beta/mlx.h"
 
 # include <stdlib.h>
 # include <stdio.h>
-# include  <errno.h>  // don't know if it's allowed --------------------------------
+# include <errno.h>
 # include <math.h>
-// To use uint8_t
 # include <stdint.h>
 
-# define WIDTH 600
-# define HEIGHT 600
+# define WIDTH 800
+# define HEIGHT 800
 
 typedef struct s_image
 {

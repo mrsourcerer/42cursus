@@ -1,22 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_freevoid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/03/02 21:03:40 by danlopez          #+#    #+#             */
+/*   Updated: 2023/05/21 10:33:49 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	ft_freevoid(void **p)
 {
-	t_complex	z;
+	if (*p)
+	{
+		free(*p);
+		*p = NULL;
+	}
+}
 
-	z.re = re;
-	z.im = im;
-	return (z);
+void	ft_frint(int **i)
+{
+	if (*i)
+	{
+		free(*i);
+		*i = NULL;
+	}
+}
+
+void	ft_freestr(char **str)
+{
+	char	**tmp;
+
+	tmp = str;
+	while (*tmp)
+	{
+		free(*tmp);
+		tmp++;
+	}
+	free(str);
+	str = NULL;
 }

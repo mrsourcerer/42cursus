@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/13 20:43:08 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/13 20:48:10 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+size_t	ft_power(int base, int power)
 {
-	t_complex	z;
+	int		i;
+	size_t	num;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	i = power;
+	num = 1;
+	while (i > 0)
+	{
+		num *= base;
+		i--;
+	}
+	return (num);
 }

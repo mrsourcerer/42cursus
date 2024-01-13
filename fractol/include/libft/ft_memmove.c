@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/06 10:41:15 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/19 06:49:26 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_complex	z;
+	char	*d;
+	char	*s;
+	size_t	i;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	i = 0;
+	d = (char *)dst;
+	s = (char *)src;
+	if (d > s)
+	{
+		while (len > 0 && !(!dst && !src))
+		{
+			d[len - 1] = s[len - 1];
+			len--;
+		}
+	}
+	else
+	{
+		while (i < len && !(!dst && !src))
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return (dst);
 }

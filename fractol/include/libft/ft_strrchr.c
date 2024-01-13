@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/07 20:20:37 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/08 06:48:09 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
-
-t_complex	ft_z(double re, double im)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_complex	z;
+	const char	*p;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	p = s;
+	if (*p)
+		while (*p)
+			p++;
+	while (p >= s)
+	{
+		if (*p == (char)c)
+			return ((char *)p);
+		p--;
+	}
+	return (0);
 }

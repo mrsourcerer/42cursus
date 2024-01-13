@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/15 22:13:36 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/26 19:57:54 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_complex	z;
+	size_t	size;
+	size_t	i;
+	char	*str;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (!s || !f)
+		return (0);
+	size = ft_strlen(s);
+	str = (char *)malloc((size + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < size)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[size] = '\0';
+	return (str);
 }

@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_printf_charutils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/03 06:53:04 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/27 06:54:09 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "ft_printf.h"
 
-t_complex	ft_z(double re, double im)
+void	ft_printf_c(char c, int *p_i)
 {
-	t_complex	z;
+	*p_i = ft_putchar(c, 1);
+}
 
-	z.re = re;
-	z.im = im;
-	return (z);
+void	ft_printf_s(char *str, int *p_i)
+{
+	if (str)
+	{
+		*p_i = ft_putstr(str, 1);
+	}
+	else
+	{
+		*p_i = ft_putstr("(null)", 1);
+	}
 }

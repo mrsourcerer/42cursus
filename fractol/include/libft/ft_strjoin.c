@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/08 19:02:18 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/26 18:00:37 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_complex	z;
+	char	*join;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (!s1 || !s2)
+		return (0);
+	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * 1);
+	if (!join)
+		return (0);
+	ft_strlcpy(join, s1, ft_strlen(s1) + 1);
+	ft_strlcpy(join + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	return (join);
 }

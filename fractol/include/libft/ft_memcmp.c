@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/08 08:36:39 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/08 10:11:17 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_complex	z;
+	size_t	i;
+	char	*p_s1;
+	char	*p_s2;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	p_s1 = (char *)s1;
+	p_s2 = (char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if ((unsigned char)p_s1[i] != (unsigned char)p_s2[i])
+			return ((unsigned char)p_s1[i] - (unsigned char)p_s2[i]);
+		i++;
+	}
+	return (0);
 }

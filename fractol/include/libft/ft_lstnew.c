@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/15 05:56:53 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/15 06:50:44 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+t_list	*ft_lstnew(void *content)
 {
-	t_complex	z;
+	t_list	*new;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	new = (t_list *)malloc(1 * sizeof(*new));
+	if (!new)
+		return (NULL);
+	(*new).content = content;
+	new->next = NULL;
+	return (new);
 }

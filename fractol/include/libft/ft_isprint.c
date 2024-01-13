@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/06 06:26:46 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/06 06:31:29 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
-
-t_complex	ft_z(double re, double im)
+int	ft_isprint(int c)
 {
-	t_complex	z;
-
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

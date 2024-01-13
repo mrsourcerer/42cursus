@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/08 07:21:57 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/08 08:22:24 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	t_complex	z;
+	size_t	i;
+	char	*p;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	p = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if ((unsigned char)p[i] == (unsigned char)c)
+			return (&p[i]);
+		i++;
+	}
+	return (0);
 }

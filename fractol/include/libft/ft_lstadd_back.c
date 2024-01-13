@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/16 07:07:54 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/16 19:57:03 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_complex	z;
+	t_list	*tmp;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (*lst)
+	{
+		tmp = ft_lstlast(*lst);
+		tmp->next = new;
+	}
+	else
+		*lst = new;
 }

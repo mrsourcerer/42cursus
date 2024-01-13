@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_putnbrf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/06/25 10:22:54 by danlopez          #+#    #+#             */
+/*   Updated: 2023/06/26 06:40:38 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+int	ft_putnbrf(double n, int precision, int fd)
 {
-	t_complex	z;
+	int		written;
+	char	*str;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	str = ft_ftoa(n, precision);
+	written = ft_putstr(str, fd);
+	free(str);
+	return (written);
 }

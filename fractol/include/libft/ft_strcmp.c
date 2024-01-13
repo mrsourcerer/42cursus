@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/06/25 07:07:48 by danlopez          #+#    #+#             */
+/*   Updated: 2023/06/25 07:24:19 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_complex	z;
+	size_t	len;
+	size_t	i;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (0);
+	len = ft_strlen(s1);
+	i = 0;
+	while (i < len)
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

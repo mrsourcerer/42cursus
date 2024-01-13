@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/08 15:40:00 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/08 16:33:53 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	*ft_calloc(size_t count, size_t size)
 {
-	t_complex	z;
+	void	*p;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	p = (void *)malloc(count * size);
+	if (!p)
+		return (0);
+	ft_bzero(p, count * size);
+	return (p);
 }

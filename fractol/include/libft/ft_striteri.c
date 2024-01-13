@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/15 22:38:54 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/26 19:17:03 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_complex	z;
+	size_t	size;
+	size_t	i;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (!s || !f)
+		return ;
+	size = ft_strlen(s);
+	i = 0;
+	while (i < size)
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

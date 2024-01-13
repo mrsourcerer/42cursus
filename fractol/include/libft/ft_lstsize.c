@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2023/02/16 06:18:34 by danlopez          #+#    #+#             */
+/*   Updated: 2023/02/16 06:46:29 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+int	ft_lstsize(t_list *lst)
 {
-	t_complex	z;
+	int	i;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	if (!lst)
+		return (0);
+	i = 1;
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

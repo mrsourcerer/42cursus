@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 06:33:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:45:59 by danlopez         ###   ########.fr       */
+/*   Created: 2022/12/06 06:58:23 by danlopez          #+#    #+#             */
+/*   Updated: 2022/12/06 07:38:23 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-t_complex	ft_z(double re, double im)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	t_complex	z;
+	size_t	i;
+	char	*s;
 
-	z.re = re;
-	z.im = im;
-	return (z);
+	s = (char *)b;
+	i = 0;
+	while (i < len)
+	{
+		s[i] = c;
+		i++;
+	}
+	return (b);
 }

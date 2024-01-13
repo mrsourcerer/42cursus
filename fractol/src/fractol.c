@@ -6,7 +6,7 @@
 /*   By: danlopez <danlopez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 07:14:55 by danlopez          #+#    #+#             */
-/*   Updated: 2023/12/21 19:36:01 by danlopez         ###   ########.fr       */
+/*   Updated: 2024/01/13 09:40:39 by danlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,5 @@ int	main(int argc, char *argv[])
 	ft_init_vars(vars);
 	ft_draw(vars);
 	mlx_loop(vars->mlx);
-	// a partir de aqui sobra todo hasta el return
-	/*free(vars);*/
 	return (0);
 }
